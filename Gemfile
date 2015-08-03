@@ -44,7 +44,5 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'database_cleaner'
 end
