@@ -5,15 +5,21 @@ html {
 
 h1 {
   width: 12em;
-  padding-top: 4em;
+  padding-top: 5%;
   position: relative;
   margin: 0 auto;
   color: red;
 }
 
+#nav {
+  padding-top: 1%;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .navbar {
   display: inline;
-  margin: 5em;
+  margin: 3%;
   background: rgba(255, 255, 255, 0.6);
   border-radius: 25px;
   padding: 10px;
