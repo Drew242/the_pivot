@@ -1,19 +1,16 @@
-html {
-  background-image: url("jurassic_park_gate.jpg");
-  background-size: cover;
+html{
+  background-color: grey;
 }
 
-h1 {
-  width: 12em;
-  padding-top: 4em;
-  position: relative;
+#nav {
+  padding-top: 1%;
+  width: 80%;
   margin: 0 auto;
-  color: red;
 }
 
 .navbar {
   display: inline;
-  margin: 5em;
+  margin: 3%;
   background: rgba(255, 255, 255, 0.6);
   border-radius: 25px;
   padding: 10px;
