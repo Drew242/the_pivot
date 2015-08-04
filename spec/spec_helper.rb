@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 RSpec.configure do |config|
   require 'capybara/rspec'
   config.expect_with :rspec do |expectations|
