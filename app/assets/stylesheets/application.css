@@ -11,6 +11,10 @@ a:link, a:active, a:hover{
   text-decoration: none;
 }
 
+#about_section{
+  color: black;
+}
+
 #nav {
   padding-top: 1%;
   width: 80%;
