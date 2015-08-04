@@ -1,8 +1,8 @@
-require 'simplecov'
+require "simplecov"
 SimpleCov.start
 
 RSpec.configure do |config|
-  require 'capybara/rspec'
+  require "capybara/rspec"
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
@@ -22,7 +22,7 @@ RSpec.configure do |config|
   config.disable_monkey_patching!
 
   if config.files_to_run.one?
-    config.default_formatter = 'doc'
+    config.default_formatter = "doc"
   end
 
   config.profile_examples = 10
