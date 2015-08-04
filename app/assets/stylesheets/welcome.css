@@ -3,9 +3,15 @@ html {
   background-size: cover;
 }
 
+
 h1 {
+  font-size: 3em;
+  font-family: "Jurassic Park", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2em;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
   width: 12em;
   padding-top: 5%;
+  padding-left: 14%;
   position: relative;
   margin: 0 auto;
   color: red;
