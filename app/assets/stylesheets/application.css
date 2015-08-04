@@ -1,8 +1,19 @@
-html{
-  background-color: grey;
+html {
+  background-image: url("dinosaur_scene.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-#nav {
+a:visited {
+  text-decoration: none;
+  color: green;
+}
+
+a:link, a:active, a:hover{
+  text-decoration: none;
+}
+
+#nav{
   padding-top: 1%;
   width: 80%;
   margin: 0 auto;
@@ -16,6 +27,10 @@ html{
   padding: 10px;
 }
 
+#about_section{
+  color: black;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -26,6 +41,7 @@ html{
   visibility: hidden;
   opacity: 0;
 }
+
 .overlay:target {
   visibility: visible;
   opacity: 8;
@@ -51,9 +67,11 @@ html{
   text-decoration: none;
   color: #E6E6E6;
 }
+
 .popup .close:hover {
   color: #00246B;
 }
+
 .popup .content {
   color: white;
   max-height: 30%;

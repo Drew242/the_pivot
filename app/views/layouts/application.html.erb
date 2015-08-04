@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>JurassicParka</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= render "partials/navigation" %> 
 </head>
+
 <body>
+  <%= render "partials/navigation" %>
 
 <%= yield %>
 
 </body>
+
 </html>
