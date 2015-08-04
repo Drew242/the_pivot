@@ -1,25 +1,20 @@
-/*
-*= require_self
-*= require_tree
-*/
 
 html {
   background-image: url("dinosaur_scene.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 a:visited {
   text-decoration: none;
   color: green;
 }
+
 a:link, a:active, a:hover{
   text-decoration: none;
 }
 
-#about_section{
-  color: black;
-
-#nav {
+#nav{
   padding-top: 1%;
   width: 80%;
   margin: 0 auto;
@@ -33,6 +28,10 @@ a:link, a:active, a:hover{
   padding: 10px;
 }
 
+#about_section{
+  color: black;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -43,6 +42,7 @@ a:link, a:active, a:hover{
   visibility: hidden;
   opacity: 0;
 }
+
 .overlay:target {
   visibility: visible;
   opacity: 8;
@@ -68,9 +68,11 @@ a:link, a:active, a:hover{
   text-decoration: none;
   color: #E6E6E6;
 }
+
 .popup .close:hover {
   color: #00246B;
 }
+
 .popup .content {
   color: white;
   max-height: 30%;
