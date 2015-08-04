@@ -1,5 +1,14 @@
-html{
-  background-color: grey;
+html {
+  background-image: url("dinosaur_scene.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+a:visited {
+  text-decoration: none;
+  color: green;
+}
+a:link, a:active, a:hover{
+  text-decoration: none;
 }
 
 #nav {
