@@ -1,0 +1,12 @@
+html {
+  background-image: url("jurassic_park_gate.jpg");
+  background-size: cover;
+}
+
+h1 {
+  width: 12em;
+  padding-top: 5%;
+  position: relative;
+  margin: 0 auto;
+  color: red;
+}
