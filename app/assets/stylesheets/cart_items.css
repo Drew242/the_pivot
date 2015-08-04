@@ -1,0 +1,24 @@
+#CartTitle {
+  font-family: sans-serif;
+}
+
+#CartTable {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#CartTable th {
+    font-size: 1.1em;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #A7C942;
+    color: #ffffff;
+}
+
+#CartTable td {
+    color: #000000;
+    background-color: #EAF2D3;
+    position: relative;
+    width: 100em;
+    margin: 0 auto;
+}
