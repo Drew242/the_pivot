@@ -1,14 +1,13 @@
-<div class="container" id="Items">
-  <% items.each do |item| %>
+<div class="container">
   <div class="row">
-    <div class="col-sm-6 col-md-4">
+      <% items.each do |item| %>
+    <div class="col-sm-12" style="background-color:tan;">
       <div class="thumbnail">
-        <img src=<%= item.image %>></img>
-        <h4><%= item.title %></h4>
-        <p><%= item.description %></p>
-        <p>$<%= item.price %></p>
-        <% end %>
-      </div>
+      <img style="max-height:17em" class="item_image" src=<%= item.image %>></img>
+      <h4><%= item.title %></h4>
+      <p><%= number_to_currency item.price %></p>
     </div>
+    </div>
+    <% end %>
   </div>
 </div>
