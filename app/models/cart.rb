@@ -17,6 +17,10 @@ class Cart
     data[item.id.to_s] += 1
   end
 
+  def remove_item(item)
+    data[item.id.to_s] -= 1
+  end
+
   def total
     items.inject(0) do |subtotal, cart_item|
       subtotal + (cart_item.price * cart_item.quantity)
