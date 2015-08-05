@@ -8,4 +8,4 @@
   <li class="price_and_quantity"><%=@item.price%></li>
 </ul>
 
-<div id="add_to_cart"><%= button_to "Add to cart", cart_items_path %></div>
+<div id="add_to_cart"><%= button_to "Add to cart", cart_items_path(item_id: @item.id) %></div>

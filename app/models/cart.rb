@@ -9,4 +9,7 @@ class Cart
       CartItem.new(item, quantity)
     end
   end
+
+  def total
+  end
 end
