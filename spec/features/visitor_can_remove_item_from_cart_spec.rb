@@ -13,7 +13,7 @@ RSpec.feature "VisitorRemovesItemFromCart", type: :feature do
       click_link "View Cart"
     end
 
-    it "removes an item from the cart" do
+    xit "removes an item from the cart" do
       visit cart_path
       click_button "Remove"
 
