@@ -1,79 +1,16 @@
-html {
-  background-image: url("dinosaur_scene.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-a:visited {
-  text-decoration: none;
-  color: green;
-}
-
-a:link, a:active, a:hover{
-  text-decoration: none;
-}
-
-#nav{
-  padding-top: 1%;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.navbar {
-  display: inline;
-  margin: 3%;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 25px;
-  padding: 10px;
-}
-
-#about_section{
-  color: black;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transition: 1000ms;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.overlay:target {
-  visibility: visible;
-  opacity: 8;
-}
-
-.popup {
-  box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.9);
-  margin: 110px auto;
-  padding: 20px;
-  border-radius: 5px;
-  width: 43%;
-  position: relative;
-  transition: all 5s ease-in-out;
-}
-
-.popup .close {
-  margin: -12px;
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #E6E6E6;
-}
-
-.popup .close:hover {
-  color: #00246B;
-}
-
-.popup .content {
-  color: white;
-  max-height: 30%;
-  overflow: auto;
-}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap
+ *= require_tree .
+ *= require_self
+ */

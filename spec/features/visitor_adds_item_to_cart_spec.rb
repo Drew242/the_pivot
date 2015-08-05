@@ -14,7 +14,7 @@ RSpec.feature "VisitorAddsItemToCart", type: :feature do
       visit item_path(item)
       click_button "Add to cart"
 
-      click_link "VIEW CART"
+      click_link "View Cart"
 
       expect(page.body).to have_content("TRex Specs")
       expect(page.body).to have_content("Make sure you can see what you're about to eat!")
