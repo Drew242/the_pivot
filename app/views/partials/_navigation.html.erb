@@ -1,15 +1,22 @@
-<ul id="nav">
-  <li class="navbar"><%= link_to "HOME", root_path %></li>
-  <li class="navbar"><%= link_to "ITEMS", items_path %></li>
-  <li class="navbar">CATEGORIES</li>
-  <li class="navbar">LOGIN</li>
-  <li class="navbar">CART</li>
-  <li class="navbar"><a class="button" href="#popup1">About Jurassic Parka</a></li>
-        <div id="popup1" class="overlay">
-          <div class="popup">
-            <a class="close" href="">×</a>
-            <div class="content">
-              <p id="about_section">Jurassic Parka was founded on the notion that
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to "Home", root_path %></li>
+      <li class="active"><%= link_to "Items", items_path %></li>
+      <li class="active"><%= link_to "Categories", "#" %></li>
+      <li class="active"><%= link_to "Login", "#" %></li>
+      <li class="active"><%= link_to "Cart", "#" %></li>
+      <li class="active"><%= link_to "About Jurassic Parka", "#"%></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+      <!-- <div id="popup1" class="overlay">
+        <div class="popup">
+          <a class="close" href="">×</a>
+          <div class="content">
+            <p id="about_section">Jurassic Parka was founded on the notion that
               dinosaurs of all shapes and sizes deserve access to the highest
               fashion available for all eras - not just Jurassic. Through rigorous
               study of the fashion industry from the Jurassic era until present
@@ -19,5 +26,4 @@
               in between. Omnivores - we don't judge. You're welcome at the Parka.</p>
             </div>
           </div>
-      </div>
-</ul>
+        </div> -->

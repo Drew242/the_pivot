@@ -1,0 +1,56 @@
+html {
+  background-image: url("dinosaur_scene.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#about_section{
+  color: black;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 1000ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 8;
+}
+
+.popup {
+  box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.9);
+  margin: 110px auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 43%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup .close {
+  margin: -12px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #E6E6E6;
+}
+
+.popup .close:hover {
+  color: #00246B;
+}
+
+.popup .content {
+  color: white;
+  max-height: 30%;
+  overflow: auto;
+}
