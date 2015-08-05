@@ -4,6 +4,7 @@ body {
   background-repeat: no-repeat;
   height: 800px;
 }
+
 .welcome {
   background-color: black;
   background-image: url("jurassic_park_gate.jpg");
@@ -22,6 +23,7 @@ body {
   margin: 0 auto;
   color: red;
 }
+
 #title {
   padding-bottom: 3em;
   text-align: center;
@@ -34,13 +36,22 @@ body {
   margin: 0 auto;
   color: red;
 }
+
 #Items {
   padding-top: 3em;
   border: 1px solid black;
 }
+
+#Item {
+  padding-top: 3em;
+  text-align: center;
+  padding-left: 28em;
+}
+
 #CartPage{
   padding-top: 3em;
 }
+
 #CartTitle {
   font-family: "Jurassic Park", Helvetica, Arial, sans-serif;
   letter-spacing: 0.2em;

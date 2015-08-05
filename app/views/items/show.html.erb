@@ -1,9 +1,20 @@
-<h1><%=@item.title%> Details</h1>
+<div class="row">
+  <div class="coll-md-12">
+    <h1 id="title"><%=@item.title%> Details</h1>
+  </div>
+</div>
 
-<div id="item_image"><img src=<%= @item.image %>></img></div>
-
-<div id="description"><%=@item.description%></div>
-<ul>
-<li class="price_and_quantity"><%=@item.price%></li>
-<!-- <li class="price_and_quantity"><%#=@cart.quantity%></li> -->
-</ul>
+<div class="container" id="Item">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <img src=<%= @item.image %>></img>
+        <%=@item.description%>
+        <ul>
+          <li class="price_and_quantity"><%=@item.price%></li>
+          <!-- <li class="price_and_quantity"><%#=@cart.quantity%></li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
