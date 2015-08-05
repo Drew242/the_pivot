@@ -17,8 +17,10 @@
         <li class="active"><%= link_to "About Jurassic Parka", "#"%></li>
         <% if current_user %>
         <li class="active"><%= link_to "Logged in as #{current_user.username}", "#" %></li>
-        <li class="flash"><%= flash.notice %></li>
         <% end %>
+        <li class="active"><% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: "flash_#{type}" %>
+        <% end %></li>
       </ul>
     </div>
   </div>
