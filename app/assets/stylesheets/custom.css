@@ -1,56 +1,71 @@
-html {
+body {
   background-image: url("dinosaur_scene.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  height: 800px;
+}
+.welcome {
+  background-color: black;
+  background-image: url("jurassic_park_gate.jpg");
+  height: 900px;
+  background-size: cover;
 }
 
-#about_section{
-  color: black;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transition: 1000ms;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.overlay:target {
-  visibility: visible;
-  opacity: 8;
-}
-
-.popup {
-  box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.9);
-  margin: 110px auto;
-  padding: 20px;
-  border-radius: 5px;
-  width: 43%;
+#welcome {
+  font-size: 3em;
+  font-family: "Jurassic Park", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2em;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  width: 12em;
+  top: 2.5em;
   position: relative;
-  transition: all 5s ease-in-out;
+  margin: 0 auto;
+  color: red;
+}
+#title {
+  padding-bottom: 3em;
+  text-align: center;
+  font-family: "Jurassic Park", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2em;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  width: 12em;
+  top: 2.5em;
+  position: relative;
+  margin: 0 auto;
+  color: red;
+}
+#Items {
+  padding-top: 3em;
+  border: 1px solid black;
+}
+#CartPage{
+  padding-top: 3em;
+}
+#CartTitle {
+  font-family: "Jurassic Park", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2em;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  top: 2.5em;
+  color: red;
 }
 
-.popup .close {
-  margin: -12px;
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #E6E6E6;
+#CartTable {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: rgba(234,242, 211,0.5);
 }
 
-.popup .close:hover {
-  color: #00246B;
+#CartTable th {
+    font-size: 1.1em;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #A7C942;
+    color: #ffffff;
 }
 
-.popup .content {
-  color: white;
-  max-height: 30%;
-  overflow: auto;
+#CartTable td {
+    color: #000000;
+    position: relative;
+    width: 100em;
+    margin: 0 auto;
 }
