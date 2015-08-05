@@ -5,9 +5,22 @@
         <li class="active"><%= link_to "Home", root_path %></li>
         <li class="active"><%= link_to "Items", items_path %></li>
         <li class="active"><%= link_to "Categories", categories_path %></li>
-        <li class="active"><%= link_to "Login", "#" %></li>
+        <% if !current_user %>
+        <li class="active"><%= link_to "Login", login_path %></li>
+        <% else %>
+        <li class="active"><%= link_to "Logout", logout_path, method: :delete %></li>
+        <% end %>
         <li class="active"><%= link_to "View Cart", cart_path %></li>
+        <% if !current_user %>
+        <li class="active"><%= link_to "Create Account", new_user_path  %>
+        <% end %>
         <li class="active"><%= link_to "About Jurassic Parka", "#"%></li>
+        <% if current_user %>
+        <li class="active"><%= link_to "Logged in as #{current_user.username}", "#" %></li>
+        <% end %>
+        <li class="active"><% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: "flash_#{type}" %>
+        <% end %></li>
       </ul>
     </div>
   </div>
