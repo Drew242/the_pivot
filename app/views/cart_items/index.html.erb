@@ -3,16 +3,18 @@
 </head>
 <h1 id="CartTitle">Your Shopping Cart</h1>
 <table id="CartTable">
-  <th>Image</th>
-  <th>Title</th>
+  <th></th>
+  <th>Item</th>
   <th>Description</th>
   <th>Price</th>
   <% @cart_items.each do |cart_item| %>
     <tr>
-      <td id="ItemImage"><%= cart_item.image %></td>
+      <td id="ItemImage"><%= image_tag cart_item.image %></td>
       <td id="Title"><%= cart_item.title %></td>
       <td id="Description"><%= cart_item.description %></td>
       <td id="price">$<%= cart_item.price %></td>
     </tr>
   <% end %>
 </table>
+
+<h4>Cart Total: <%= number_to_currency(cart.total) %></h4>

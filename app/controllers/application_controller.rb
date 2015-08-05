@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
   def cart
     Cart.new(session[:cart])
   end
+
+  helper_method :cart
 end

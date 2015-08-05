@@ -1,6 +1,6 @@
 class Cart
   def initialize(data)
-    @data = data
+    @data = data || {}
   end
 
   def items
@@ -11,5 +11,8 @@ class Cart
   end
 
   def total
+    items.inject(0) do |subtotal, cart_item|
+      subtotal + (cart_item.price * cart_item.quantity)
+    end
   end
 end
