@@ -21,7 +21,7 @@ body {
   width: 30%;
   height: 24em;
   margin: 1%;
-  display:
+  display: inline;
 }
 
 .thumbnail {
@@ -109,4 +109,12 @@ body {
     position: relative;
     width: 100em;
     margin: 0 auto;
+}
+
+.flash_error {
+  color: red;
+}
+
+.flash_message {
+  color: green; 
 }

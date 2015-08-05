@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "VisitorCanViewItemsAtCategoriesPath", type: :feature do
   context "as a visitor" do
-    let!(:category) {Category.create(name: "hats")}
+    let!(:category) { Category.create(name: "hats") }
     let!(:item) do
       Item.create(category_id: category.id, title: "Sombraro",
                   description: "Hola",
@@ -29,5 +29,6 @@ RSpec.feature "VisitorCanViewItemsAtCategoriesPath", type: :feature do
       expect(page).to have_content("Sombraro")
       expect(page).to have_content("Cowboy")
     end
+
   end
 end

@@ -4,7 +4,7 @@
     <%= link_to(item) do %>
     <div class="col-sm-12">
       <div class="thumbnail">
-      <img style="max-height:17em" class="item_image" src=<%= asset_path(item.image) %>></img>
+      <img style="max-height:17em" class="item_image" src=<%= (item.image) %>></img>
       <h4><%= item.title %></h4>
       <p><%= number_to_currency item.price %></p>
     </div>

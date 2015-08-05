@@ -1,5 +1,17 @@
 {
   "result": {
+<<<<<<< HEAD
     "covered_percent": 97.19
+=======
+
+
+    "covered_percent": 98.89
+
+    "covered_percent": 98.03
+ 7466393... precompiled for heroku
+
+    "covered_percent": 98.03
+>>>>>>> master
+>>>>>>> master
   }
 }

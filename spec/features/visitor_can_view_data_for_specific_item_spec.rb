@@ -20,7 +20,7 @@ RSpec.feature "visitor can view data for specific items", type: :feature do
           expect(page).to have_content("An extra long scarf for all of those
           littlefoots in your life")
         end
-        
+
         within ".price_and_quantity" do
           expect(page).to have_content("230")
         end
