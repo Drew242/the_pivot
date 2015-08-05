@@ -1,19 +1,19 @@
 <div class="container" id="CartPage">
-<h1 id="CartTitle">Your Shopping Cart</h1>
-<table id="CartTable">
-  <th></th>
-  <th>Item Name</th>
-  <th>Description</th>
-  <th>Price</th>
-  <th>Quantity</th>
-  <th>Total Price</th>
-  <tr>
-    <td id="ItemImage"><img src="http://www.wired.co.uk/_/img/jurassic/labcoat.png"</img></td>
-    <td id="ItemName">jurassic parka</td>
-    <td id="Description">keep your cold blood warm</td>
-    <td id="price">$1000</td>
-    <td id="quantity">2</td>
-    <td id="total price">$2000</td>
-  </tr>
-</table>
+
+  <h1 id="CartTitle">Your Shopping Cart</h1>
+  <table id="CartTable">
+    <th></th>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Price</th>
+    <% @cart_items.each do |cart_item| %>
+    <tr>
+      <td id="ItemImage"><%= image_tag cart_item.image %></td>
+      <td id="Title"><%= cart_item.title %></td>
+      <td id="Description"><%= cart_item.description %></td>
+      <td id="price"><%= number_to_currency(cart_item.price) %></td>
+    </tr>
+    <% end %>
+  </table>
+<h4>Cart Total: <%= number_to_currency(cart.total) %></h4>
 </div>

@@ -12,9 +12,12 @@
         <%=@item.description%>
         <ul>
           <li class="price_and_quantity"><%=@item.price%></li>
-          <!-- <li class="price_and_quantity"><%#=@cart.quantity%></li> -->
-        </ul>
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">
+              <%= button_to "Add to cart", cart_items_path(item_id: @item.id) %></button>
+            </div>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>

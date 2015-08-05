@@ -4,17 +4,4 @@
   </div>
 </div>
 
-<div class="container" id="Items">
-  <% @items.each do |item| %>
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src=<%= item.image %>></img>
-        <h4><%= item.title %></h4>
-        <p><%= item.description %></p>
-        <p>$<%= item.price %></p>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: "show_items", locals: {items: @items} %>
