@@ -1,10 +1,3 @@
 <h1>All Items</h1>
 
-<% @items.each do |item| %>
-  <ul>
-    <li><%= item.title %></li>
-    <li><%= item.description %></li>
-    <li>$<%= item.price %></li>
-    <li><img src=<%= item.image %>></img></li>
-  </ul>
-<% end %>
+<%= render partial: "show_items", locals: {items: @items} %>

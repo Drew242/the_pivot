@@ -1,31 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mitchashby16/module_2/projects/jurassic_parka/spec/features/visitor_can_view_data_for_specific_item_spec.rb": [
+      "/Users/mitchashby16/module_2/projects/jurassic_parka/spec/features/visitor_can_view_all_categories_spec.rb": [
         1,
         null,
         1,
         1,
-        2,
-        null,
-        null,
-        null,
-        null,
         1,
         1,
         1,
         1,
         null,
         1,
-        1,
         null,
         1,
         1,
-        null,
-        null,
         1,
-        1,
-        null,
         null,
         null,
         null
@@ -189,6 +179,7 @@
         null,
         null,
         null,
+        null,
         null
       ],
       "/Users/mitchashby16/module_2/projects/jurassic_parka/config/initializers/backtrace_silencers.rb": [
@@ -260,10 +251,41 @@
         1,
         1,
         1,
+        1,
+        1,
         null
       ],
       "/Users/mitchashby16/module_2/projects/jurassic_parka/app/helpers/application_helper.rb": [
         1,
+        null
+      ],
+      "/Users/mitchashby16/module_2/projects/jurassic_parka/spec/features/visitor_can_view_data_for_specific_item_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/mitchashby16/module_2/projects/jurassic_parka/spec/features/visitor_can_view_items_spec.rb": [
@@ -283,6 +305,71 @@
         1,
         1,
         1,
+        null,
+        null,
+        null
+      ],
+      "/Users/mitchashby16/module_2/projects/jurassic_parka/spec/features/when_visiting_categories_path_visitor_can_see_items_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/mitchashby16/module_2/projects/jurassic_parka/spec/models/category_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        4,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/mitchashby16/module_2/projects/jurassic_parka/app/models/category.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        7,
+        null,
+        null,
+        1,
+        4,
         null,
         null,
         null
@@ -312,9 +399,12 @@
       ],
       "/Users/mitchashby16/module_2/projects/jurassic_parka/app/models/item.rb": [
         1,
+        1,
         null
       ],
-      "/Users/mitchashby16/module_2/projects/jurassic_parka/app/controllers/items_controller.rb": [
+      "/Users/mitchashby16/module_2/projects/jurassic_parka/app/controllers/categories_controller.rb": [
+        1,
+        null,
         1,
         1,
         1,
@@ -332,8 +422,20 @@
         null,
         1,
         null
+      ],
+      "/Users/mitchashby16/module_2/projects/jurassic_parka/app/controllers/items_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1438711308
+    "timestamp": 1438735717
   }
 }
