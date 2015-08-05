@@ -12,7 +12,7 @@
       <td id="ItemImage"><%= image_tag cart_item.image %></td>
       <td id="Title"><%= cart_item.title %></td>
       <td id="Description"><%= cart_item.description %></td>
-      <td id="price">$<%= cart_item.price %></td>
+      <td id="price"><%= number_to_currency(cart_item.price) %></td>
     </tr>
   <% end %>
 </table>

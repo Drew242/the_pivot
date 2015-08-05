@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "VisitorAddsItemToCart", type: :feature do
   context "not logged in and cart is empty" do
