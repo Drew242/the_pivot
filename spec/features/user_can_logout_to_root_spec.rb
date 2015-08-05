@@ -1,5 +1,4 @@
-require 'rails_helper'
-
+require "rails_helper"
 RSpec.feature "UserCanLogoutAndSeeHomePage", type: :feature do
   context "when logged in" do
     let!(:user) { User.create(username: "Mitchell", password: "password") }
@@ -23,6 +22,5 @@ RSpec.feature "UserCanLogoutAndSeeHomePage", type: :feature do
       expect(page).to have_content("Login")
       expect(current_path).to eq "/"
     end
-
   end
 end

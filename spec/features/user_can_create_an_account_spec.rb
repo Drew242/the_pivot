@@ -1,5 +1,4 @@
-require 'rails_helper'
-
+require "rails_helper"
 RSpec.feature "UserCanCreateAccountAndSeeDashBoard", type: :feature do
   context "when user does not exist" do
 
@@ -20,6 +19,5 @@ RSpec.feature "UserCanCreateAccountAndSeeDashBoard", type: :feature do
       expect(page).to have_content("Welcome back Mitchell")
       expect(page).to have_content("We appreciate your business! - Jurassic Parka senior staff")
     end
-
   end
 end

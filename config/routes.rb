@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :index]
   resources :cart_items, only: [:index, :create]
   resources :users, except: [:show]
-  get '/dashboard', to: 'users#show'
+  get "/dashboard", to: "users#show"
   get "/cart", to: "cart_items#index"
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 end
