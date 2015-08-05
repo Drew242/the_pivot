@@ -16,7 +16,7 @@
       <td>
         <div class="btn-group" role="group" aria-label="...">
           <button type="button" class="btn btn-default">
-            <%= button_to "Remove", cart_items_path, method: :destroy %></button>
+            <%= button_to "Remove", cart_item_path(@item), method: :delete %></button>
         </div>
       </td>
     </tr>
