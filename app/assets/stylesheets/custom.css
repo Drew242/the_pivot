@@ -80,3 +80,7 @@ body {
     width: 100em;
     margin: 0 auto;
 }
+
+.flash {
+  color: red;
+}
