@@ -7,7 +7,7 @@ body {
 
 
 .container{
-  background-color: grey;
+  background-color: #F3F6FA;
   display: grid;
   text-align: center;
 }
@@ -25,6 +25,7 @@ body {
 }
 
 .thumbnail {
+  background-color: #83D3C9;
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
