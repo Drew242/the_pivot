@@ -14,7 +14,7 @@
         <% if !current_user %>
         <li class="active"><%= link_to "Create Account", new_user_path  %>
         <% end %>
-        <li class="active"><%= link_to "About Jurassic Parka", "#"%></li>
+        <li class="active"><%= link_to "About Jurassic Parka", "#popup"%></li>
         <% if current_user %>
         <li class="active"><%= link_to "Logged in as #{current_user.username}", "#" %></li>
         <% end %>
@@ -25,13 +25,18 @@
     </div>
   </div>
 </nav>
-
-<!-- <p id="about_section">Jurassic Parka was founded on the notion that
-dinosaurs of all shapes and sizes deserve access to the highest
-fashion available for all eras - not just Jurassic. Through rigorous
-study of the fashion industry from the Jurassic era until present
-day, along with the body types of the various (now extinct) species
-we believe we have successfully emobodied was it means to be
-"high fashion", whether you"re a carnivore, an herbivore, or somewhere
-in between. Omnivores - we don"t judge. You"re welcome at the Parka.</p>
--->
+<div id="popup" class="overlay">
+       <div class="popup">
+         <a class="close" href="">×</a>
+         <div class="content">
+           <p>Jurassic Parka was founded on the notion that
+           dinosaurs of all shapes and sizes deserve access to the highest
+           fashion available for all eras - not just Jurassic. Through rigorous
+           study of the fashion industry from the Jurassic era until present
+           day, along with the body types of the various (now extinct) species
+           we believe we have successfully emobodied was it means to be
+           "high fashion", whether you"re a carnivore, an herbivore, or somewhere
+           in between. Omnivores - we don"t judge. You"re welcome at the Parka.</p>
+         </div>
+       </div>
+     </div>
