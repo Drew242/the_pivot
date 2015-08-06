@@ -39,20 +39,14 @@ RSpec.feature "VisitorAddsItemToCart", type: :feature do
       visit cart_path
       expect(page.body).to have_content("1")
 
-      # fill_in "Quantity", with: "2"
       click_button "+"
 
       expect(current_path).to eq(cart_path)
       expect(page.body).to have_content("2")
-      #test subtotal
+      within "#CartTable" do
+        expect(page.body).to have_content("$400")
+      end
       expect(page.body).to have_content("Cart Total: $400.00")
-      # When I visit "/cart"
-      # Then I should see my item with a quantity of 1
-      # And when I increase the quantity
-      # Then my current page should be '/cart'
-      # And that item's quantity should reflect the increase
-      # And the subtotal for that item should increase
-      # And the total for the cart should match that increase
     end
   end
 end
