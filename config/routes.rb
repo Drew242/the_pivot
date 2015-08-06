@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "welcome#index"
   resources :items, only: [:index, :show]
   resources :categories, only: [:show, :index]
-  resources :cart_items, only: [:index, :create, :destroy]
+  resources :cart_items, only: [:index, :create, :update, :destroy]
   resources :users, except: [:show]
   get "/dashboard", to: "users#show"
   get "/cart", to: "cart_items#index"

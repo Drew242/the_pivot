@@ -39,8 +39,8 @@ RSpec.feature "VisitorAddsItemToCart", type: :feature do
       visit cart_path
       expect(page.body).to have_content("1")
 
-      fill_in "Quantity", with: "2"
-      click_button "Update Quantity"
+      # fill_in "Quantity", with: "2"
+      click_button "+"
 
       expect(current_path).to eq(cart_path)
       expect(page.body).to have_content("2")

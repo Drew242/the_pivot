@@ -29,5 +29,9 @@ RSpec.feature "VisitorRemovesItemFromCart", type: :feature do
 
       expect(page).to have_content("Make sure you can see what you're about to eat!")
     end
+
+    xit "decreases the quantity of items in the cart" do
+
+    end
   end
 end
