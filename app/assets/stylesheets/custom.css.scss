@@ -5,7 +5,6 @@ body {
   height: 800px;
 }
 
-
 .container{
   background-color: #F3F6FA;
   display: grid;
@@ -61,13 +60,11 @@ body {
 }
 
 #title {
-  padding-bottom: 3em;
+  padding-bottom: 1em;
   text-align: center;
   font-family: "Jurassic Park", Helvetica, Arial, sans-serif;
   letter-spacing: 0.2em;
   text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
-  width: 12em;
-  top: 2.5em;
   position: relative;
   margin: 0 auto;
   color: red;
