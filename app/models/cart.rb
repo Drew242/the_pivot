@@ -17,6 +17,14 @@ class Cart
     data[item.id.to_s] += 1
   end
 
+  def remove_item(item)
+    if data[item.id.to_s] && data[item.id.to_s] > 1
+      data[item.id.to_s] -= 1
+    else
+      data.except!(item.id.to_s)
+    end
+  end
+
   def total
     items.inject(0) do |subtotal, cart_item|
       subtotal + (cart_item.price * cart_item.quantity)

@@ -9,4 +9,12 @@ class CartItemsController < ApplicationController
     session[:cart] = cart.data
     redirect_to items_path
   end
+
+  def destroy
+    @item = Item.find(params[:id])
+    cart.remove_item(@item)
+    session[:cart] = cart.data
+    flash[:notice] = render_to_string partial: "flash"
+    redirect_to cart_path
+  end
 end

@@ -42,6 +42,32 @@ RSpec.describe Cart, type: :model do
     end
   end
 
+  context "#remove_item" do
+    it "updates the data method when item is removed from cart" do
+      item = Item.create(title: "TRex Spex")
+      cart = Cart.new(nil)
+
+      cart.add_item(item)
+      cart.add_item(item)
+      expect(cart.data).to eq(item.id.to_s => 2)
+
+      cart.remove_item(item)
+      expect(cart.data).to eq(item.id.to_s => 1)
+    end
+
+    it "does not permit zero or negative quantities for cart items" do
+      item = Item.create(title: "TRex Spex")
+      cart = Cart.new(nil)
+
+      cart.add_item(item)
+      expect(cart.data).to eq(item.id.to_s => 1)
+
+      cart.remove_item(item)
+      expect(cart.data).not_to eq("1" => 0)
+      expect(cart.data).to eq({})
+    end
+  end
+
   context "cart total" do
     let(:item1) do
       Item.create(title: "Item 1",
