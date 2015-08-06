@@ -18,7 +18,11 @@ class Cart
   end
 
   def remove_item(item)
-    data[item.id.to_s] -= 1
+    if data[item.id.to_s] && data[item.id.to_s] > 1
+      data[item.id.to_s] -= 1
+    else
+      data.except!(item.id.to_s)
+    end
   end
 
   def total

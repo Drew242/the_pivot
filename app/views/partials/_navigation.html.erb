@@ -19,7 +19,7 @@
         <li class="active"><%= link_to "Logged in as #{current_user.username}", "#" %></li>
         <% end %>
         <li class="active"><% flash.each do |type, msg| %>
-        <%= content_tag :div, msg, class: "flash_#{type}" %>
+        <%= content_tag :div, msg.html_safe, class: "flash_#{type}" %>
         <% end %></li>
       </ul>
     </div>
