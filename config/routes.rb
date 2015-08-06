@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :index]
   resources :cart_items, only: [:index, :create, :destroy]
   resources :cart_items, only: [:index, :create]
+  resources :users, except: [:show]
   namespace :admin do
     get "/dashboard", to: "admin#index"
     # resources :users, except: [:show]

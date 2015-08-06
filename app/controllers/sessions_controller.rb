@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       if @user.role == "admin"
         redirect_to admin_dashboard_path
       else
-        redirect_to '/dashboard'
+        redirect_to "/dashboard"
       end
     else
       flash.now[:error] = "Invalid username or password"
