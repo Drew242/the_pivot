@@ -116,5 +116,64 @@ body {
 }
 
 .flash_message {
-  color: green; 
+  color: green;
+}
+
+.box {
+  float:left;
+  width: 20%;
+  background: rgba(255,255,255,0.3);
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+  transition: opacity 2000ms;
+}
+
+.overlay {
+  position: absolute;
+  transition: opacity 2000ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  box-shadow: 1px 0px 300px 200em rgba(0,0,0,0.66);
+  margin: 14% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: opacity 2000ms;
+  background-color: black;
+}
+
+.popup .close {
+  margin: .1em;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  opacity: 100;
+}
+.popup .close:hover {
+  color: green;
+}
+.popup .content {
+  -webkit-box-shadow: 0px 0px 41px 13px rgba(255,255,255,1);
+  -moz-box-shadow: 0px 0px 41px 13px rgba(255,255,255,1);
+  box-shadow: 0px 0px 41px 13px rgba(255,255,255,1);
+  padding: 25px;
+  color: white;
+  max-height: 30%;
+  overflow: auto;
 }
