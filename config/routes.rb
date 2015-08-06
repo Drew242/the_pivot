@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, except: [:show]
   get "/dashboard", to: "users#show"
   get "/cart", to: "cart_items#index"
+  get "/signup", to: "users#new"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
