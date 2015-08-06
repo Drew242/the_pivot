@@ -6,6 +6,7 @@
     <th>Item</th>
     <th>Description</th>
     <th>Price</th>
+    <th>Quantity</th>
     <th></th>
     <% @cart_items.each do |cart_item| %>
     <tr>
@@ -13,6 +14,7 @@
       <td id="Title"><%= cart_item.title %></td>
       <td id="Description"><%= cart_item.description %></td>
       <td id="price"><%= number_to_currency(cart_item.price) %></td>
+      <td id="quantity"><%= cart_item.quantity %></td>
       <td>
         <div class="btn-group" role="group" aria-label="...">
           <button type="button" class="btn btn-default">
