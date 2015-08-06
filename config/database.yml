@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: jurassic_parka_production
-  username: jurassic_parka
-  password: <%= ENV["JURASSIC_PARKA_DATABASE_PASSWORD"] %>
+  # username: jurassic_parka
+  # password: <%= ENV["JURASSIC_PARKA_DATABASE_PASSWORD"] %>

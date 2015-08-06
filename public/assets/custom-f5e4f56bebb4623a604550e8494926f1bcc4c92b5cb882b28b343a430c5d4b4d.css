@@ -1,0 +1,225 @@
+/* line 1, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+body {
+  background-image: url(/assets/dinosaur_scene-531050c08115de4993af8e05fbebc026789de9402fbf43e5e336d66526038154.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 800px;
+}
+
+/* line 8, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.container {
+  background-color: #F3F6FA;
+  display: grid;
+  text-align: center;
+}
+
+/* line 14, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#categories {
+  width: 20em;
+  margin: 10% auto;
+}
+
+/* line 19, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.row {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* line 24, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.col-sm-12 {
+  width: 30%;
+  height: 24em;
+  margin: 1%;
+  display: inline;
+}
+
+/* line 31, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.thumbnail {
+  background-color: #83D3C9;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* line 39, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.item_image {
+  position: relative;
+}
+
+/* line 43, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.welcome {
+  background-color: black;
+  background-image: url(/assets/jurassic_park_gate-48f96ec1d8dfecd4e25fc62d37dce0c669d17b1108284b2a3cb7e91ee002cc32.jpg);
+  height: 900px;
+  background-size: cover;
+}
+
+/* line 50, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#welcome {
+  font-size: 3em;
+  font-family: "Jurassic Park", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2em;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  width: 12em;
+  top: 2.5em;
+  position: relative;
+  margin: 0 auto;
+  color: red;
+}
+
+/* line 62, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#title {
+  padding-bottom: 1em;
+  text-align: center;
+  font-family: "Jurassic Park", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2em;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  position: relative;
+  margin: 0 auto;
+  color: red;
+}
+
+/* line 73, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#Items {
+  padding-top: 3em;
+  border: 1px solid black;
+}
+
+/* line 78, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#Item {
+  padding-top: 3em;
+  text-align: center;
+  padding-left: 28em;
+}
+
+/* line 84, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#CartPage {
+  padding-top: 3em;
+}
+
+/* line 88, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#CartTitle {
+  font-family: "Jurassic Park", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2em;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  top: 2.5em;
+  color: red;
+}
+
+/* line 96, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#CartTable {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: rgba(234, 242, 211, 0.5);
+}
+
+/* line 102, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#CartTable th {
+  font-size: 1.1em;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  background-color: #A7C942;
+  color: #ffffff;
+}
+
+/* line 110, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#CartTable td {
+  color: #000000;
+  position: relative;
+  width: 100em;
+  margin: 0 auto;
+}
+
+/* line 117, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.flash_error {
+  color: red;
+}
+
+/* line 121, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.flash_message {
+  color: green;
+}
+
+/* line 125, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.box {
+  float: left;
+  width: 20%;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+  transition: opacity 2000ms;
+}
+
+/* line 137, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.overlay {
+  position: absolute;
+  transition: opacity 2000ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* line 144, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 149, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.popup {
+  box-shadow: 1px 0px 300px 200em rgba(0, 0, 0, 0.66);
+  margin: 14% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: opacity 2000ms;
+  background-color: black;
+}
+
+/* line 160, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.popup .close {
+  margin: .1em;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  opacity: 100;
+}
+
+/* line 172, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.popup .close:hover {
+  color: green;
+}
+
+/* line 176, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+.popup .content {
+  -webkit-box-shadow: 0px 0px 41px 13px white;
+  -moz-box-shadow: 0px 0px 41px 13px white;
+  box-shadow: 0px 0px 41px 13px white;
+  padding: 25px;
+  color: white;
+  max-height: 30%;
+  overflow: auto;
+}
+
+/* line 186, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+ul {
+  list-style-type: none;
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 192, /Users/marlabrizel/Documents/turing/twomodule/jurassic_parka/app/assets/stylesheets/custom.css.scss */
+#login {
+  margin: 10% auto;
+  width: 25%;
+  height: 28%;
+  padding: 1%;
+}
