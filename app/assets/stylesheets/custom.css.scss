@@ -1,5 +1,5 @@
 body {
-  background-image: url("dinosaur_scene.jpg");
+  background-image: image-url("dinosaur_scene.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 800px;
@@ -35,9 +35,10 @@ body {
 .item_image {
     position: relative;
 }
+
 .welcome {
   background-color: black;
-  background-image: url("jurassic_park_gate.jpg");
+  background-image: image-url("jurassic_park_gate.jpg");
   height: 900px;
   background-size: cover;
 }
