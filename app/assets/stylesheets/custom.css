@@ -12,6 +12,11 @@ body {
   text-align: center;
 }
 
+#categories{
+  width: 20em;
+  margin: 10% auto;
+}
+
 .row {
   width: 90%;
   margin: 0 auto;
@@ -33,7 +38,7 @@ body {
 }
 
 .item_image {
-    position: relative;
+  position: relative;
 }
 .welcome {
   background-color: black;
@@ -97,18 +102,18 @@ body {
 }
 
 #CartTable th {
-    font-size: 1.1em;
-    padding-top: 5px;
-    padding-bottom: 4px;
-    background-color: #A7C942;
-    color: #ffffff;
+  font-size: 1.1em;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  background-color: #A7C942;
+  color: #ffffff;
 }
 
 #CartTable td {
-    color: #000000;
-    position: relative;
-    width: 100em;
-    margin: 0 auto;
+  color: #000000;
+  position: relative;
+  width: 100em;
+  margin: 0 auto;
 }
 
 .flash_error {
@@ -165,9 +170,11 @@ body {
   color: white;
   opacity: 100;
 }
+
 .popup .close:hover {
   color: green;
 }
+
 .popup .content {
   -webkit-box-shadow: 0px 0px 41px 13px rgba(255,255,255,1);
   -moz-box-shadow: 0px 0px 41px 13px rgba(255,255,255,1);
@@ -176,4 +183,17 @@ body {
   color: white;
   max-height: 30%;
   overflow: auto;
+}
+
+ul {
+  list-style-type: none;
+  list-style:none;
+  padding-left:0;
+}
+
+#login {
+  margin: 10% auto;
+  width: 25%;
+  height: 28%;
+  padding: 1%;
 }
