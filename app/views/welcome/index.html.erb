@@ -3,7 +3,7 @@
   <h1 id="welcome">Welcome to</h1>
 </div>
 </div>
-
+<% if @items.size >= 3 %>
 <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="2500" data-wrap="true">
 <ol class="carousel-indicators">
     <li data-target="#item-1" data-slide-to="0" class="active"></li>
@@ -40,3 +40,4 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
+<% end %>
