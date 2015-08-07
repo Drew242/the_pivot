@@ -41,10 +41,22 @@ body {
 }
 
 .welcome {
-  background-color: black;
-  background-image: image-url("jurassic_park_gate.jpg");
-  height: 900px;
+  background-color: #5A725B;
+  height: 100%;
+  z-index: -2;
+  -webkit-box-shadow: inset 0px -40px 60px -9px rgba(68,84,68,1);
+  -moz-box-shadow:    inset 0px -40px 60px -9px rgba(68,84,68,1);
+  box-shadow:         inset 0px -40px 60px -9px rgba(68,84,68,1);
+}
+
+#banner_box {
   background-size: cover;
+  width: 100%;
+  height: 33em;
+  background-image: image-url("jurassic_park_gate.jpg");
+  -webkit-box-shadow: inset 0px -46px 72px 0px rgba(91,115,93,1);
+  -moz-box-shadow: inset 0px -46px 72px 0px rgba(91,115,93,1);
+  box-shadow: inset 0px -46px 72px 0px rgba(91,115,93,1);
 }
 
 #welcome {
@@ -55,7 +67,7 @@ body {
   width: 12em;
   top: 2.5em;
   position: relative;
-  margin: 0 auto;
+  margin: 0 35%;
   color: red;
 }
 
@@ -82,7 +94,9 @@ body {
 }
 
 #CartPage{
-  padding-top: 3em;
+  width: 80%;
+  height: auto;
+  margin: 8% auto;
 }
 
 #CartTitle {
@@ -114,14 +128,6 @@ body {
   margin: 0 auto;
 }
 
-.flash_error {
-  color: red;
-}
-
-.flash_message {
-  color: green;
-}
-
 .box {
   float:left;
   width: 20%;
@@ -129,16 +135,22 @@ body {
   padding: 20px;
   border: 2px solid #fff;
   border-radius: 20px/50px;
-  background-clip: padding-box;
   text-align: center;
-  transition: opacity 2000ms;
+  border-radius: 25px;
+  background-image: image-url("paper.gif");
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   transition: opacity 2000ms;
   visibility: hidden;
   opacity: 0;
+  z-index: 3;
 }
 
 .overlay:target {
@@ -147,14 +159,21 @@ body {
 }
 
 .popup {
-  box-shadow: 1px 0px 300px 200em rgba(0,0,0,0.66);
-  margin: 14% auto;
+  -webkit-box-shadow: 0px 0px 0px 100em rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 0px 100em rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 0px 100em rgba(0,0,0,0.75);
+  margin: 10% auto;
   padding: 20px;
   border-radius: 5px;
   width: 50%;
   position: relative;
-  transition: opacity 2000ms;
   background-color: black;
+  border-radius: 25px;
+  background-image: image-url("paper.gif");
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 20px;
+  z-index: 80;
 }
 
 .popup .close {
@@ -178,9 +197,12 @@ body {
   -moz-box-shadow: 0px 0px 41px 13px rgba(255,255,255,1);
   box-shadow: 0px 0px 41px 13px rgba(255,255,255,1);
   padding: 25px;
-  color: white;
+  color: black;
   max-height: 30%;
   overflow: auto;
+  font-weight: bolder;
+  line-height: 1.5em;
+  letter-spacing: 0.2em;
 }
 
 ul {
@@ -194,4 +216,59 @@ ul {
   width: 25%;
   height: 28%;
   padding: 1%;
+}
+
+.flash_notice {
+  color: green;
+  width: 20em;
+  margin: -3.5% 40%;
+  border-radius: 5px;
+  padding: 0;
+  position: fixed;
+  z-index: 1;
+  transition: opacity 2000ms;
+  background-color: black;
+}
+
+.flash_error {
+  color: red;
+  width: 20em;
+  margin: -3.5% 40%;
+  border-radius: 5px;
+  padding: 0;
+  position: fixed;
+  z-index: 1;
+  transition: opacity 2000ms;
+  background-color: black;
+}
+
+.navbar {
+  background-color: #776451;
+}
+
+.carousel {
+  width: 65%;
+  height: auto;
+  margin: -25% auto;
+  border-radius: 60px;
+    background-image: image-url("paper.gif");
+  -webkit-box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75);
+}
+
+.carousel-inner {
+  width: 100%;
+  height: 60%;
+  margin: -27% auto;
+}
+
+.carousel-control {
+  border-radius: 25px;
+  width: 2em;
+}
+
+.slide {
+  padding-left: 10%;
+  background-color: white;
 }
