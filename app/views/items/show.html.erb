@@ -1,6 +1,6 @@
 <div class="row">
   <div class="coll-md-12">
-    <h1 id="title"><%=@item.title%> Details</h1>
+    <h1><%= @item.title %> Details</h1>
   </div>
 </div>
 
@@ -9,9 +9,10 @@
     <div class="col-md-6">
       <div class="thumbnail">
         <img src=<%= @item.image %>></img>
-        <%=@item.description%>
+        <h3 id="title"> <%= @item.title %> Details</h3>
+        <%= @item.description %>
         <ul>
-          <li class="price_and_quantity"><%=@item.price%></li>
+          <li class="price_and_quantity"><%= number_to_currency @item.price %></li>
           <div class="btn-group" role="group" aria-label="...">
             <button type="button" class="btn btn-default">
               <%= button_to "Add to cart", cart_items_path(item_id: @item.id) %></button>
