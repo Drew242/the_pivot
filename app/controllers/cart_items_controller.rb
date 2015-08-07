@@ -10,6 +10,20 @@ class CartItemsController < ApplicationController
     redirect_to items_path
   end
 
+  def increment
+    item = Item.find(params[:id])
+    cart.add_item(item)
+    session[:cart] = cart.data
+    redirect_to cart_path
+  end
+
+  def decrement
+    item = Item.find(params[:id])
+    cart.decrease_item(item)
+    session[:cart] = cart.data
+    redirect_to cart_path
+  end
+
   def destroy
     @item = Item.find(params[:id])
     cart.remove_item(@item)
