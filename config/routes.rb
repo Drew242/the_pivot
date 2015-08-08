@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, except: [:show]
   namespace :admin do
     get "/dashboard", to: "admin#index"
-    # resources :users, except: [:show]
+    resources :items
   end
   get "/dashboard", to: "users#show"
   get "/cart", to: "cart_items#index"
