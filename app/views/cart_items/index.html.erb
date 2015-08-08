@@ -1,6 +1,7 @@
 <div class="container" id="CartPage">
 
   <h1 id="CartTitle">Your Shopping Cart</h1>
+  <% if @cart_items.size > 0 %>
   <table id="CartTable">
     <th></th>
     <th>Item</th>
@@ -36,5 +37,6 @@
     </tr>
     <% end %>
   </table>
+  <% end %>
 <h4 id="total">Cart Total: <%= number_to_currency(cart.total) %></h4>
 </div>
