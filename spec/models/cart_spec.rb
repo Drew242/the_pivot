@@ -52,7 +52,7 @@ RSpec.describe Cart, type: :model do
       expect(cart.data).to eq(item.id.to_s => 2)
 
       cart.remove_item(item)
-      expect(cart.data).to eq(item.id.to_s => 1)
+      expect(cart.data).to eq({})
     end
 
     it "does not permit zero or negative quantities for cart items" do

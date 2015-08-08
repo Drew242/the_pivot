@@ -1,18 +1,33 @@
 <div class="container" id="CartPage">
 
   <h1 id="CartTitle">Your Shopping Cart</h1>
+  <% if @cart_items.size > 0 %>
   <table id="CartTable">
     <th></th>
     <th>Item</th>
     <th>Description</th>
     <th>Price</th>
     <th></th>
+    <th>Quantity</th>
+    <th>Subtotal</th>
     <% @cart_items.each do |cart_item| %>
     <tr>
       <td id="ItemImage"><%= image_tag cart_item.image %></td>
       <td id="Title"><%= cart_item.title %></td>
       <td id="Description"><%= cart_item.description %></td>
       <td id="price"><%= number_to_currency(cart_item.price) %></td>
+      <td id="quantity">
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default">
+            <%= button_to "-", decrement_cart_item_path(cart_item) %></button>
+        </div>
+        <%= cart_item.quantity %>
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default">
+            <%= button_to "+", increment_cart_item_path(cart_item) %></button>
+        </div>
+      </td>
+      <td><%= number_to_currency(cart_item.quantity * cart_item.price) %></td>
       <td>
         <div class="btn-group" role="group" aria-label="...">
           <button type="button" class="btn btn-default">
@@ -22,5 +37,9 @@
     </tr>
     <% end %>
   </table>
-<h4>Cart Total: <%= number_to_currency(cart.total) %></h4>
+  <button>
+    <%= button_to "Checkout", login_path, method: :get %>
+  </button>
+  <% end %>
+<h4 id="total">Cart Total: <%= number_to_currency(cart.total) %></h4>
 </div>
