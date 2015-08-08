@@ -8,15 +8,18 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def create
-    category = Category.find_by(params[:category])
-    category_id = category.id
     @item = Item.new(item_params)
-    if @item.save
-      flash[:message] = "Item #{@item.title} created"
-      redirect_to admin_dashboard_path
-    else
-      flash[:error] = "Check the fields and try again"
+    if @item.price == 0
+      flash[:error] = "Item can't be free, we've got Dino's to feed!"
       render :new
+    else
+      if @item.save
+        flash[:message] = "Item #{@item.title} created"
+        redirect_to admin_dashboard_path
+      else
+        flash[:error] = "All fields must be accounted for"
+        render :new
+      end
     end
   end
 

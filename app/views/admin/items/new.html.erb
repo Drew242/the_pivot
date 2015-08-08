@@ -14,7 +14,7 @@
 <%= f.text_field :description %><br>
 
 <%= f.label :category %>
-<%= f.text_field :category %><br>
+<%= f.collection_select(:category_id, Category.all, :id, :name) %><br>
 
 <%= f.submit %>
 
