@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get "/dashboard", to: "admin#index"
     resources :items
   end
-  resources :orders, only: [:index, :create]
+  resources :orders, only: [:index, :show, :create]
   get "/dashboard", to: "users#show"
   get "/cart", to: "cart_items#index"
   get "/signup", to: "users#new"
