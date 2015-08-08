@@ -16,6 +16,7 @@ RSpec.feature "AdminCanCreateItem", type: :feature do
 
       expect(page).to have_content("Admin Dashboard")
       expect(current_path).to eq("/admin/dashboard")
+      expect(page).to have_content("Create Item")
     end
   end
 end
