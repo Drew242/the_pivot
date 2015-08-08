@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806204515) do
+ActiveRecord::Schema.define(version: 20150808173116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 20150806204515) do
     t.string   "title"
     t.string   "description"
     t.integer  "price"
-    t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "image",       default: "https://www.big-lies.org/NUKE-LIES/profile.ak.fbcdn.net/hprofile-ak-snc4/50335_2236820400_8469_n.jpg"
+    t.datetime "created_at",                                                                                                                   null: false
+    t.datetime "updated_at",                                                                                                                   null: false
     t.integer  "category_id"
   end
 
