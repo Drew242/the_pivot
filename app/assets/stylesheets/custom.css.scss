@@ -249,6 +249,10 @@ ul {
   background-color: black;
 }
 
+.flash_notice a {
+  color: white;
+}
+
 .flash_error {
   color: red;
   width: 20em;
@@ -290,4 +294,9 @@ ul {
 .slide {
   padding-left: 10%;
   background-color: white;
+}
+
+#right {
+  float: right;
+  margin-top: -3.99%
 }
