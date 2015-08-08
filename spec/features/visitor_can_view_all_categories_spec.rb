@@ -7,8 +7,8 @@ RSpec.feature "VisitorCanViewCategories", type: :feature do
       Category.create(name: "boots")
       Category.create(name: "shirts")
 
-      visit categories_path
-
+      visit items_path
+      click_link("Categories")
       expect(page).to have_content("Hats")
       expect(page).to have_content("Boots")
       expect(page).to have_content("Shirts")
