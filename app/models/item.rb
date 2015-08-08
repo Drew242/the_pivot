@@ -1,6 +1,10 @@
 class Item < ActiveRecord::Base
   belongs_to :category
-  validates :title, :description, :price, presence: true
+  has_many :order_items
+  has_many :orders, through: :order_items
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :price, presence: true
 
   validates_uniqueness_of :title
   scope :top, -> { all.limit(10) }

@@ -8,9 +8,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to '/dashboard'
+      if @user.role == 0
+        redirect_to root_path
+      else
+        redirect_to dashboard_path
+      end
     else
       flash[:error] = "Need Username and Password"
+      render :new
     end
   end
 
