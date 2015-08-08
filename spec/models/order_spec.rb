@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe Order, type: :model do
   before do
     @user = User.create!(username: "mitch", password: "password", role: 0)
+    @item = Item.create!(title: "dinosaur", description: "aksdhk", price: 3)
   end
 
-  it "has many items" do
-    # user = User.create!(username: "mitch", password: "password", role: 0)
-    @user.orders << Order.create!
+  xit "has many items" do
+    @user.orders << order.save
     expect(Order.first.items).to eq([])
   end
 

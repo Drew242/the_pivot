@@ -37,12 +37,10 @@ RSpec.feature "UserCanPlaceOrderViaCart", type: :feature do
       expect(Order.all.count).to eq(1)
       expect(OrderItem.first.quantity).to eq(2)
       expect(user.orders.first.total).to eq(400)
-
-      #this will be scoped to that particular user
-      # expect(page).to have_content "Order was successfully placed"
-      # within "table" do
-        # expect(page).to have_content "$400.00"
-      # end
+      expect(page).to have_content "Order was successfully placed"
+      within "table" do
+        expect(page).to have_content "$400.00"
+      end
     end
   end
 end
