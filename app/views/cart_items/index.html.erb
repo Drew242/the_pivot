@@ -38,7 +38,11 @@
     <% end %>
   </table>
   <button>
-    <%= button_to "Checkout", login_path, method: :get %>
+    <% if current_user %>
+      <%= button_to "Checkout", orders_path %>
+    <% else %>
+      <%= button_to "Checkout", login_path, method: :get %>
+    <% end %>
   </button>
   <% end %>
 <h4 id="total">Cart Total: <%= number_to_currency(cart.total) %></h4>

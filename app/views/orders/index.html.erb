@@ -1,0 +1,9 @@
+<h1>Your Orders</h1>
+<table>
+    <tr>Time Placed</tr>
+    <tr>Amount</tr>
+    <% @orders.each do |order| %>
+      <td><%= order.created_at %></td>
+      <td><%= number_to_currency order.total %></td>
+  <% end %>
+</table>
