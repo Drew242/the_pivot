@@ -5,6 +5,7 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def new
-  end 
+    @item = Item.new
+  end
 
 end
