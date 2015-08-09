@@ -16,7 +16,7 @@ RSpec.feature "UserCanCreateAccountAndSeeDashBoard", type: :feature do
 
       click_button "Create Account"
 
-      expect(page).to have_content("Welcome back Mitchell")
+      expect(page).to have_content("Welcome Back Mitchell!")
       expect(page).to have_content("We appreciate your business! - Jurassic Parka senior staff")
     end
   end
