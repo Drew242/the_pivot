@@ -8,6 +8,9 @@
       </ul>
     </div>
     <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+      <li class="active"><p class="nav-text">Logged in as <%=current_user.username%> </p></li>
+      <% end %>
       <% if !current_user %>
       <li class="active"><%= link_to "Login", login_path %></li>
       <% else %>
@@ -15,10 +18,7 @@
       <% end %>
       <li class="active"><%= link_to "View Cart", cart_path %></li>
       <% if !current_user %>
-      <li class="active"><%= link_to "Create Account", signup_path  %></li
-        <% end %>
-        <% if current_user %>
-        <li class="active"><%= link_to "Logged in as #{current_user.username}", "#" %></li>
+      <li class="active"><%= link_to "Create Account", signup_path  %></li>
         <% end %>
       </ul>
     </div>
