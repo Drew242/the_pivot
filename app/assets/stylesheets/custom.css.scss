@@ -257,6 +257,13 @@ ul {
   color: white;
 }
 
+#dashboard {
+  height: 90%;
+  width: 80%;
+  padding: 3%;
+  overflow: auto;
+}
+
 .flash_error {
   color: red;
   width: 20em;
@@ -465,4 +472,39 @@ ul {
   vertical-align: middle;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+
+#user-data {
+  color: white;
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 28%;
+}
+
+#thanks {
+  padding: 10%;
+  color: white;
+}
+
+#order-total{
+  padding-left: 50%;
+}
+
+#order {
+  text-align: center;
+}
+
+th {
+  font-size: 1.1em;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  position: relative;
+  background-color: #776451;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 auto;
+}
+
+#single-order{
+  overflow: auto;
 }

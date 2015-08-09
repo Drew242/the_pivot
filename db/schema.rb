@@ -16,6 +16,17 @@ ActiveRecord::Schema.define(version: 20150808233215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "item_id"
+  end
+
+  add_index "cart_items", ["item_id"], name: "index_cart_items_on_item_id", using: :btree
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -61,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150808233215) do
     t.integer  "role",            default: 0
   end
 
+  add_foreign_key "cart_items", "items"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"
