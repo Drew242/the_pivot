@@ -5,6 +5,8 @@ class Order < ActiveRecord::Base
 
   before_save :create_from_cart
 
+  enum status: %w(ordered paid cancelled completed)
+
   attr_accessor :cart_data
 
   def total
