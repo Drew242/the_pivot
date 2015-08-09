@@ -1,5 +1,16 @@
-<div class="dashboard">
-  <h1>Welcome back <%= @user.username %></h1>
-  <p>Info on <%= @user.username %></p>
-  <p>We appreciate your business! - Jurassic Parka senior staff</p>
+<div class="container" id="dashboard">
+  <h1>Welcome Back <%= @user.username.capitalize %>!</h1>
+  <h2><%= @user.username.capitalize %>'s Orders</h2>
+  <% @user.orders.each do |order| %>
+  <ul id="user-data">
+    <h3> <%= link_to "Order", order_path(order)%> </h3>
+    <% order.items.each do |item| %>
+    <li>Item: <%= item.title %> <%= item.price %> </li>
+    <% end %>
+    <br><strong id="order-total">Total: <%= order.total %></strong>
+  </ul>
+  <% end %>
+
+
+  <p id="thanks">We appreciate your business! - Jurassic Parka senior staff</p>
 </div>

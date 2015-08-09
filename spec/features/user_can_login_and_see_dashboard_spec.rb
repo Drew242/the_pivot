@@ -18,7 +18,7 @@ RSpec.feature "UserCanLoginAndSeeDashBoard", type: :feature do
 
       click_button "Login"
 
-      expect(page).to have_content("Welcome back Mitchell")
+      expect(page).to have_content("Welcome Back Mitchell!")
       expect(page).to_not have_content("Login")
       expect(page).to have_content("Logout")
       expect(current_path).to eq("/dashboard")
