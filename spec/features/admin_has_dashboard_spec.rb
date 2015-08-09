@@ -17,7 +17,7 @@ RSpec.feature "AdminCanSeeDashBoard", type: :feature do
       visit admin_dashboard_path
 
       expect(page).to have_content(
-      'The page you were looking for doesn"t exist.'
+      "The page you were looking for doesn't exist."
       )
     end
 
@@ -25,7 +25,7 @@ RSpec.feature "AdminCanSeeDashBoard", type: :feature do
       visit admin_dashboard_path
 
       expect(page).to have_content(
-      'The page you were looking for doesn"t exist.'
+      "The page you were looking for doesn't exist."
       )
     end
   end
