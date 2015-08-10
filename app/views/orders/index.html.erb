@@ -1,12 +1,19 @@
-<div class="container"
+<div class="container" id="OrdersPage">
+
 <h1>Your Orders</h1>
-<table>
-    <tr>Time Placed</tr>
-    <tr>Amount</tr>
+<% if @orders.size > 0 %>
+<table id="OrdersTable">
+    <th>Time Placed</th>
+    <th>Amount</th>
+    <th></th>
     <% @orders.each do |order| %>
-      <td><%= order.created_at %></td>
+    <tr>
+      <td><%= order.created_at.strftime("%m-%d-%Y %I:%M %p") %></td>
       <td><%= number_to_currency order.total %></td>
       <td><%= link_to "View Order", order_path(order) %></td>
-  <% end %>
+    <% end %>
+  </tr>
 </table>
+<% end %>
+
 </div>
