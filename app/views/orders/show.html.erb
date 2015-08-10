@@ -6,8 +6,7 @@
 <% if @order.status == "completed" || @order.status == "cancelled" %>
   <h5>Your order was <%= @order.status %> on <%= @order.updated_at.strftime("%m-%d-%Y %I:%M %p") %></h5>
 <% end %>
-
-<table id="order">
+  <table id="CartTable">
   <th>Name</th>
   <th>Quantity</th>
     <th>Subtotal</th>
