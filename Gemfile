@@ -48,3 +48,7 @@ group :development, :test do
   gem "simplecov"
   gem "mocha" 
 end
+
+group :production do
+  gem 'rails_12factor'
+end
