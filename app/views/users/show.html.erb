@@ -1,6 +1,9 @@
 <div class="container" id="dashboard">
   <h1>Welcome Back <%= @user.username.capitalize %>!</h1>
-  <h2><%= @user.username.capitalize %>'s Orders</h2>
+  <%if current_user.role == "admin" %>
+   <h2> <%= link_to "Admin Dashboard", admin_dashboard_path%> </h2>
+   <% end %>
+  <h3> <%= link_to "#{@user.username.capitalize}'s Orders", orders_path%> </h3>
   <% @user.orders.each do |order| %>
   <ul id="user-data">
     <h3> <%= link_to "Order", order_path(order)%> </h3>
