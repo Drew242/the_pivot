@@ -9,6 +9,7 @@ RSpec.feature "AdminCanSeeDashBoard", type: :feature do
       visit admin_dashboard_path
 
       expect(page).to have_content("Admin Dashboard")
+      expect(page).to have_content("View all Items")
       expect(current_path).to eq("/admin/dashboard")
     end
 
