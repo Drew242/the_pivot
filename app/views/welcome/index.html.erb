@@ -10,7 +10,7 @@
     <li data-target="#item-2" data-slide-to="1"></li>
     <li data-target="#item-3" data-slide-to="2"></li>
   </ol>
-
+<% if @items.size > 1 %>
   <div class="carousel-inner">
     <div class="item active">
       <% item = @items.sample %>
@@ -40,7 +40,7 @@
       <%end%>
     </div>
   </div>
-
+<% end %>
 
   <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
