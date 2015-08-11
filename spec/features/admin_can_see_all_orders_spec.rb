@@ -34,15 +34,11 @@ RSpec.feature "AdminCanViewAllOrders", type: :feature do
 
       expect(current_path).to eq(admin_orders_path)
       expect(page).to have_content("All Orders")
-      # within(".status") do
-      #   expect
+      expect(page).to have_content("Status")
       expect(page).to have_link("View Order")
+      within ("#status_summary") do
+        expect(page).to have_content("Status: Ordered Count: 2")
+      end
     end
   end
 end
-
-# When I visit the dashboard
-# Then I can see a listing of all orders
-# And I can see the total number of orders for each status ("Ordered", "Paid", "Cancelled", "Completed")
-# And I can see a link for each individual order
-# And I can filter orders to display by each status type  ("Ordered", "Paid", "Cancelled", "Completed")

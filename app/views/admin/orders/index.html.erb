@@ -16,4 +16,11 @@
 </table>
 <% end %>
 
+<h5>Order Status Summary</h5>
+<ul id="status_summary">
+  <% @orders.group_by { |order| order.status }.each do |status, orders| %>
+    <li><strong>Status:</strong> <%= status.capitalize %> <strong>Count:</strong> <%= orders.size %></li>
+  <% end %>
+</ul>
+
 </div>
