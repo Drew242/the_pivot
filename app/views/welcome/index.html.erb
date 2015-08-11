@@ -3,7 +3,6 @@
     <h1 id="welcome">Welcome to</h1>
   </div>
 
-<% if @items.size >= 3 %>
 <div id="featured"> <h3> Featured Items </h3> </div>
 <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="2500" data-wrap="true">
   <ol class="carousel-indicators">
@@ -11,34 +10,37 @@
     <li data-target="#item-2" data-slide-to="1"></li>
     <li data-target="#item-3" data-slide-to="2"></li>
   </ol>
-
+<% if @items.size > 1 %>
   <div class="carousel-inner">
     <div class="item active">
-      <%= link_to(@items[0]) do %>
-      <img style="max-height:17em" src=<%= (@items[0].image) %> alt="...">
+      <% item = @items.sample %>
+      <%= link_to(item) do %>
+      <img style="max-height:17em" src=<%= (item.image) %> alt="...">
       <div class="carousel-caption">
-        <h3><%= (@items[0].title) %></h3>
+        <h3><%= (item.title) %></h3>
       </div>
       <%end%>
     </div>
     <div class="item">
-      <%= link_to(@items[1]) do %>
-      <img style="max-height:17em" src=<%= (@items[1].image) %> alt="...">
+      <% item = @items.sample %>
+      <%= link_to(item) do %>
+      <img style="max-height:17em" src=<%= (item.image) %> alt="...">
       <div class="carousel-caption">
-        <h3><%= (@items[1].title) %></h3>
+        <h3><%= (item.title) %></h3>
       </div>
       <%end%>
     </div>
     <div class="item">
-      <%= link_to(@items[2]) do %>
-      <img style="max-height:17em" src=<%= (@items[2].image) %> alt="...">
+      <% item = @items.sample %>
+      <%= link_to(item) do %>
+      <img style="max-height:17em" src=<%= (item.image) %> alt="...">
       <div class="carousel-caption">
-        <h3><%= (@items[2].title) %></h3>
+        <h3><%= (item.title) %></h3>
       </div>
       <%end%>
     </div>
   </div>
-
+<% end %>
 
   <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -47,6 +49,5 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
-<% end %>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
 </div>
