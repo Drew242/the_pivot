@@ -1,16 +1,15 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = current_user.orders
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
   end
 
   def create
-    @order = Order.new()
-    @order.cart_data = session[:cart]
-    current_user.orders << @order
+    @order = current_user.orders.build
+    @order.cart_data = session[:cart] if session[:cart]
     if @order.save
       flash[:message] = "Order was successfully placed"
       session[:cart] = nil

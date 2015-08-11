@@ -1,0 +1,26 @@
+<div class="container" id="AdminOrdersPage">
+
+<h1>All Orders</h1>
+<% if @orders.size > 0 %>
+<table id="admin_orders">
+  <th>Customer ID</th>
+  <th>Order Status</th>
+  <th>Order Details</th>
+  <% @orders.each do |order| %>
+  <tr>
+    <td><%= order.user_id %></td>
+    <td><%= order.status %></td>
+    <td><%= link_to "View Order", order_path(order) %></td>
+  <% end %>
+  </tr>
+</table>
+<% end %>
+
+<h5>Order Status Summary</h5>
+<ul id="status_summary">
+  <% @orders.group_by { |order| order.status }.each do |status, orders| %>
+    <li><strong>Status:</strong> <%= status.capitalize %> <strong>Count:</strong> <%= orders.size %></li>
+  <% end %>
+</ul>
+
+</div>
