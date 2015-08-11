@@ -2,8 +2,9 @@
   <div id="banner_box">
     <h1 id="welcome">Welcome to</h1>
   </div>
-</div>
+
 <% if @items.size >= 3 %>
+<div id="featured"> <h3> Featured Items </h3> </div>
 <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="2500" data-wrap="true">
   <ol class="carousel-indicators">
     <li data-target="#item-1" data-slide-to="0" class="active"></li>
@@ -47,3 +48,5 @@
   </a>
 </div>
 <% end %>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+</div>
