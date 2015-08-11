@@ -21,7 +21,7 @@ class Admin::ItemsController < Admin::BaseController
       flash[:message] = "Item #{@item.title} created"
       redirect_to admin_dashboard_path
     else
-      flash[:error] = "All fields must be accounted for"
+      flash[:error] = "All fields must be accounted for and price can't be 0"
       render :new
     end
   end
