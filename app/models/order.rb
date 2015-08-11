@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   has_many :order_items
   has_many :items, through: :order_items
 
-  before_save :create_from_cart
+  before_create :create_from_cart
 
   enum status: %w(ordered paid cancelled completed)
 
@@ -20,7 +20,7 @@ class Order < ActiveRecord::Base
   def create_from_cart
     if cart_data
       cart_data.each do |item_id, quantity|
-        OrderItem.create(quantity: quantity, item_id: item_id.to_i, order_id: id)
+        order_items.build(quantity: quantity, item_id: item_id.to_i, order_id: id)
       end
     end
   end
