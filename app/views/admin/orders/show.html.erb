@@ -5,5 +5,15 @@ Customer: <%= @order.user.username %>
 Shipping Address: <%= @order.user.address.street_address %>, <%= @order.user.address.city %>
 <%= @order.user.address.state %>
 <%= @order.user.address.zip %>
+<ul id="admin_order_items">
+  <% @order.order_items.each do |order_item| %>
+  <li><%= order_item.item.title %></li>
+  <li>Quantity: <%= order_item.quantity %></li>
+  <li>Price: <%= number_to_currency(order_item.item.price) %></li>
+  <li>Subtotal: <%= number_to_currency(order_item.item.price * order_item.quantity) %></li>
+  <% end %>
+</ul>
+
+Total: <%= number_to_currency(@order.total) %>
 
 </div>
