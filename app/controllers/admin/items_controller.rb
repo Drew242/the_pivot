@@ -7,6 +7,14 @@ class Admin::ItemsController < Admin::BaseController
     @item = Item.new
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.price == 0
@@ -21,6 +29,14 @@ class Admin::ItemsController < Admin::BaseController
         render :new
       end
     end
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    
+    flash[:message] = "Item updated"
+    redirect_to admin_dashboard_path
   end
 
   private

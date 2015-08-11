@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
       <% @items.each do |item| %>
-    <%= link_to(item) do %>
+    <%= link_to admin_item_path(item) do %>
     <div class="col-sm-12">
       <div class="thumbnail">
       <img style="max-height:17em" class="item_image" src=<%= (item.image) %>></img>
