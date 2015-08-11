@@ -34,6 +34,8 @@ body {
   margin: 0 auto;
   overflow: hidden;
   text-align: center;
+  color: black;
+  font-weight: bold;
 }
 
 a {
@@ -537,4 +539,15 @@ th {
   background-color: grey;
   border-radius: 5px;
   padding: 2%;
+}
+
+#order-info {
+  text-align: left;
+  width: 40%;
+  margin: 0 auto;
+}
+
+#title {
+  width: 30%;
+  margin: 0 auto;
 }
