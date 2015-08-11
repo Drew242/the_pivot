@@ -18,8 +18,10 @@ class Order < ActiveRecord::Base
   private
 
   def create_from_cart
-    cart_data.each do |item_id, quantity|
-      OrderItem.create(quantity: quantity, item_id: item_id.to_i, order_id: id)
+    if cart_data
+      cart_data.each do |item_id, quantity|
+        OrderItem.create(quantity: quantity, item_id: item_id.to_i, order_id: id)
+      end
     end
   end
 end
