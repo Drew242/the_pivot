@@ -21,7 +21,7 @@ RSpec.feature "AdminCanViewAllOrders", type: :feature do
       visit admin_order_path(order)
 
       expect(page).to have_content("Order #{order.id}")
-      expect(page).to have_content("Created On: #{order.created_at.strftime("%b %d, %Y")}")
+      expect(page).to have_content("Created on #{order.created_at.strftime("%b %d, %Y")} at #{order.created_at.strftime("%I:%M:%S %p")}")
       # expect(page).to have_link("View Order")
       # within ("#status_summary") do
       #   expect(page).to have_content("Status: Ordered Count: 2")

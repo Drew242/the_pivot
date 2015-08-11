@@ -1,5 +1,5 @@
 <div class="container">
 <h1> Order <%= @order.id %> </h1>
-Created On: <%= @order.created_at.strftime("%b %d, %Y")%>
+Created on <%= @order.created_at.strftime("%b %d, %Y")%> at <%= @order.created_at.strftime("%I:%M:%S %p")%>
 
 </div>
