@@ -1,5 +1,6 @@
 <div class="container">
 <h1> Order <%= @order.id %> </h1>
 Created on <%= @order.created_at.strftime("%b %d, %Y")%> at <%= @order.created_at.strftime("%I:%M:%S %p")%>
+Customer: <%= @order.user.username %>
 
 </div>

@@ -22,7 +22,7 @@ RSpec.feature "AdminCanViewAllOrders", type: :feature do
 
       expect(page).to have_content("Order #{order.id}")
       expect(page).to have_content("Created on #{order.created_at.strftime("%b %d, %Y")} at #{order.created_at.strftime("%I:%M:%S %p")}")
-      # expect(page).to have_link("View Order")
+      expect(page).to have_content("Customer: #{user.username}")
       # within ("#status_summary") do
       #   expect(page).to have_content("Status: Ordered Count: 2")
       # end
