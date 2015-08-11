@@ -17,24 +17,19 @@ class Admin::ItemsController < Admin::BaseController
 
   def create
     @item = Item.new(item_params)
-    if @item.price == 0
-      flash[:error] = "Item can't be free, we've got Dino's to feed!"
-      render :new
+    if @item.save
+      flash[:message] = "Item #{@item.title} created"
+      redirect_to admin_dashboard_path
     else
-      if @item.save
-        flash[:message] = "Item #{@item.title} created"
-        redirect_to admin_dashboard_path
-      else
-        flash[:error] = "All fields must be accounted for"
-        render :new
-      end
+      flash[:error] = "All fields must be accounted for"
+      render :new
     end
   end
 
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
-    
+
     flash[:message] = "Item updated"
     redirect_to admin_dashboard_path
   end
