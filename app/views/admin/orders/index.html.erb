@@ -1,26 +1,40 @@
 <div class="container" id="AdminOrdersPage">
+  <div class="btn-group", id="admin-orders-button", colspan="12">
+    <button type="button" class="btn btn-default" id="ordered-filter">Ordered</button>
+    <button type="button" class="btn btn-default" id="paid-filter">Paid</button>
+    <button type="button" class="btn btn-default" id="cancelled-filter">Cancelled</button>
+    <button type="button" class="btn btn-default" id="completed-filter">Completed</button>
+  </div>
 
-<h1>All Orders</h1>
-<% if @orders.size > 0 %>
-<table id="admin_orders">
-  <th>Customer ID</th>
-  <th>Order Status</th>
-  <th>Order Details</th>
-  <% @orders.each do |order| %>
-  <tr>
-    <td><%= order.user_id %></td>
-    <td><%= order.status %></td>
-    <td><%= link_to "View Order", admin_order_path(order) %></td>
-  <% end %>
-  </tr>
-</table>
-<% end %>
+  <h1>All Orders</h1>
 
-<h5>Order Status Summary</h5>
-<ul id="status_summary">
-  <% @orders.group_by { |order| order.status }.each do |status, orders| %>
-    <li><strong>Status:</strong> <%= status.capitalize %> <strong>Count:</strong> <%= orders.size %></li>
+  <h3>Order Status Summary</h3>
+  <ul id="status_summary">
+    <% @orders.group_by { |order| order.status }.each do |status, orders| %>
+      <li><strong>Status:</strong> <%= status.capitalize %> <strong>Count:</strong> <%= orders.size %></li>
+    <% end %>
+  </ul>
+
+  <% if @orders.size > 0 %>
+  <h3>Orders</h3>
+  <table id="admin_orders">
+    <thead>
+      <tr>
+        <th>Customer ID</th>
+        <th>Order Status</th>
+        <th>Order Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr class="<%= order.status %>">
+          <td><%= order.user_id %></td>
+          <td><%= order.status %></td>
+          <td><%= link_to "View Order", admin_order_path(order) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
   <% end %>
-</ul>
 
 </div>
