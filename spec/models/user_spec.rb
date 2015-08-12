@@ -2,8 +2,13 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   context "with valid params" do
     let!(:user) { User.create!(valid_params) }
+
     it "creates a user with valid params" do
       expect(user).to be_valid
+    end
+
+    it "has a default role" do
+      expect(user.role).to eq("default")
     end
   end
 
@@ -19,12 +24,11 @@ RSpec.describe User, type: :model do
     end
 
     it "does not permit duplicate usernames" do
-      user1 = User.create(valid_params)
-      user2 = User.create(valid_params)
-      expect(user2).to_not be_valid
+      user = User.create(valid_params)
+      user = User.create(valid_params)
+      expect(user).to_not be_valid
     end
   end
-
 
   private
 
