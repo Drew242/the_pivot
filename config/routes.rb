@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       post :increment, :decrement
     end
   end
-  resources :users, except: [:show]
+  resources :users, except: [:show] do
+    resources :addresses, only: [:new, :create, :show]
+  end
   namespace :admin do
     get "/dashboard", to: "admin#index"
     resources :items
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
   end
   resources :orders, only: [:index, :show, :create]
   get "/dashboard", to: "users#show"
+  post "/dashboard", to: "addresses#create"
   get "/cart", to: "cart_items#index"
   get "/signup", to: "users#new"
   get "/login", to: "sessions#new"
