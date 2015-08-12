@@ -15,7 +15,7 @@ RSpec.feature "visitor can view data for specific items", type: :feature do
           expect(page).to have_content("Brachiosaurus Scarf Details")
         end
 
-        within ".thumbnail" do
+        within "#item-thumbnail" do
           expect(page).to have_css("img[src*='http://vignette1.wikia.nocookie.net/scarfheroes/images/e/e6/Royal-stewart-tartan-lambswool-scarf.jpg/revision/latest?cb=20150322230625']")
           expect(page).to have_content("An extra long scarf for all of those
           littlefoots in your life")
