@@ -15,11 +15,11 @@ RSpec.feature "AdminCanCreateItem", type: :feature do
       visit admin_dashboard_path
 
       expect(page).to have_content("Admin Dashboard")
-      expect(current_path).to eq("/admin/dashboard")
+      expect(current_path).to eq(admin_dashboard_path)
       expect(page).to have_content("View all Items")
 
       click_link("View all Items")
-      expect(current_path).to eq("/admin/items")
-    end 
+      expect(current_path).to eq(admin_items_path)
+    end
   end
 end

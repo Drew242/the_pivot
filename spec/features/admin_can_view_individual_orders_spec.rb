@@ -8,12 +8,12 @@ RSpec.feature "AdminCanViewAnInvididualOrder", type: :feature do
     image: "https://s-media-cache-ak0.pinimg.com/236x/90/eb/32/90eb32bc73e010067b15e08cac3ff016.jpg")
   end
   let!(:admin) { User.create(username: "admin", password: "password", role: 1) }
-  let!(:user) {User.create(username: "Mitch", password: "supersecret", role: 0)}
-  let!(:address) {Address.create(street_address: "1510 Blake Street", city: "Denver", state: "CO", zip: "80218", user_id: user.id)}
+  let!(:user) { User.create(username: "Mitch", password: "supersecret", role: 0) }
+  let!(:address) { Address.create(street_address: "1510 Blake Street", city: "Denver", state: "CO", zip: "80218", user_id: user.id) }
   let!(:order) { Order.create(user_id: user.id, status: 0) }
   let!(:order_item) { OrderItem.create(quantity: 2, item_id: item.id, order_id: order.id) }
-  context "logged in as an admin and viewing a single order" do
 
+  context "logged in as an admin and viewing a single order" do
     before do
       ApplicationController.any_instance.stubs(:current_user).returns(admin)
     end
