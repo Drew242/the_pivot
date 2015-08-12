@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  function make_filter(name) {
+  function makeFilter(name) {
     $("#" + name + "-filter").click(function(){
       $("#admin_orders tbody tr").each(function(index, element) {
         var $element = $(element);
@@ -13,8 +13,8 @@ $(document).ready(function() {
 
   }
 
-  make_filter("ordered")
-  make_filter("paid")
-  make_filter("completed")
-  make_filter("cancelled")
+  makeFilter("ordered");
+  makeFilter("paid");
+  makeFilter("completed");
+  makeFilter("cancelled");
 });
