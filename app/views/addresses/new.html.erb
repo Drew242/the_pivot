@@ -1,5 +1,6 @@
 <div class="container">
 <h3 id="title">Create Address</h3>
+  <div class="form">
 <%= form_for(@address, url: dashboard_path) do |f| %>
   <%= f.label :street_address %>
   <%= f.text_field :street_address %><br>
@@ -15,4 +16,5 @@
 
   <%= f.submit "Use Address" %>
   <% end %>
+</div>
 </div>
