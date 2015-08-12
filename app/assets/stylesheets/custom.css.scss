@@ -27,7 +27,7 @@ body {
   display: inline;
 }
 
-.thumbnail {
+#item-thumbnail {
   background-color: #CCCFBC;
   border-radius: 5px;
   height: 100%;
@@ -305,64 +305,6 @@ ul {
   border-radius: 20px;
 }
 
-.carousel {
-  width: auto;
-  overflow: auto;
-  height: 27%;
-  margin: 0% auto;
-  border-radius: 8px;
-  background-color: #dbdbdb;
-  color: black;
-  -webkit-box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75);
-}
-
-.carousel-caption {
-  color: black;
-  font-size: 20px;
-  width: auto;
-  margin: -45% auto;
-}
-
-.carousel-inner {
-  height: 100%;
-  width: 100%;
-}
-
-.carousel-inner > .active {
-    float: left;
-    padding-left: 10%;
-    width: 33%;
-    max-width: 65%;
-    max-height: 90%;
-    margin: 2% auto;
-}
-
-.carousel-inner > .active img {
-    max-height: 10em;
-    max-width: 1em;
-}
-
-.carousel-items {
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-.slide {
-  width: 75%;
-  margin: 0 auto;
-}
-
-.carousel-control {
-  border-radius: 8px;
-  width: 2em;
-}
-
 #right {
   float: right;
   margin-top: -3.99%
@@ -595,4 +537,46 @@ th {
 .btn-group, .btn-group-vertical {
 width: 100%;
 margin: 0 29%;
+}
+
+.carousel-row {
+  float: left;
+}
+
+.carousel {
+    height: 400px;
+    overflow: hidden;
+}
+.carousel .item {
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+.carousel .active.left, .carousel .active.right {
+    left:0;
+    opacity:0;
+    z-index:2;
+}
+.carousel .next, .carousel .prev {
+    left:0;
+    opacity:1;
+    z-index:1;
+}
+
+.thumbnail {
+    width: 260px;
+    height: 180px;
+    overflow: hidden;
+    border: 0;
+    box-shadow: 0 12px 12px -10px #c4c4c4;
+    -webkit-box-shadow: 0 17px 22px -20px #c4c4c4;
+    -moz-box-shadow: 0 12px 12px -10px #c4c4c4;
+}
+.thumbnail img { width:100%; height:auto; }
+.thumbnails p { text-align: center; padding: 10px; }
+
+#item-thumbnail img {
+  max-width: 75%;
 }

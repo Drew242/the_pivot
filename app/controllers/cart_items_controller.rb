@@ -7,6 +7,7 @@ class CartItemsController < ApplicationController
     item = Item.find(params[:item_id])
     cart.add_item(item)
     session[:cart] = cart.data
+    # if request.referrer.include?("")
     redirect_to items_path
   end
 

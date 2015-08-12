@@ -4,54 +4,123 @@
   </div>
 
   <div id="featured"> <h3> Featured Items </h3> </div>
-  <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="2500" data-wrap="true">
-    <ol class="carousel-indicators">
-      <li data-target="#item-1" data-slide-to="0" class="active"></li>
-      <li data-target="#item-2" data-slide-to="1"></li>
-      <li data-target="#item-3" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-items">
-      <% if @items.size > 1 %>
+  <div class="row-fluid">
+    <div class="carousel slide" id="myCarousel">
       <div class="carousel-inner">
         <div class="item active">
-          <% item = @items.sample %>
-          <%= link_to(item) do %>
-          <img src=<%= (item.image) %> alt="...">
-          <div class="carousel-caption">
-            <h3><%= (item.title) %></h3>
-          </div>
-          <%end%>
-        </div>
-        <div class="item active">
-          <% item = @items.sample %>
-          <%= link_to(item) do %>
-          <img src=<%= (item.image) %> alt="...">
-          <div class="carousel-caption">
-            <h3><%= (item.title) %></h3>
-          </div>
-          <%end%>
-        </div>
-        <div class="item active">
-          <% item = @items.sample %>
-          <%= link_to(item) do %>
-          <img src=<%= (item.image) %> alt="...">
-          <div class="carousel-caption">
-            <h3><%= (item.title) %></h3>
-          </div>
-          <%end%>
-        </div>
-      </div>
-      <% end %>
-    </div>
-    <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-  </div>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
-</div>
+          <ul class="thumbnails">
+            <li class="span3">
+              <div class="thumbnail">
+                <% item = @items.sample %>
+                <%= link_to(item) do %>
+                <img id="carousel-image" src=<%= (item.image) %> alt="...">
+                <% end %>
+              </div>
+              <p>First item<br>
+                <small class="red"><%=item.price%></small><br>
+                <a href="#" class="btn btn-success"><button type="button" class="btn btn-default">
+                  <%= button_to "Add to cart", cart_items_path(item_id: item.id) %></button></a></p>
+              </li>
+              <li class="span3">
+                <div class="thumbnail">
+                  <% item = @items.sample %>
+                  <%= link_to(item) do %>
+                  <img id="carousel-image" src=<%= (item.image) %> alt="...">
+                  <% end %>
+                </div>
+                <p>This is second<br>
+                  <small class="red"><%=item.price%></small><br>
+                  <a href="#" class="btn btn-success"><button type="button" class="btn btn-default">
+                    <%= button_to "Add to cart", cart_items_path(item_id: item.id) %></button></a></p>
+                </li>
+                <li class="span3">
+                  <div class="thumbnail">
+                    <% item = @items.sample %>
+                    <%= link_to(item) do %>
+                    <img id="carousel-image" src=<%= (item.image) %> alt="...">
+                    <% end %>
+                  </div>
+                  <p>Third product<br>
+                    <small class="red"><%=item.price%></small><br>
+                    <a href="#" class="btn btn-success"><button type="button" class="btn btn-default">
+                      <%= button_to "Add to cart", cart_items_path(item_id: item.id) %></button></a></p>
+                  </li>
+                  <li class="span3">
+                    <div class="thumbnail">
+                      <% item = @items.sample %>
+                      <%= link_to(item) do %>
+                      <img id="carousel-image" src=<%= (item.image) %> alt="...">
+                      <% end %>
+                    </div>
+                    <p>And the fourth<br>
+                      <small class="red"><%=item.price%></small><br>
+                      <a href="#" class="btn btn-success"><button type="button" class="btn btn-default">
+                        <%= button_to "Add to cart", cart_items_path(item_id: item.id) %></button></a></p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="item">
+                  <ul class="thumbnails">
+                    <li class="span3">
+                      <div class="thumbnail">
+                        <% item = @items.sample %>
+                        <%= link_to(item) do %>
+                        <img id="carousel-image" src=<%= (item.image) %> alt="...">
+                        <% end %>
+                      </div>
+                      <p>Another caption<br>
+                        <small class="red"><%=item.price%></small><br>
+                        <a href="#" class="btn btn-success"><button type="button" class="btn btn-default">
+                          <%= button_to "Add to cart", cart_items_path(item_id: item.id) %></button></a></p>
+                      </li>
+                      <li class="span3">
+                        <div class="thumbnail">
+                          <% item = @items.sample %>
+                          <%= link_to(item) do %>
+                          <img id="carousel-image" src=<%= (item.image) %> alt="...">
+                          <% end %>
+                        </div>
+                        <p>Another caption<br>
+                          <small class="red"><%=item.price%></small><br>
+                          <a href="#" class="btn btn-success"><button type="button" class="btn btn-default">
+                            <%= button_to "Add to cart", cart_items_path(item_id: item.id) %></button></a></p>
+                        </li>
+                        <li class="span3">
+                          <div class="thumbnail">
+                            <% item = @items.sample %>
+                            <%= link_to(item) do %>
+                            <img id="carousel-image" src=<%= (item.image) %> alt="...">
+                            <% end %>
+                          </div>
+                          <p>Another caption<br>
+                            <small class="red"><%=item.price%></small><br>
+                            <a href="#" class="btn btn-success"><button type="button" class="btn btn-default">
+                              <%= button_to "Add to cart", cart_items_path(item_id: item.id) %></button></a></p>
+                          </li>
+                          <li class="span3">
+                            <div class="thumbnail">
+                              <% item = @items.sample %>
+                              <%= link_to(item) do %>
+                              <img id="carousel-image" src=<%= (item.image) %> alt="...">
+                              <% end %>
+                            </div>
+                            <p>Another caption<br>
+                              <small class="red"><%=item.price%></small><br>
+                              <a href="#" class="btn btn-success"><button type="button" class="btn btn-default">
+                                <%= button_to "Add to cart", cart_items_path(item_id: item.id) %></button></a></p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
+                      <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
+                    </div>
 
-<!-- #three at once with smaller pictures, title, price, and add to cart
-#pull title to left and add line length of carousel 1px solid white -->
+                    <script type="text/javascript">
+                    $(document).ready(function() {
+                      $('.carousel').carousel();
+                    });
+                    </script>
+
+                    <!-- #three at once with smaller pictures, title, price, and add to cart
+                    #pull title to left and add line length of carousel 1px solid white -->
