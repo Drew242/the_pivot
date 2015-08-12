@@ -20,7 +20,7 @@ RSpec.feature "UserCanLogoutAndSeeHomePage", type: :feature do
 
       expect(page).to_not have_content("Logout")
       expect(page).to have_content("Login")
-      expect(current_path).to eq "/"
+      expect(current_path).to eq root_path
     end
   end
 end

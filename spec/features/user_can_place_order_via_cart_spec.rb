@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature "UserCanPlaceOrderViaCart", type: :feature do
   context "logged in and cart has no items" do
     let!(:user) { User.create(username: "Mitchell", password: "password") }
-    let!(:address) {Address.create(street_address: "1510 Blake Street", city: "Denver", state: "CO", zip: "80218", user_id: user.id)}
+    let!(:address) { Address.create(street_address: "1510 Blake Street", city: "Denver", state: "CO", zip: "80218", user_id: user.id) }
 
     it "does not see a checkout button" do
       visit cart_path
@@ -13,7 +13,7 @@ RSpec.feature "UserCanPlaceOrderViaCart", type: :feature do
 
   context "logged in and cart has items" do
     let!(:user) { User.create(username: "dorrance", password: "password") }
-    let!(:address) {Address.create(street_address: "1510 Blake Street", city: "Denver", state: "CO", zip: "80218", user_id: user.id)}
+    let!(:address) { Address.create(street_address: "1510 Blake Street", city: "Denver", state: "CO", zip: "80218", user_id: user.id) }
     it "can click checkout and create an order" do
       @item = Item.create!(title: "TRex Specs",
                            description: "Make sure you can see what you're about to eat!",

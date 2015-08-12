@@ -1,7 +1,7 @@
 <div class="container" id="OrdersPage">
 
-<h1>Your Orders</h1>
-<% if @orders.size > 0 %>
+  <h1>Your Orders</h1>
+  <% if @orders.size > 0 %>
   <table id="orders">
     <th>Time Placed</th>
     <th>Amount</th>
@@ -11,9 +11,9 @@
       <td><%= order.created_at.strftime("%m-%d-%Y %I:%M %p") %></td>
       <td><%= number_to_currency order.total %></td>
       <td><%= link_to "View Order", order_path(order) %></td>
-    <% end %>
-  </tr>
-</table>
-<% end %>
+      <% end %>
+    </tr>
+  </table>
+  <% end %>
 
 </div>

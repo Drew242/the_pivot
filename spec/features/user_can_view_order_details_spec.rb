@@ -3,10 +3,19 @@ require "rails_helper"
 RSpec.feature "UserCanViewPastOrder", type: :feature do
   context "logged in with previous order" do
     let!(:user) { User.create(username: "dorrance", password: "password") }
-    let!(:item) do Item.create(title: "TRex Specs", description: "specs",
-      price: 200, image: "https://s-media-cache-ak0.pinimg.com/236x/90/eb/32/90eb32bc73e010067b15e08cac3ff016.jpg")
+    let!(:item) do
+      Item.create(title: "TRex Specs",
+                  description: "specs",
+                  price: 200,
+                  image: "https://s-media-cache-ak0.pinimg.com/236x/90/eb/32/90eb32bc73e010067b15e08cac3ff016.jpg")
     end
-    let!(:address) {Address.create(street_address: "1510 Blake Street", city: "Denver", state: "CO", zip: "80218", user_id: user.id)}
+    let!(:address) do
+      Address.create(street_address: "1510 Blake Street",
+                     city: "Denver",
+                     state: "CO",
+                     zip: "80218",
+                     user_id: user.id)
+    end
 
     it "can click checkout and create an order" do
       visit root_path

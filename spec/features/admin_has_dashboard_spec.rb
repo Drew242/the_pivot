@@ -10,7 +10,7 @@ RSpec.feature "AdminCanSeeDashBoard", type: :feature do
 
       expect(page).to have_content("Admin Dashboard")
       expect(page).to have_content("View all Items")
-      expect(current_path).to eq("/admin/dashboard")
+      expect(current_path).to eq(admin_dashboard_path)
     end
 
     it "shows a 404 with registered user non admin" do

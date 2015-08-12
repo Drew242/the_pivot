@@ -11,7 +11,7 @@ RSpec.feature "UserMustLoginToCheckout", type: :feature do
       visit cart_path
 
       expect(page).to have_content("hat")
-      
+
       click_button "Checkout"
 
       expect(current_path).to eq(login_path)

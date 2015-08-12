@@ -19,5 +19,9 @@ RSpec.describe Item, type: :model do
     it "has a price" do
       expect(item.price).to eq(3000)
     end
+
+    it "has an image" do
+      expect(item.image).to eq("https://s-media-cache-ak0.pinimg.com/236x/90/eb/32/90eb32bc73e010067b15e08cac3ff016.jpg")
+    end
   end
 end
