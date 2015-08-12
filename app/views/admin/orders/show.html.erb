@@ -8,10 +8,10 @@
     <%= @order.user.address.zip %><br><br>
     <ul id="admin_order_items">
       <% @order.order_items.each do |order_item| %>
-      <li><h3><%= link_to order_item.item.title, item_path(order_item.item) %><h3></li>
-      <li>Quantity: <%= order_item.quantity %></li>
-      <li>Price: <%= number_to_currency(order_item.item.price) %></li>
-      <li>Subtotal: <%= number_to_currency(order_item.item.price * order_item.quantity) %></li>
+        <li><h3><%= link_to order_item.item.title, item_path(order_item.item) %><h3></li>
+        <li>Quantity: <%= order_item.quantity %></li>
+        <li>Price: <%= number_to_currency(order_item.item.price) %></li>
+        <li>Subtotal: <%= number_to_currency(order_item.item.price * order_item.quantity) %></li>
       <% end %>
     </ul>
 
