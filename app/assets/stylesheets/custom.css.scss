@@ -15,9 +15,18 @@ body {
   color: white;
 }
 
+.admin-thumbs {
+  padding-bottom: 1em;
+}
+
 .row {
   width: 95%;
   margin: 0% 3%;
+}
+
+.top-buffer {
+  margin-top: 2em;
+  display: inline-block; 
 }
 
 .col-sm-12{
@@ -36,6 +45,24 @@ body {
   text-align: center;
   color: black;
   font-weight: bold;
+}
+
+.admin-thumbnail {
+  background-color: #CCCFBC;
+  border-radius: 5px;
+  height: 60%;
+  width: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+#admin-item-price {
+  font-size: 1em;
 }
 
 a {

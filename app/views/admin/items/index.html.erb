@@ -1,17 +1,29 @@
-<div class="container">
-  <div class="row">
+<div class="container admin-thumbns">
+  <div class="row top-buffer">
     <% @items.each do |item| %>
-      <%= link_to admin_item_path(item) do %>
-        <div class="col-sm-12">
-          <div class="thumbnail">
-            <img style="max-height:17em" class="item_image" src=<%= (item.image) %>></img>
-            <h4><%= item.title %></h4>
-            <p><%= number_to_currency item.price %></p>
-            <p>Edit</p>
-            <p>Delete</p>
+        <div class="col-md-3">
+          <div class="admin-thumbnail">
+            <img style="max-height:6em" class="item_image" src=<%= (item.image) %>></img>
+            <h6><%= item.title %></h6>
+            <p id="admin-item-price"><%= number_to_currency item.price %></p>
+            <p><%= link_to "Edit", edit_admin_item_path(item) %></p>
           </div>
         </div>
-      <% end %>
     <% end %>
   </div>
 </div>
+
+<!-- <div class="container">
+  <div class="row">
+    <table>
+      <% @items.each do |item| %>
+      <tbody>
+        <td><img style="max-height:8em" class="item_image" src=<%= (item.image) %>></img></td>
+        <td><%= item.title %></td>
+        <td><%= number_to_currency item.price %></td>
+        <td><%= link_to "Edit", edit_admin_item_path(item) %></td>
+      </tbody>
+      <% end %>
+    </table>
+  </div>
+</div> -->
