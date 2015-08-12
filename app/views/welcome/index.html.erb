@@ -10,38 +10,39 @@
     <li data-target="#item-2" data-slide-to="1"></li>
     <li data-target="#item-3" data-slide-to="2"></li>
   </ol>
+<div class="carousel-items">
 <% if @items.size > 1 %>
   <div class="carousel-inner">
     <div class="item active">
       <% item = @items.sample %>
       <%= link_to(item) do %>
-      <img style="max-height:17em" src=<%= (item.image) %> alt="...">
+      <img src=<%= (item.image) %> alt="...">
       <div class="carousel-caption">
         <h3><%= (item.title) %></h3>
       </div>
       <%end%>
     </div>
-    <div class="item">
+    <div class="item active">
       <% item = @items.sample %>
       <%= link_to(item) do %>
-      <img style="max-height:17em" src=<%= (item.image) %> alt="...">
+      <img src=<%= (item.image) %> alt="...">
       <div class="carousel-caption">
         <h3><%= (item.title) %></h3>
       </div>
       <%end%>
     </div>
-    <div class="item">
+    <div class="item active">
       <% item = @items.sample %>
       <%= link_to(item) do %>
-      <img style="max-height:17em" src=<%= (item.image) %> alt="...">
+      <img src=<%= (item.image) %> alt="...">
       <div class="carousel-caption">
         <h3><%= (item.title) %></h3>
       </div>
       <%end%>
     </div>
-  </div>
+</div>
 <% end %>
-
+</div>
   <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
@@ -52,5 +53,5 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
 </div>
 
-#three at once with smaller pictures, title, price, and add to cart
-#pull title to left and add line length of carousel 1px solid white
+<!-- #three at once with smaller pictures, title, price, and add to cart
+#pull title to left and add line length of carousel 1px solid white -->
