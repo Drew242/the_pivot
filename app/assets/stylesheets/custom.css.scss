@@ -15,10 +15,6 @@ body {
   color: white;
 }
 
-.admin-thumbs {
-  padding-bottom: 1em;
-}
-
 .row {
   width: 95%;
   margin: 0% 3%;
@@ -26,7 +22,7 @@ body {
 
 .top-buffer {
   margin-top: 2em;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .col-sm-12{
@@ -50,7 +46,7 @@ body {
 .admin-thumbnail {
   background-color: #CCCFBC;
   border-radius: 5px;
-  height: 60%;
+  height: 50%;
   width: 50%;
   margin: 0 auto;
   overflow: hidden;
@@ -59,6 +55,7 @@ body {
   font-weight: bold;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 #admin-item-price {
