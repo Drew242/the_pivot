@@ -1,7 +1,8 @@
 <div class="container">
   <h1>Admin Dashboard</h1>
-
-  <%= link_to "Create Item", new_admin_item_path %><br>
-  <%= link_to "View all Items", admin_items_path %><br>
-  <%= link_to "View Orders", admin_orders_path %><br>
+<ul id="admin-list">
+  <li><%= link_to "Create Item", new_admin_item_path %><br></li>
+  <li><%= link_to "View all Items", admin_items_path %><br></li>
+  <li><%= link_to "View Orders", admin_orders_path %><br></li>
+</ul>
 </div>
