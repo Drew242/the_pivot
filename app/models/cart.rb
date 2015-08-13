@@ -31,7 +31,7 @@ class Cart
 
   def total
     items.inject(0) do |subtotal, cart_item|
-      subtotal + (cart_item.price * cart_item.quantity)
+      subtotal + (cart_item.final_price * cart_item.quantity)
     end
   end
 end

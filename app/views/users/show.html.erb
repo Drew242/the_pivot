@@ -1,19 +1,19 @@
 <div class="container" id="dashboard">
   <h1>Welcome Back <%= @user.username.capitalize %>!</h1>
   <%if current_user.role == "admin" %>
-  <h2> <%= link_to "Admin Dashboard", admin_dashboard_path%> </h2>
+  <ul id="admin-list">
+  <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
   <% end %>
-  <h3> <%= link_to "#{@user.username.capitalize}'s Orders", orders_path%> </h3>
+  <li><%= link_to "#{@user.username.capitalize}'s Orders", orders_path %></li>
+  </ul>
   <% @user.orders.each do |order| %>
   <ul id="user-data">
-    <h3> <%= link_to "Order", order_path(order)%> </h3>
+    <%= link_to "Order", order_path(order)%>
     <% order.items.each do |item| %>
-    <li>Item: <%= item.title %> <%= item.price %> </li>
+    <li>Item: <%= item.title %> <%= item.final_price %> </li>
     <% end %>
     <br><strong id="order-total">Total: <%= order.total %></strong>
   </ul>
   <% end %>
-
-
   <p id="thanks">We appreciate your business! - Jurassic Parka senior staff</p>
 </div>

@@ -1,6 +1,5 @@
 <div class="container">
   <h3>New Item</h3>
-
   <%= form_for @item, :url => admin_items_path, :html => {method: :post} do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %><br>
@@ -16,8 +15,8 @@
 
     <%= f.label :category %>
     <%= f.collection_select(:category_id, Category.all, :id, :name) %><br>
-
+<div class="submit">
     <%= f.submit %>
-
+</div>
   <% end %>
 </div>
