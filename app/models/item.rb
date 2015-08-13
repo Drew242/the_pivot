@@ -15,7 +15,7 @@ class Item < ActiveRecord::Base
   end
 
   def final_price
-    if sale
+    if sale && sale.active?
       price * (sale.discount * 0.01)
     else
       price
