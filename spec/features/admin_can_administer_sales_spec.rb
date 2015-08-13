@@ -15,7 +15,7 @@ RSpec.feature "Admin Can Administer Sales", type: :feature do
 
     expect(current_path).to eq(new_admin_sale_path)
     fill_in "Name", with: "Summer Blowout"
-    fill_in "Discount", with: "50"
+    fill_in "Percentage Off", with: "50"
     select "Shoes"
     select "Hat"
     click_button "Create Sale"
@@ -31,7 +31,7 @@ RSpec.feature "Admin Can Administer Sales", type: :feature do
 
     expect(current_path).to eq(new_admin_sale_path)
     fill_in "Name", with: "Summer Blowout"
-    fill_in "Discount", with: "50"
+    fill_in "Percentage Off", with: "50"
     select "Shoes"
     select "Hat"
     click_button "Create Sale"
