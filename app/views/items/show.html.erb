@@ -7,10 +7,7 @@
         <%= @item.description %>
         <ul>
           <li class="price_and_quantity"><%= number_to_currency @item.price %></li>
-          <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default">
-              <%= button_to "Add to cart", cart_items_path(item_id: @item.id) %></button>
-            </div>
+          <%= button_to "Add to cart", cart_items_path(item_id: @item.id), class: "btn btn-success" %>
           </ul>
         </div>
       </div>

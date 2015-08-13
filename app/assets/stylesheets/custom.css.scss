@@ -19,10 +19,6 @@ body {
   width: 1000px;
   margin: 0 auto;
 }
-// .row {
-//   width: 95%;
-//   margin: 0% 3%;
-// }
 
 .col-sm-12{
   width: 30%;
@@ -37,9 +33,20 @@ body {
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
-  text-align: center;
   color: black;
   font-weight: bold;
+  text-align: center;
+}
+
+#item-thumbnail h4 {
+  text-align: center;
+  border-bottom: 0px;
+  color: black;
+}
+
+#item-thumbnail img {
+  width: 75%;
+  margin: 0 15%;
 }
 
 .home-item .btn {
@@ -47,6 +54,8 @@ body {
 }
 
 .home-item {
+  font-family: 'Open Sans';
+  color:black;
   width:260px;
   float:left;
   border: 4px solid gold;
@@ -66,9 +75,11 @@ a {
 }
 
 a:hover {
-  color: black;
+  background-color: white;
+  color:black;
   transition: .2s;
   transition-timing-function: ease-in;
+  text-decoration: none;
 }
 
 .item_image {
@@ -100,6 +111,7 @@ a:hover {
   position: relative;
   margin: 0 35%;
   color: red;
+  border-bottom: 0px;
 }
 
 #title {
@@ -148,10 +160,6 @@ a:hover {
   -webkit-box-shadow: 0px 0px 95px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 95px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 95px 0px rgba(0,0,0,0.75);
-}
-
-#total {
-  color: white;
 }
 
 #CartTable th {
@@ -460,6 +468,11 @@ ul {
   }
 }
 
+#right {
+  float: right;
+  margin-top: -3.99%
+}
+
 #items {
   margin : -2% auto;
 }
@@ -482,7 +495,7 @@ ul {
 }
 
 #thanks {
-  padding: 10%;
+  padding-top: 10em;
   color: white;
 }
 
@@ -607,7 +620,8 @@ h1, h2, h3, h4 {
 .thumbnail img { width:90%; max-height:100%; }
 .thumbnails p { text-align: center; padding: 10px; }
 
-#item-thumbnail img {
+#bnail img {
+  width: 100%;
   max-width: 75%;
 }
 
@@ -623,4 +637,37 @@ h1, h2, h3, h4 {
 #quantity {
   padding: 2.5%;
   font-weight: bold;
+}
+
+td {
+  padding-bottom: 3%;
+}
+
+.checkout {
+  float: left;
+  margin-right: 13%;
+  margin-left: 42%;
+  margin-bottom: 5%;
+}
+
+#total {
+  margin-top: 2%;
+  padding-bottom: 1%;
+}
+
+#admin-list li {
+  text-align: left;
+}
+
+.submit{
+  color: black;
+}
+
+input {
+  margin-left: 5%;
+}
+
+.carousel-control:hover {
+ color: inherit;
+ background-color: inherit;
 }
