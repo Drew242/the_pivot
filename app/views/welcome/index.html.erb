@@ -2,56 +2,30 @@
   <div id="banner_box">
     <h1 id="welcome">Welcome to</h1>
   </div>
-
-  <div id="featured"> <h3> Featured Items </h3> </div>
-  <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="2500" data-wrap="true">
-    <ol class="carousel-indicators">
-      <li data-target="#item-1" data-slide-to="0" class="active"></li>
-      <li data-target="#item-2" data-slide-to="1"></li>
-      <li data-target="#item-3" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-items">
-      <% if @items.size > 1 %>
-      <div class="carousel-inner">
-        <div class="item active">
-          <% item = @items.sample %>
-          <%= link_to(item) do %>
-          <img src=<%= (item.image) %> alt="...">
-          <div class="carousel-caption">
-            <h3><%= (item.title) %></h3>
+  <% if @items.size > 1 %>
+  <div class="home-wrapper">
+    <div id="featured"> <h3> Featured Items </h3> </div>
+    <div class="row-fluid">
+      <div class="carousel slide" id="myCarousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= render partial: "partials/carousel", locals: {items: @items} %>
           </div>
-          <%end%>
-        </div>
-        <div class="item active">
-          <% item = @items.sample %>
-          <%= link_to(item) do %>
-          <img src=<%= (item.image) %> alt="...">
-          <div class="carousel-caption">
-            <h3><%= (item.title) %></h3>
+          <div class="item">
+            <%= render partial: "partials/carousel", locals: {items: @items} %>
           </div>
-          <%end%>
-        </div>
-        <div class="item active">
-          <% item = @items.sample %>
-          <%= link_to(item) do %>
-          <img src=<%= (item.image) %> alt="...">
-          <div class="carousel-caption">
-            <h3><%= (item.title) %></h3>
+          <div class="item">
+            <%= render partial: "partials/carousel", locals: {items: @items} %>
           </div>
-          <%end%>
         </div>
+        <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
       </div>
+      <script type="text/javascript">
+      $(document).ready(function() {
+        $('.carousel').carousel();
+      });
+      </script>
       <% end %>
     </div>
-    <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
   </div>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
-</div>
-
-<!-- #three at once with smaller pictures, title, price, and add to cart
-#pull title to left and add line length of carousel 1px solid white -->

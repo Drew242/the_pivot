@@ -7,7 +7,11 @@ class CartItemsController < ApplicationController
     item = Item.find(params[:item_id])
     cart.add_item(item)
     session[:cart] = cart.data
-    redirect_to items_path
+    if request.referrer.include?("/items/")
+      redirect_to items_path
+    else
+      redirect_to root_path
+    end
   end
 
   def increment
