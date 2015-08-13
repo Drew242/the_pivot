@@ -1,10 +1,24 @@
 <div class="container">
   <h1>Active Sales</h1>
-  <ul>
-  <% @sales.each do |sale| %>
-    <li><%= sale.name %> (<%= sale.discount %>% off) <%= link_to "End Sale", end_sale_admin_sale_path(sale), method: :post, confirm: "Are you sure you want to end this sale?"  %></li>
-  <% end %>
-  </ul>
 
-  <%= link_to "Create A New Sale", new_admin_sale_path %>
+  <table id="admin-orders">
+    <thead>
+      <tr>
+        <th>Sale Details</th>
+        <th>Discount Amount</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.name %></td>
+        <td><%= sale.discount %>%</td>
+        <td><%= button_to "End Sale", end_sale_admin_sale_path(sale), class: "btn btn-danger"%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= button_to "Create A New Sale", new_admin_sale_path, method: :get, class: "btn btn-success" %>
 </div>
