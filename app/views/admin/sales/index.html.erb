@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Active Sales</h1>
+  <% if @sales %>
+    <ul>
+    <% @sales.each do |sale| %>
+      <li><%= sale.name %> (<%= sale.discount %>% off)</li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
