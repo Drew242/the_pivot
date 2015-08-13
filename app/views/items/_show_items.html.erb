@@ -5,7 +5,12 @@
     <div id="items-thumbnail">
       <img style="max-height:17em" class="item_image" src=<%= item.image %>></img>
       <h4><%= item.title %></h4>
+      <% if item.sale && item.sale.status == "active" %>
+      <p><%= number_to_currency item.final_price %> </p>
+      <p><div id="orig-price"><%= number_to_currency item.price %></div></p>
+      <% else %>
       <p><%= number_to_currency item.final_price %></p>
+      <% end %>
     </div>
   </div>
   <%end%>

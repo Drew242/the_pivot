@@ -8,12 +8,14 @@ class Admin::SalesController < Admin::BaseController
   end
 
   def create
-    @sale = Sale.new(sale_params)
-    if @sale.save
-      redirect_to admin_sales_path
-    else
-      flash[:error] = @sale.errors.full_messages.join(", ")
+    params[:sale][:items].each do |item|
+      valid_item = Item.find(item.to_i) if item != ""
+      if valid_item
+        valid_item.create_sale(sale_params)
+        valid_item.update_attribute(:sale_id, Sale.last.id)
+      end
     end
+    redirect_to admin_sales_path
   end
 
   def end_sale

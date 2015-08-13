@@ -1,9 +1,9 @@
 html {
   height: 100%;
-  width: 100%;
 }
 
 body {
+  font-size: 15px;
   background-image: image-url("dinosaur_scene.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -139,7 +139,6 @@ a:hover {
 
 .welcome {
   background-color: black;
-  height: 100%;
   width: 100%;
 }
 
@@ -731,8 +730,8 @@ input {
 }
 
 .carousel-control:hover {
- color: inherit;
- background-color: inherit;
+  color: inherit;
+  background-color: inherit;
 }
 
 form {
@@ -750,4 +749,23 @@ form {
   width :50%;
   margin: 0 auto;
   text-align: left;
+}
+
+a {
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+table {
+  font-size: 115%;
+}
+
+#orig-price {
+  text-decoration: line-through;
+  color: red;
 }
