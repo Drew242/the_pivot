@@ -1,15 +1,15 @@
 <div class="container">
   <h3>Create a Sale</h3>
-  <div class="form">
+  <div class="form" id="sale-form login">
     <%= form_for @sale, url: admin_sales_path, html: {method: :post} do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %><br>
 
-      <%= f.label :discount %>
-      <%= f.text_field :discount %>%<br>
+      <%= f.label :discount, "Percentage Off" %>
+      <%= f.text_field :discount %><br>
 
       <%= f.label :items %>
-      <%= f.collection_select(:items, Item.all, :id, :title, {}, {:multiple => true}) %>
+      <%= f.collection_select(:items, Item.all, :id, :title, {}, {:multiple => true}) %><br>
 
       <%= f.submit %>
 
