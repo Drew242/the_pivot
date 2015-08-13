@@ -11,7 +11,7 @@ class Order < ActiveRecord::Base
 
   def total
     order_items.inject(0) do |subtotal, order_item|
-      subtotal + (order_item.item.price * order_item.quantity)
+      subtotal + (order_item.item.final_price * order_item.quantity)
     end
   end
 
