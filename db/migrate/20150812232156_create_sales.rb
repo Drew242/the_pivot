@@ -3,6 +3,7 @@ class CreateSales < ActiveRecord::Migration
     create_table :sales do |t|
       t.string :name
       t.integer :discount
+      t.integer :status, default: 0
 
       t.timestamps null: false
     end

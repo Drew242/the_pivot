@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     get "/dashboard", to: "admin#index"
     resources :items
     resources :orders, only: [:index, :show]
-    resources :sales, only: [:index, :new, :create]
+    resources :sales, only: [:index, :new, :create] do
+      member do
+        post :end_sale
+      end
+    end
   end
   resources :orders, only: [:index, :show, :create]
   get "/dashboard", to: "users#show"

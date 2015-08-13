@@ -1,6 +1,6 @@
 class Admin::SalesController < Admin::BaseController
   def index
-    @sales = Sale.all
+    @sales = Sale.active
   end
 
   def new
@@ -14,6 +14,12 @@ class Admin::SalesController < Admin::BaseController
     else
       flash[:error] = @sale.errors.full_messages.join(", ")
     end
+  end
+
+  def end_sale
+    @sale = Sale.find(params[:id])
+    @sale.expire
+    redirect_to admin_sales_path
   end
 
   private

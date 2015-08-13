@@ -71,8 +71,9 @@ ActiveRecord::Schema.define(version: 20150812232156) do
   create_table "sales", force: :cascade do |t|
     t.string   "name"
     t.integer  "discount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "status",     default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|

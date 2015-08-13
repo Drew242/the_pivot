@@ -24,4 +24,20 @@ RSpec.feature "Admin Can Administer Sales", type: :feature do
     expect(page).to have_content "Summer Blowout"
     expect(page).to have_content "50% off"
   end
+
+  it "can end a sale" do
+    visit admin_dashboard_path
+    click_link "Create a Sale"
+
+    expect(current_path).to eq(new_admin_sale_path)
+    fill_in "Name", with: "Summer Blowout"
+    fill_in "Discount", with: "50"
+    select "Shoes"
+    select "Hat"
+    click_button "Create Sale"
+    expect(page).to have_content "Summer Blowout"
+
+    click_link "End Sale"
+    expect(page).not_to have_content "Summer Blowout"
+  end
 end
