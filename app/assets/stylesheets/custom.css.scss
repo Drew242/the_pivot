@@ -26,6 +26,11 @@ body {
   margin: 0 auto;
 }
 
+.top-buffer {
+  margin-top: 2em;
+  display: inline-block;
+}
+
 .col-sm-12{
   width: 30%;
   height: 24em;
@@ -94,6 +99,25 @@ body {
 
 .right-col{
   float:right;
+}
+
+.admin-thumbnail {
+  background-color: #CCCFBC;
+  border-radius: 5px;
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#admin-item-price {
+  font-size: 1em;
 }
 
 a {
@@ -585,6 +609,14 @@ h1, h2, h3, h4 {
   background-color: grey;
   border-radius: 5px;
   padding: 2%;
+}
+
+#entry {
+  color: black;
+}
+
+#drop-down {
+  position:relative; 
 }
 
 #order-info {
