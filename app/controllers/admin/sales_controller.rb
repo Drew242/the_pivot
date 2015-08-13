@@ -25,6 +25,6 @@ class Admin::SalesController < Admin::BaseController
   private
 
   def sale_params
-    params.require(:sale).permit(:name, :discount)
+    params.require(:sale).permit(:name, :discount, :items)
   end
 end
