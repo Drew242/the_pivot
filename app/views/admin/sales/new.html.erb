@@ -6,7 +6,7 @@
       <%= f.text_field :name %><br>
 
       <%= f.label :discount %>
-      <%= f.text_field :discount %><br>
+      <%= f.text_field :discount %>%<br>
 
       <%= f.label :items %>
       <%= f.collection_select(:items, Item.all, :id, :title, {}, {:multiple => true}) %>

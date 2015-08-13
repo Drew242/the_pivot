@@ -4,5 +4,7 @@
   <% @sales.each do |sale| %>
     <li><%= sale.name %> (<%= sale.discount %>% off) <%= link_to "End Sale", end_sale_admin_sale_path(sale), method: :post, confirm: "Are you sure you want to end this sale?"  %></li>
   <% end %>
-    </ul>
+  </ul>
+
+  <%= link_to "Create A New Sale", new_admin_sale_path %>
 </div>
