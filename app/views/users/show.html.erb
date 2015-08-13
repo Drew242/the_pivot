@@ -4,6 +4,7 @@
   <ul id="admin-list">
   <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
   </ul>
+  <% end %>
   <% @user.orders.each do |order| %>
   <ul id="user-data">
     <%= link_to "Order", order_path(order)%>
@@ -12,7 +13,6 @@
     <% end %>
     <br><strong id="order-total">Total: <%= number_to_currency order.total %></strong>
   </ul>
-  <% end %>
   <% end %>
   <p id="thanks">We appreciate your business! - Jurassic Parka senior staff</p>
 
