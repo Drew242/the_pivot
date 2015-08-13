@@ -22,7 +22,7 @@ RSpec.feature "Admin Can Administer Sales", type: :feature do
 
     expect(current_path).to eq(admin_sales_path)
     expect(page).to have_content "Summer Blowout"
-    expect(page).to have_content "50% off"
+    expect(page).to have_content "50%"
   end
 
   it "can end a sale" do
@@ -37,7 +37,7 @@ RSpec.feature "Admin Can Administer Sales", type: :feature do
     click_button "Create Sale"
     expect(page).to have_content "Summer Blowout"
 
-    click_link "End Sale"
+    click_button "End Sale"
     expect(page).not_to have_content "Summer Blowout"
   end
 end
