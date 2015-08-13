@@ -37,7 +37,7 @@ RSpec.feature "AdminCanViewAllOrders", type: :feature do
       expect(page).to have_content("Status")
       expect(page).to have_link("View Order")
       within ("#status_summary") do
-        expect(page).to have_content("Status: Ordered Count: 2")
+        expect(page).to have_content("Ordered: 2")
       end
     end
   end
