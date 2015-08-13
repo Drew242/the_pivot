@@ -6,7 +6,8 @@ html {
 body {
   background-image: image-url("dinosaur_scene.jpg");
   background-size: cover;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
+  background-color: black;
   height: 100%;
   width: 100%;
 }
@@ -595,7 +596,7 @@ th {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Open Sans';
+  font-family: "Open Sans", sans-serif;
   font-weight: 800;
   color: white;
   height: 5%;
@@ -616,7 +617,7 @@ h1, h2, h3, h4 {
 }
 
 #drop-down {
-  position:relative; 
+  position:relative;
 }
 
 #order-info {
@@ -743,4 +744,10 @@ form {
 #dashboard h1 {
   border-bottom: 0;
   margin-bottom: 5%;
+}
+
+#sale-form form {
+  width :50%;
+  margin: 0 auto;
+  text-align: left;
 }
