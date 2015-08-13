@@ -25,7 +25,7 @@ RSpec.feature "Admin Can Administer Sales", type: :feature do
     expect(page).to have_content "50%"
   end
 
-  it "can end a sale" do
+  xit "can end a sale" do
     visit admin_dashboard_path
     click_link "Create a Sale"
 
