@@ -10,7 +10,7 @@
   <ul id="user-data">
     <%= link_to "Order", order_path(order)%>
     <% order.items.each do |item| %>
-    <li>Item: <%= item.title %> <%= item.price %> </li>
+    <li>Item: <%= item.title %> <%= item.final_price %> </li>
     <% end %>
     <br><strong id="order-total">Total: <%= order.total %></strong>
   </ul>

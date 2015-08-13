@@ -6,7 +6,7 @@
         <h3 id="title"> <%= @item.title %> Details</h3>
         <%= @item.description %>
         <ul>
-          <li class="price_and_quantity"><%= number_to_currency @item.price %></li>
+          <li class="price_and_quantity"><%= number_to_currency @item.final_price %></li>
           <%= button_to "Add to cart", cart_items_path(item_id: @item.id), class: "btn btn-success" %>
           </ul>
         </div>
