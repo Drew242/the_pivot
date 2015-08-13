@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Sale, type: :model do
-
   it "has a name" do
     sale = Sale.create(name: "Summer Blowout", discount: 50)
     expect(sale.name).to eq("Summer Blowout")
