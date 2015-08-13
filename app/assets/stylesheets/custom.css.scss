@@ -1,8 +1,14 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background-image: image-url("dinosaur_scene.jpg");
   background-size: cover;
   background-repeat: repeat;
   height: 100%;
+  width: 100%;
 }
 
 .container {
@@ -32,10 +38,25 @@ body {
   display: inline;
 }
 
+#items-thumbnail {
+  background-color: #CCCFBC;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+#items-thumbnail h4 {
+  text-align: center;
+  border-bottom: 0px;
+  color: black;
+}
+
 #item-thumbnail {
   background-color: #CCCFBC;
   border-radius: 5px;
-  height: 100%;
+  width: 25%;
   margin: 0 auto;
   overflow: hidden;
   color: black;
@@ -50,6 +71,11 @@ body {
 }
 
 #item-thumbnail img {
+  width: 75%;
+  margin: 0 15%;
+}
+
+#items-thumbnail img {
   width: 75%;
   margin: 0 15%;
 }
@@ -113,6 +139,7 @@ a:hover {
 .welcome {
   background-color: black;
   height: 100%;
+  width: 100%;
 }
 
 #banner_box {
@@ -156,7 +183,6 @@ a:hover {
 #Item {
   padding-top: 3em;
   text-align: center;
-  padding-left: 28em;
 }
 
 #CartPage{
@@ -290,6 +316,11 @@ ul {
   width: 25%;
   height: 28%;
   padding: 1%;
+}
+
+#login h3 {
+  margin-bottom: 15%;
+  border-bottom: 0;
 }
 
 .flash_notice {
@@ -492,11 +523,6 @@ ul {
   }
 }
 
-#right {
-  float: right;
-  margin-top: -3.99%
-}
-
 #items {
   margin : -2% auto;
 }
@@ -516,6 +542,9 @@ ul {
   text-align: left;
   margin: 0 auto;
   padding-left: 28%;
+  background-color: grey;
+  border-radius: 5px;
+  margin: 3%;
 }
 
 #thanks {
@@ -540,6 +569,7 @@ th {
 
 #single-order{
   overflow: auto;
+  width: 100%;
 }
 
 #orders {
@@ -702,4 +732,15 @@ input {
 .carousel-control:hover {
  color: inherit;
  background-color: inherit;
+}
+
+form {
+  width: 40%;
+  text-align: right;
+  margin: 0 18%;
+}
+
+#dashboard h1 {
+  border-bottom: 0;
+  margin-bottom: 5%;
 }

@@ -25,7 +25,7 @@ RSpec.feature "AdminCanViewAnInvididualOrder", type: :feature do
       expect(page).to have_content("Created on #{order.created_at.strftime("%b %d, %Y")} at #{order.created_at.strftime("%I:%M:%S %p")}")
       expect(page).to have_content("Customer: Mitch")
       expect(page).to have_content("Shipping Address: 1510 Blake Street, Denver CO 80218")
-      within("#admin_order_items") do
+      within("#order-info") do
         expect(page).to have_content("Parka")
         expect(page).to have_content("Quantity: 2")
         expect(page).to have_content("Price: $3,000.00")
