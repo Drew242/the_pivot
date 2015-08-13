@@ -3,17 +3,17 @@
   <%if current_user.role == "admin" %>
   <ul id="admin-list">
   <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
-  <% end %>
-  <li><%= link_to "#{@user.username.capitalize}'s Orders", orders_path %></li>
   </ul>
   <% @user.orders.each do |order| %>
   <ul id="user-data">
     <%= link_to "Order", order_path(order)%>
     <% order.items.each do |item| %>
-    <li>Item: <%= item.title %> <%= item.final_price %> </li>
+    <li>Item: <%= item.title %> <%= number_to_currency item.final_price %> </li>
     <% end %>
-    <br><strong id="order-total">Total: <%= order.total %></strong>
+    <br><strong id="order-total">Total: <%= number_to_currency order.total %></strong>
   </ul>
   <% end %>
+  <% end %>
   <p id="thanks">We appreciate your business! - Jurassic Parka senior staff</p>
+
 </div>

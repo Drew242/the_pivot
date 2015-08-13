@@ -6,7 +6,7 @@
     Shipping Address: <%= @order.user.address.street_address %>, <%= @order.user.address.city %>
     <%= @order.user.address.state %>
     <%= @order.user.address.zip %><br><br>
-    <ul id="admin_order_items">
+    <ul>
       <% @order.order_items.each do |order_item| %>
         <li><h3><%= link_to order_item.item.title, item_path(order_item.item) %><h3></li>
         <li>Quantity: <%= order_item.quantity %></li>
