@@ -13,4 +13,11 @@ class Item < ActiveRecord::Base
   def self.random_items
     RandomItemsGenerator.generate(all)
   end
+
+  def final_price
+    if item.sale.nil?
+      price
+    else
+      price * (item.sale.discount * 0.01)
+  end
 end
