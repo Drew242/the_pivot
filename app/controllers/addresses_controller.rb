@@ -5,9 +5,8 @@ class AddressesController < ApplicationController
   end
 
   def create
-    @address = Address.new(address_params)
+    @address = current_user.build_address(address_params)
     if @address.save
-      @address.update_attribute(:user_id, current_user.id)
       redirect_to cart_path
     else
       flash[:error] = "You have missing fields."
