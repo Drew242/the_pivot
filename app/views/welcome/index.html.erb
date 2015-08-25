@@ -1,31 +1,17 @@
-<div class="welcome">
-  <div id="banner_box">
-    <h1 id="welcome">Welcome to</h1>
-  </div>
-  <% if @items.size > 1 %>
-  <div class="home-wrapper">
-    <div id="featured"> <h3> Featured Items </h3> </div>
-    <div class="row-fluid">
-      <div class="carousel slide" id="myCarousel">
-        <div class="carousel-inner">
-          <div class="item active">
-            <%= render partial: "partials/carousel", locals: {items: @items} %>
-          </div>
-          <div class="item">
-            <%= render partial: "partials/carousel", locals: {items: @items} %>
-          </div>
-          <div class="item">
-            <%= render partial: "partials/carousel", locals: {items: @items} %>
-          </div>
-        </div>
-        <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
-        <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
+<div class='row'>
+  <div class='col-md-8 col-md-offset-2 welcome'>
+
+    <h1 id="welcome">Technically Employed </h1>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="exampleInputName2">Job Title</label>
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="Ruby on Rails">
       </div>
-      <script type="text/javascript">
-      $(document).ready(function() {
-        $('.carousel').carousel();
-      });
-      </script>
-      <% end %>
-    </div>
+      <div class="form-group">
+        <label for="exampleInputEmail2">Location</label>
+        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="City, State, or Zip Code">
+      </div>
+      <button type="submit" class="btn btn-default">Find Me A Job</button>
+    </form>
   </div>
+</div>

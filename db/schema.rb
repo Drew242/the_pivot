@@ -50,13 +50,11 @@ ActiveRecord::Schema.define(version: 20150812232156) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer  "quantity"
-    t.integer  "item_id"
     t.integer  "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "order_items", ["item_id"], name: "index_order_items_on_item_id", using: :btree
   add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
@@ -86,7 +84,6 @@ ActiveRecord::Schema.define(version: 20150812232156) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "items", "sales"
-  add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"
 end

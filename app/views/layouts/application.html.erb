@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>JurassicParka</title>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>TechnicallyEmployed</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<body>
-  <%= render "partials/navigation" %>
-  <% flash.each do |type, msg| %>
-  <%= content_tag :div, msg.html_safe, class: "flash_#{type}" %>
-  <% end %>
-  <%= yield %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <script>
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-  });
-  </script>
-</body>
+  <body>
 
+    <%= render "partials/navigation" %>
+    <div class='container'>
+
+      <% flash.each do |type, msg| %>
+        <%= content_tag :div, msg.html_safe, class: "flash_#{type}" %>
+      <% end %>
+      <%= yield %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <script>
+$("#menu-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+});
+      </script>
+    </div>
+  </body>
 </html>
