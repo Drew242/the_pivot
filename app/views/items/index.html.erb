@@ -3,7 +3,7 @@
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <% @categories.each do |category| %>
-      <li class="sidebar-band"><%= link_to category.name.capitalize, category_path(category)%></li>
+        <li class="sidebar-band"><%= link_to category.name.capitalize, category_path(category)%></li>
       <% end %>
     </ul>
   </div>
@@ -11,10 +11,8 @@
   <div id="page-content-wrapper">
     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Categories</a>
     <div class="col-lg-12">
-      <div class="container" id="items">
-        <h1 id="title">All Items</h1>
-        <%= render partial: "show_items", locals: {items: @items} %>
-      </div>
+      <h1 id="title">Jobs</h1>
+      <%= render partial: "show_items", locals: {items: @items} %>
     </div>
   </div>
 </div>
