@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     get "/dashboard", to: "admin#index"
-    resources :items
+    resources :jobs
     resources :orders, only: [:index, :show]
     resources :sales, only: [:index, :new, :create] do
       member do
