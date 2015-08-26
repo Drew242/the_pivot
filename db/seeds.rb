@@ -2,6 +2,16 @@ Category.create(name: "development")
 Category.create(name: "infrastructure")
 Category.create(name: "design")
 
+
+Company.create!(name: 'Example Company',
+                information: 'adsf')
+
+99.times do  |n|
+  name = Faker::Company.name
+  information = Faker::Lorem.word
+  Company.create!(name: name, information: information)
+end
+
 Job.create!(title:        "Example Job",
              description: "example of job info",
              created_at:  Time.now,
