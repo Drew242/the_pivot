@@ -2,8 +2,7 @@ class CartJobsController < ApplicationController
   def index
     @cart_jobs = cart.jobs
   end
-
-  def create
+def create
     job = Job.find(params[:job_id])
     cart.add_job(job)
     session[:cart] = cart.data

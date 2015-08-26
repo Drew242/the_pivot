@@ -2,17 +2,17 @@ require "rails_helper"
 RSpec.feature "UserMustLoginToCheckout", type: :feature do
   context "when logged out" do
     before do
-      @item = Item.create(title: "hat", description: "a nice hat", price: 3000)
+      @job = Job.create!(title: "dev", description: "awesome")
     end
 
     it "redirects the user to a login page if they are not logged in" do
-      visit item_path(@item)
-      click_button "Add to cart"
+      visit job_path(@job)
+      click_button "Add to Favorites"
       visit cart_path
 
-      expect(page).to have_content("hat")
+      expect(page).to have_content("dev")
 
-      click_button "Checkout"
+      click_button "Apply to Jobs"
 
       expect(current_path).to eq(login_path)
     end

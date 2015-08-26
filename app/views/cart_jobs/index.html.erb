@@ -24,11 +24,11 @@
       </div>
       <div class="checkout">
         <% if current_user && current_user.address == nil  %>
-          <%= button_to "Checkout", new_user_address_path(current_user), method: :get, class: "btn btn-success checkout"  %>
+          <%= button_to "Apply to Jobs", new_user_address_path(current_user), method: :get, class: "btn btn-success checkout"  %>
         <% elsif current_user%>
-          <%= button_to "Checkout", orders_path, class: "btn btn-success checkout"  %>
+          <%= button_to "Apply to Jobs", orders_path, class: "btn btn-success checkout"  %>
         <% else %>
-          <%= button_to "Checkout", login_path, method: :get, class: "btn btn-success checkout"  %>
+          <%= button_to "Apply to Jobs", login_path, method: :get, class: "btn btn-success checkout"  %>
         <% end %>
       </div>
     <% end %>

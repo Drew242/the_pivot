@@ -17,7 +17,6 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
       fill_in "exampleInputName2", with: "Stop the Virus"
       fill_in "exampleInputEmail2", with: "Seattle, WA"
       click_button "Find Me A Job"
-      save_and_open_page
 
       expect(page).to have_content("Jobs")
       expect(page).to have_content("Stop the Virus")

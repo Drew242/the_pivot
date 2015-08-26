@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Order, type: :model do
+RSpec.describe OrderJob, type: :model do
   before do
     @user = User.create!(username: "mitch", password: "password", role: 0)
     @job = Job.create!(title: "junior_developer", description: "wicked")
@@ -8,15 +8,15 @@ RSpec.describe Order, type: :model do
     @order_job = OrderJob.create!(job_id: @job.id, order_id: @order.id)
   end
 
-  it "has a user" do
-    expect(Order.first.user_id).to eq(@user.id)
+  it "belongs to an job" do
+    expect(@order_job.job_id).to eq(@job.id)
   end
 
-  # it "has a total" do
-  #   expect(@order.total).to eq(6)
-  # end
-  #
-  # it "has a status" do
-  #   expect(@order.status).to eq("ordered")
+  it "belongs to an order" do
+    expect(@order_job.order_id).to eq(@order.id)
+  end
+
+  # it "has a quantity" do
+  #   expect(@order_item.quantity).to eq(2)
   # end
 end
