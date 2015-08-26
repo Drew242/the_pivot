@@ -2,10 +2,12 @@ require "rails_helper"
 
 RSpec.feature "VisitorCanViewJobs", type: :feature do
   context "as a visitor" do
+    let!(:company) { Company.create(name: "ABC Company", information: "xyz") }
     let!(:job) do
-      Job.create(title: "Jr Dev",
-                  description: "As a Junior developer, you will code",
-                  location: "Denver, CO")
+      company.jobs.create(title: "Jr Dev",
+                          description: "As a Junior developer, you will code",
+                          location: "Denver, CO",
+                          company_id: 1)
     end
 
     it "can view all existing jobs" do
@@ -19,7 +21,6 @@ RSpec.feature "VisitorCanViewJobs", type: :feature do
     it "can view all existing jobs" do
       visit jobs_path
 
-      click_link("Jobs")
       expect(current_path).to eq(jobs_path)
     end
   end
