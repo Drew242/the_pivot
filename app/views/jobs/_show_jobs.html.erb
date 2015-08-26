@@ -3,18 +3,18 @@
     <table class='table table-bordered table-hover'>
       <tr>
         <th>Job Title</th>
-        <th>Category</th>
+        <th>Description</th>
         <th>Posted</th>
         <th>Company Name</th>
         <th>Location</th>
       </tr>
       <% jobs.each do |job| %>
         <tr>
-          <td><%= job.title %></td>
-          <td><%= job.title %></td>
-          <td><%= job.title %></td>
-          <td><%= job.title %></td>
-          <td><%= job.title %></td>
+          <td><%= link_to job.title, job_path(job) %></td>
+          <td><%= job.description %></td>
+          <td><%= job.created_at %></td>
+          <td><%= link_to job.company, "#" %></td>
+          <td><%= job.location %></td>
         </tr>
       <% end %>
   </div>
