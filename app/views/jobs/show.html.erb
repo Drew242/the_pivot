@@ -1,11 +1,3 @@
-<div class="container" id="Item">
-
-  <div id="job-thumbnail">
     <h3 id="title"> <%= @job.title %> Details</h3>
     <%= @job.description %>
-    <ul>
-      <li class="job"><%= @job.title %></li>
-      <%= button_to "Favorite", "#", class: "btn btn-success" %>
-    </ul>
-  </div>
-</div>
+    <%= button_to "Add to Favorites", cart_jobs_path(job_id: @job.id), class: "btn btn-success" %>

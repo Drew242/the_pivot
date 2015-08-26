@@ -13,3 +13,6 @@
 /tmp
 *.txt
 /coverage/
+
+.ruby-version
+

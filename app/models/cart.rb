@@ -5,16 +5,16 @@ class Cart
     @data = data || {}
   end
 
-  def items
-    @data.map do |item_id, quantity|
-      item = Item.find(item_id)
-      CartItem.new(item, quantity)
+  def jobs
+    @data.map do |job_id|
+      job = Job.find(job_id[0])
+      CartJob.new(job)
     end
   end
 
-  def add_item(item)
-    data[item.id.to_s] ||= 0
-    data[item.id.to_s] += 1
+  def add_job(job)
+    data[job.id.to_s] ||= 0
+    data[job.id.to_s] += 1
   end
 
   def decrease_item(item)
@@ -25,13 +25,17 @@ class Cart
     end
   end
 
-  def remove_item(item)
-    data.except!(item.id.to_s)
+  def remove_job(job)
+    data.except!(job.id.to_s)
   end
 
   def total
-    items.inject(0) do |subtotal, cart_item|
-      subtotal + (cart_item.final_price * cart_item.quantity)
-    end
+    jobs.size
+    # jobs.inject(0) do |subtotal, cart_job|
+    #
+    #   # subtotal + (cart_job.final_price * cart_job.quantity)
+    #   subtotal += 1
+    # end
+
   end
 end
