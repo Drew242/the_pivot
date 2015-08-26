@@ -1,39 +1,36 @@
-<div class="container" id="CartPage">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <% if @cart_jobs.size > 0 %>
+      <div class="centered center-block">
+        <h1 id="CartTitle">Your Favorite Jobs</h1>
+        </div>
+      <div class="centered center-block">
+        <table id="CartTable">
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+          <% @cart_jobs.each do |cart_job| %>
 
-  <h1 id="CartTitle">Your Shopping Cart</h1>
-  <% if @cart_jobs.size > 0 %>
-  <table id="CartTable">
-    <th></th>
-    <th>Item</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Quantity</th>
-    <th>Subtotal</th>
-    <th></th>
-    <% @cart_jobs.each do |cart_job| %>
-
-    <tr id="cart-table">
-      <td id="Title"><%= cart_job.title %></td>
-      <td id="Description"><%= cart_job.description %></td>
-      <td id="quantity">
-        <%= button_to "-", decrement_cart_job_path(cart_job), class: "btn btn-danger" %>
-        <%= cart_job.quantity %>
-        <%= button_to "+", increment_cart_job_path(cart_job),class: "btn btn-success" %>
-      </td>
-      <td>
-        <%= button_to "Remove", cart_job_path(cart_job), method: :delete, class: "btn btn-danger"  %>
-      </tr>
-      <% end %>
-    </table>
-    <div class="checkout">
-      <% if current_user && current_user.address == nil  %>
-      <%= button_to "Checkout", new_user_address_path(current_user), method: :get, class: "btn btn-success checkout"  %>
-      <% elsif current_user%>
-      <%= button_to "Checkout", orders_path, class: "btn btn-success checkout"  %>
-      <% else %>
-      <%= button_to "Checkout", login_path, method: :get, class: "btn btn-success checkout"  %>
-      <% end %>
-    </div>
+            <tr id="cart-table">
+              <td id="Title"><%= cart_job.title %></td>
+              <td id="Description"><%= cart_job.description %></td>
+              <td>
+                <%= button_to "Remove", cart_job_path(cart_job), method: :delete, class: "btn btn-xs" %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="checkout">
+        <% if current_user && current_user.address == nil  %>
+          <%= button_to "Checkout", new_user_address_path(current_user), method: :get, class: "btn btn-success checkout"  %>
+        <% elsif current_user%>
+          <%= button_to "Checkout", orders_path, class: "btn btn-success checkout"  %>
+        <% else %>
+          <%= button_to "Checkout", login_path, method: :get, class: "btn btn-success checkout"  %>
+        <% end %>
+      </div>
     <% end %>
-    <!-- <h4 id="total">Cart Total: <%= number_to_currency(cart.total) %></h4> -->
   </div>
+</div>
