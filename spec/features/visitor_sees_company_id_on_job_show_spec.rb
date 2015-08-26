@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "VisitorCanViewJobs", type: :feature do
+RSpec.feature "VisitorSeesCompanyIdOnJobShow", type: :feature do
   context "as a visitor" do
     let!(:company) { Company.create(name: "ABC Company", information: "xyz") }
     let!(:job) do
@@ -10,18 +10,12 @@ RSpec.feature "VisitorCanViewJobs", type: :feature do
                           company_id: 1)
     end
 
-    it "can view all existing jobs" do
+    it "can view a single job" do
       visit jobs_path
 
       expect(page).to have_content("Jobs")
-      expect(page).to have_content("Jr Dev")
-      expect(page).to have_content("Denver, CO")
+      click_link("Jr Dev")
+      expect(current_path).to eq(company_job_path(job.company, job))
     end
-
-    it "can view all existing jobs" do
-      visit jobs_path
-
-      expect(current_path).to eq(jobs_path)
-    end
-  end
+  end 
 end
