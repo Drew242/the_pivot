@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
   before_create :make_slug
-  has_many :items
+  has_many :jobs
 
   def make_slug
     self.slug = name.downcase.gsub(" ", "_")
