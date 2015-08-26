@@ -1,0 +1,7 @@
+<h3 id="title"> "<%= @company.name %>" Details</h3>
+<%= @company.information %></br>
+<% if @company.jobs %>
+<% @company.jobs.each do |job| %>
+<%= link_to job.title, company_job_path(job.company, job) %></br>
+<% end %>
+<% end %>

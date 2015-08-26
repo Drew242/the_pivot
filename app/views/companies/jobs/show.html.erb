@@ -1,0 +1,3 @@
+<h3 id="title"> <%= @job.title %> Details</h3>
+<%= @job.description %>
+<%= button_to "Add to Favorites", cart_jobs_path(job_id: @job.id), class: "btn btn-success" %>

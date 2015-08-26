@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-12">
+    <table class='table table-bordered table-hover'>
+      <tr>
+        <th>Company Name</th>
+        <th>Information</th>
+      </tr>
+      <% companies.each do |company| %>
+        <tr>
+          <td><%= link_to company.name, company_path(company) %></td>
+          <td><%= company.information %></td>
+        </tr>
+      <% end %>
+  </div>
+</div>

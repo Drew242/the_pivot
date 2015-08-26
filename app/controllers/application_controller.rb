@@ -26,4 +26,8 @@ class ApplicationController < ActionController::Base
   def render_not_found
     render "/public/404", status: 404
   end
+
+  def current_company
+    @current_company ||= Company.find(params[:id]) if params[:company]
+  end
 end
