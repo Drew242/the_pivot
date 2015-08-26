@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   root to: "welcome#index"
-  resources :jobs, only: [:index, :show]
+  resources :jobs, only: [:index]
   resources :companies, only: [:index, :show]
+
+  namespace :companies, path: ':company', as: :company do
+    resources :jobs, only: [:index, :show]
+  end
+
   resources :categories, only: [:show, :index]
   resources :cart_jobs, only: [:index, :create, :destroy] do
     member do
