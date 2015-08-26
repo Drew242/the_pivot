@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "welcome#index"
-  resources :items, only: [:index, :show]
+  resources :jobs, only: [:index, :show]
   resources :categories, only: [:show, :index]
   resources :cart_items, only: [:index, :create, :destroy] do
     member do
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     get "/dashboard", to: "admin#index"
-    resources :items
+    resources :jobs
     resources :orders, only: [:index, :show]
     resources :sales, only: [:index, :new, :create] do
       member do
