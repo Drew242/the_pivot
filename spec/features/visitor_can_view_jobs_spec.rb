@@ -15,5 +15,12 @@ RSpec.feature "VisitorCanViewJobs", type: :feature do
       expect(page).to have_content("Jr Dev")
       expect(page).to have_content("Denver, CO")
     end
+
+    it "can view all existing jobs" do
+      visit jobs_path
+
+      click_link("Jobs")
+      expect(current_path).to eq(jobs_path)
+    end
   end
 end
