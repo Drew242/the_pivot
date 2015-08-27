@@ -39,3 +39,6 @@ Job.create!(title:        "Example Job",
                company_id:  company_id,
                location:    location)
 end
+
+Job.bulk_update_fuzzy_title
+Job.bulk_update_fuzzy_location
