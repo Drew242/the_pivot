@@ -10,7 +10,7 @@ def create
     if request.referrer.include?("/jobs/")
 
       flash[:notice] = "Added to Favorites"
-      redirect_to job_path(job)
+      redirect_to company_job_path(job.company, job)
     else
       # redirect_to root_path
       flash.now[:notice] = "Unable to add to Favorites"
