@@ -1,4 +1,4 @@
-class OrderJob < ActiveRecord::Base
+class FavoriteJob < ActiveRecord::Base
   belongs_to :job
   belongs_to :order
 

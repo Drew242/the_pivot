@@ -1,11 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe OrderJob, type: :model do
+
+# this used to be OrderItem
+
+RSpec.describe FavoriteJob, type: :model do
   before do
     @user = User.create!(username: "mitch", password: "password", role: 0)
-    @job = Job.create!(title: "junior_developer", description: "wicked")
+    company = Company.create!(name: "acme", information: "asdf")
+    @job = company.jobs.create!(title: "junior_developer", description: "wicked")
     @order = Order.create!(user_id: @user.id, status: 0)
-    @order_job = OrderJob.create!(job_id: @job.id, order_id: @order.id)
+    @order_job = FavoriteJob.create!(job_id: @job.id, order_id: @order.id)
   end
 
   it "belongs to an job" do
