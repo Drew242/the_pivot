@@ -19,7 +19,7 @@ class Order < ActiveRecord::Base
 
   def create_from_cart
     if cart_data
-      cart_data.each do |item_id, quantity|
+      cart_data.each do |job_id, quantity|
         favorite_jobs.build(quantity: quantity, job_id: job_id.to_i, order_id: id)
       end
     end
