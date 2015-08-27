@@ -2,8 +2,7 @@ class CartJobsController < ApplicationController
   def index
     @cart_jobs = cart.jobs
   end
-
-  def create
+def create
     job = Job.find(params[:job_id])
     cart.add_job(job)
     session[:cart] = cart.data
@@ -11,7 +10,7 @@ class CartJobsController < ApplicationController
     if request.referrer.include?("/jobs/")
 
       flash[:notice] = "Added to Favorites"
-      redirect_to job_path(job)
+      redirect_to company_job_path(job.company, job)
     else
       # redirect_to root_path
       flash.now[:notice] = "Unable to add to Favorites"

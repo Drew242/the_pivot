@@ -2,12 +2,16 @@ require "rails_helper"
 
 RSpec.feature "User", type: :feature do
   context "as a guest" do
-    let!(:job) { Job.create!(title: "Jr Dev",
-                             description: "As a Junior dev, you will code",
-                             location: "Denver, CO") }
+
+    let!(:company) { Company.create!(name: "acme",
+                                     information: "asdf") }
+
+    let!(:job) { company.jobs.create!(title: "Job 1",
+                                      description: "Job 1 description") }
+
 
     it 'can add a job to favorites' do
-      visit job_path(job)
+      visit company_job_path(job.company, job)
 
       click_button 'Add to Favorites'
 

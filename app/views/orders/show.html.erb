@@ -10,13 +10,10 @@
     <th>Name</th>
     <th>Quantity</th>
     <th>Subtotal</th>
-    <% @order.order_items.each do |order_item| %>
+    <% @order.favorite_jobs.each do |favorite_job| %>
     <tr>
-      <td><%= link_to order_item.item.title, item_path(order_item.item.id) %></td>
-      <td><%= order_item.quantity %></td>
-      <td><%= number_to_currency order_item.sub_total %></td>
+      <td><%= link_to "favorite", company_job_path(favorite_job.company, favorite_job.id) %></td>
     </tr>
     <% end %>
   </table><br><br>
-  <h4>Total: <%= number_to_currency @order.total %></h4>
 </div>

@@ -34,7 +34,6 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
       fill_in :search_title, with: "Stop the Virus"
       fill_in :search_location, with: "Seattle, WA"
       click_button "Find Me A Job"
-      save_and_open_page
 
       expect(page).to have_content("Jobs")
       expect(page).not_to have_content("Prevent Radical-6")
