@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   def index
     @categories = Category.all
-    @jobs = Job.all
+    @jobs = Job.paginate(page: params[:page])
     if params[:search_title]
       @jobs = Job.find_by_fuzzy_title(params[:search_title])
     end
