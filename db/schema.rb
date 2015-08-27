@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827010116) do
+ActiveRecord::Schema.define(version: 20150827170833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20150827010116) do
 
   add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
 
+  create_table "applications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "status",     default: 0
+  end
+
+  add_index "applications", ["user_id"], name: "index_applications_on_user_id", using: :btree
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -42,16 +51,15 @@ ActiveRecord::Schema.define(version: 20150827010116) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "favorite_jobs", force: :cascade do |t|
-    t.integer  "quantity"
-    t.integer  "order_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "job_applications", force: :cascade do |t|
+    t.integer  "application_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "job_id"
   end
 
-  add_index "favorite_jobs", ["job_id"], name: "index_favorite_jobs_on_job_id", using: :btree
-  add_index "favorite_jobs", ["order_id"], name: "index_favorite_jobs_on_order_id", using: :btree
+  add_index "job_applications", ["application_id"], name: "index_job_applications_on_application_id", using: :btree
+  add_index "job_applications", ["job_id"], name: "index_job_applications_on_job_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
@@ -64,15 +72,6 @@ ActiveRecord::Schema.define(version: 20150827010116) do
   end
 
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
-
-  create_table "orders", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "status",     default: 0
-  end
-
-  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "sales", force: :cascade do |t|
     t.string   "name"
@@ -91,8 +90,8 @@ ActiveRecord::Schema.define(version: 20150827010116) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "favorite_jobs", "jobs"
-  add_foreign_key "favorite_jobs", "orders"
+  add_foreign_key "applications", "users"
+  add_foreign_key "job_applications", "applications"
+  add_foreign_key "job_applications", "jobs"
   add_foreign_key "jobs", "companies"
-  add_foreign_key "orders", "users"
 end

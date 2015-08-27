@@ -4,7 +4,7 @@
     <%if current_user.role == "admin" %>
       <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
     <% else %>
-      <li><%= link_to "View Past Orders", orders_path %></li>
+      <li><%= link_to "View Past Applications", applications_path %></li>
     <% end %>
   </ul>
   </div>
