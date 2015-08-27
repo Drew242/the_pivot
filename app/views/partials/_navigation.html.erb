@@ -26,7 +26,7 @@
             <% else %>
               <li class="active"><%= link_to "Logout", logout_path, method: :delete %></li>
             <% end %>
-            <li class="active"><%= link_to "View Profile", cart_path %></li>
+            <li class="active" id="profile"><%= link_to "View Profile", cart_path %></li>
             <% if !current_user %>
               <li class="active"><%= link_to "Create Account", signup_path  %></li>
             <% end %>
