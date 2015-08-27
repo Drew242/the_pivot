@@ -1,0 +1,17 @@
+<div class="container" id="OrdersPage">
+
+  <h1>Your Applications</h1>
+  <% if @applications.size > 0 %>
+    <table id="applications">
+      <tr>
+        <th>Time Placed</th>
+      </tr>
+      <% @applications.each do |application| %>
+        <tr>
+          <td><%= application.created_at.strftime("%m-%d-%Y %I:%M %p") %></td>
+          <td><%= link_to "View Application", application_path(application) %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>

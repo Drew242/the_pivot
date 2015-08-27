@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: "welcome#index"
   resources :jobs, only: [:index]
   resources :companies, only: [:index, :show]
@@ -13,20 +14,23 @@ Rails.application.routes.draw do
       post :increment, :decrement
     end
   end
+
   resources :users, except: [:show] do
     resources :addresses, only: [:new, :create, :show]
   end
+
   namespace :admin do
     get "/dashboard", to: "admin#index"
     resources :jobs
-    resources :orders, only: [:index, :show]
+    resources :applications, only: [:index, :show]
     resources :sales, only: [:index, :new, :create] do
       member do
         post :end_sale
       end
     end
   end
-  resources :orders, only: [:index, :show, :create]
+
+  resources :applications, only: [:index, :show, :create]
   get "/dashboard", to: "users#show"
   post "/dashboard", to: "addresses#create"
   get "/cart", to: "cart_jobs#index"
