@@ -13,22 +13,17 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <ul class="nav navbar-nav">
-              <li class="active"><%= link_to "Jobs", jobs_path %></li>
-            </ul>
+              <li class=""><%= link_to "Jobs", jobs_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
-              <li class="active"><%= link_to "Logged in as #{current_user.username}", dashboard_path %> </li>
-            <% end %>
-            <% if !current_user %>
-              <li class="active"><%= link_to "Login", login_path %></li>
+              <li class="" id="profile"><%= link_to "View Profile", user_path(current_user) %></li>
+              <li class="" id="favorite_jobs"><%= link_to "Favorite Jobs", cart_path %></li>
+              <li class=""><%= link_to "Logged in as #{current_user.username}", dashboard_path %> </li>
+              <li class=""><%= link_to "Logout", logout_path, method: :delete %></li>
             <% else %>
-              <li class="active"><%= link_to "Logout", logout_path, method: :delete %></li>
-            <% end %>
-            <li class="active" id="profile"><%= link_to "View Profile", cart_path %></li>
-            <% if !current_user %>
-              <li class="active"><%= link_to "Create Account", signup_path  %></li>
+              <li class=""><%= link_to "Create Account", signup_path  %></li>
+              <li class=""><%= link_to "Login", login_path %></li>
             <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
