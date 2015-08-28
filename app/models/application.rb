@@ -14,7 +14,7 @@ class Application < ActiveRecord::Base
   def create_from_cart
     if cart_data
       cart_data.each do |job_id|
-        job_applications.build(job_id: job_id.to_i, application_id: id)
+        job_applications.build(job_id: job_id.first.to_i, application_id: job_id.last)
       end
     end
   end
