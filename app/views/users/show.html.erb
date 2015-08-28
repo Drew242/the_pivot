@@ -1,10 +1,30 @@
-<div class="container" id="dashboard">
-  <h1>Welcome Back <%= @user.username.capitalize %>!</h1>
-  <ul id="admin-list">
-    <%if current_user.role == "admin" %>
-      <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
-    <% else %>
-      <li><%= link_to "View Past Applications", applications_path %></li>
-    <% end %>
-  </ul>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3" id="user_show">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-1" id="user_show">
+            <h3 class="panel-title text-center">
+              Welcome Back <%= @user.username.capitalize %>!
+            </h3>
+          </div>
+          <div class="col-md-3">
+            <%= button_to "Edit Profile", edit_user_path(@user), method: :get %>
+          </div>
+        </div>
+        <div class="panel-body">
+          <ul id="admin-list">
+            <%if current_user.role == "admin" %>
+              <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
+            <% else %>
+              <li><%= link_to "View Past Applications", applications_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
+
+
+
+

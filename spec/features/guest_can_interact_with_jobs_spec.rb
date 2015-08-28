@@ -76,7 +76,7 @@ RSpec.feature "User", type: :feature do
 
       click_button "Login"
 
-      within('#profile') { click_link "View Profile" }
+      within('#favorite_jobs') { click_link "Favorite Jobs" }
 
       expect(page).to have_content('Job 1')
       expect(page).to have_content('Job 2')

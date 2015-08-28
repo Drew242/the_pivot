@@ -10,14 +10,14 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show, :index]
   resources :cart_jobs, only: [:index, :create, :destroy] do
-    member do
-      post :increment, :decrement
-    end
+    # member do
+    #   post :increment, :decrement
+    # end
   end
 
-  resources :users, except: [:show] do
-    resources :addresses, only: [:new, :create, :show]
-  end
+  resources :users #, except: [:show] do
+  #   resources :addresses, only: [:new, :create, :show]
+  # end
 
   namespace :admin do
     get "/dashboard", to: "admin#index"
