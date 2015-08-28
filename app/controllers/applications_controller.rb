@@ -4,7 +4,7 @@ class ApplicationsController < ApplicationController
   end
 
   def show
-    @order = current_user.applications.find(params[:id])
+    @application = current_user.applications.find(params[:id])
   end
 
   def create

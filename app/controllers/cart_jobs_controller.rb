@@ -18,20 +18,6 @@ def create
     end
   end
 
-  def increment
-    job = Job.find(params[:id])
-    cart.add_job(job)
-    session[:cart] = cart.data
-    redirect_to cart_path
-  end
-
-  def decrement
-    job = job.find(params[:id])
-    cart.decrease_job(job)
-    session[:cart] = cart.data
-    redirect_to cart_path
-  end
-
   def destroy
     @job = Job.find(params[:id])
     cart.remove_job(@job)
