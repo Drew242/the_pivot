@@ -10,7 +10,6 @@ class Job < ActiveRecord::Base
   fuzzily_searchable :title
   fuzzily_searchable :location
 
-  validates_uniqueness_of :title
   scope :top, -> { all.limit(10) }
 
   # def self.random_items
