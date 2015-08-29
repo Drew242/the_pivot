@@ -9,7 +9,7 @@
       <% @applications.each do |application| %>
         <tr>
           <td><%= application.created_at.strftime("%m-%d-%Y %I:%M %p") %></td>
-          <td><%= link_to "View Application", application_path(application) %></td>
+          <td><%= link_to "View Application History", application_path(application) %></td>
         </tr>
       <% end %>
     </table>
