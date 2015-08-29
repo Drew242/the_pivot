@@ -17,7 +17,7 @@
             <%if current_user.role == "admin" %>
               <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
             <% else %>
-              <li><%= link_to "View Past Applications", applications_path %></li>
+              <li><%= link_to "Application History", applications_path %></li>
             <% end %>
           </ul>
         </div>

@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   end
 
   resources :applications, only: [:index, :show, :create]
+
   get "/dashboard", to: "users#show"
   post "/dashboard", to: "addresses#create"
   get "/cart", to: "cart_jobs#index"

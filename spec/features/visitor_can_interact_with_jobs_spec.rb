@@ -28,7 +28,8 @@ RSpec.feature "User", type: :feature do
       visit company_job_path(job2.company, job2)
       click_button 'Add to Favorites'
 
-      visit cart_path
+      visit root_path
+      click_link "Favorite Jobs"
 
       expect(page).to have_content('Job 1')
       expect(page).to have_content('Job 2')

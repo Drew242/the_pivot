@@ -1,21 +1,35 @@
-<div class="container">
-  <h1>Application: <%= @application.id %></h1>
-  <h4>Application Status: <%= @application.status.capitalize %></h4>
-  <h5>Applied on: <%= @application.created_at.strftime("%m-%d-%Y %I:%M %p") %></h5>
-  <br><br>
-  <% if @application.status == "completed" || @application.status == "cancelled" %>
-    <h5>Your applications were <%= @application.status %> on <%= @application.updated_at.strftime("%m-%d-%Y %I:%M %p") %></h5>
-  <% end %>
-  <table id="CartTable">
-    <th>Name</th>
-    <th>Quantity</th>
-    <th>Subtotal</th>
-    <% current_user.applications.each do |job_application| %>
-      <tr>
-        <% job_application.jobs.each do |job| %>
-          <td><%= link_to job.title, company_job_path(job_application, job_application.id) %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </table><br><br>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2" id="view-application">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Applied on: <%= @application.created_at.strftime("%m-%d-%Y %I:%M %p") %></h5>
+          </div>
+          <div class="col-md-6">
+            <h5>Status: <%= @application.status.capitalize %></h4>
+          </div>
+        </div>
+        <table id="user-applications">
+          <tr>
+            <th>Title</th>
+            <th>Location</th>
+          </tr>
+          <% @application.jobs.each do |job| %>
+            <tr>
+              <td>
+                <%= link_to job.title, company_job_path(job.company.id, job.id), id: job.title %>
+              </td>
+              <td>
+                <%= job.location %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+</div>
+
