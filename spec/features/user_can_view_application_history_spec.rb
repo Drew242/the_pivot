@@ -26,24 +26,35 @@ RSpec.feature "User", type: :feature do
       click_button "Login"
     end
 
-    it "can view their application history" do
+    it "is redirected to the application history page when applying for jobs" do
 
       click_link "Favorite Jobs"
       click_button "Apply to Jobs"
 
       expect(current_path).to eq(applications_path)
 
-      click_link "View Application History"
+      click_link "View"
 
       expect(page).to have_content('Job1')
       expect(page).to have_content('Job2')
+    end
+
+    it "can view their past applications" do
+
+      click_link "Favorite Jobs"
+      click_button "Apply to Jobs"
+
+      click_link "View Profile"
+      click_link "View Past Applications"
+
+      expect(page).to have_content('Your Previous Applications')
     end
 
     it "can visit the jobs show page from application history" do
 
       click_link "Favorite Jobs"
       click_button "Apply to Jobs"
-      click_link "View Application History"
+      click_link "View"
 
       expect(page).to have_link('Job1')
       expect(page).to have_link('Job2')
@@ -54,10 +65,9 @@ RSpec.feature "User", type: :feature do
 
       click_link "View Profile"
       click_link "View Past Applications"
-      click_link "View Application History"
-      save_and_open_page
+      click_link "View"
 
-      click_link "job2"
+      click_link "Job2"
 
       expect(page).to have_content('Job 2 description')
     end
