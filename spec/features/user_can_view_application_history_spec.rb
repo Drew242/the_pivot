@@ -3,9 +3,9 @@ RSpec.feature "User", type: :feature do
   let!(:company) { Company.create!(name: "acme",
                                    information: "asdf") }
 
-  let!(:job) { company.jobs.create!(title: "Job 1",
+  let!(:job) { company.jobs.create!(title: "Job1",
                                     description: "Job 1 description") }
-  let!(:job2) { company.jobs.create!(title: "Job 2",
+  let!(:job2) { company.jobs.create!(title: "Job2",
                                      description: "Job 2 description") }
 
   before do
@@ -15,7 +15,7 @@ RSpec.feature "User", type: :feature do
     click_button 'Add to Favorites'
   end
 
-  context "that is logged in as a registerd user"  do
+  context "that is logged in as a registered user"  do
     let!(:user) { User.create!(username: 'user', password: 'password') }
 
     before do
@@ -35,8 +35,8 @@ RSpec.feature "User", type: :feature do
 
       click_link "View Application History"
 
-      expect(page).to have_content('Job 1')
-      expect(page).to have_content('Job 2')
+      expect(page).to have_content('Job1')
+      expect(page).to have_content('Job2')
     end
 
     it "can visit the jobs show page from application history" do
@@ -45,18 +45,17 @@ RSpec.feature "User", type: :feature do
       click_button "Apply to Jobs"
       click_link "View Application History"
 
-      expect(page).to have_link('Job 1')
-      expect(page).to have_link('Job 2')
+      expect(page).to have_link('Job1')
+      expect(page).to have_link('Job2')
 
-      click_link "Job 1"
+      click_link "Job1"
 
       expect(page).to have_content('Job 1 description')
 
       click_link "View Profile"
       click_link "View Past Applications"
       click_link "View Application History"
-
-      click_link "job 2"
+      click_link "job2"
 
       expect(page).to have_content('Job 2 description')
     end
