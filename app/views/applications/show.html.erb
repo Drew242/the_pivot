@@ -8,19 +8,16 @@
             <h5>Application Status: <%= @application.status.capitalize %></h4>
             <h5>Applied on: <%= @application.created_at.strftime("%m-%d-%Y %I:%M %p") %></h5>
 
-            <table id="CartTable">
+            <table id="user-applications">
               <tr>
                 <th>Job Title</th>
               </tr>
-              <% current_user.applications.each do |job_application| %>
-
+              <% @application.jobs.each do |job| %>
                 <tr>
-                  <% job_application.jobs.each do |job| %>
                     <tr>
                       <td><%= link_to job.title, company_job_path(job.company.id, job.id) %></td>
                     </tr>
                 </tr>
-              <% end %>
             <% end %>
             </table>
           </div>

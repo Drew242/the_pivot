@@ -55,6 +55,8 @@ RSpec.feature "User", type: :feature do
       click_link "View Profile"
       click_link "View Past Applications"
       click_link "View Application History"
+      save_and_open_page
+
       click_link "job2"
 
       expect(page).to have_content('Job 2 description')
