@@ -45,7 +45,7 @@ RSpec.feature "User", type: :feature do
       click_button "Apply to Jobs"
 
       click_link "View Profile"
-      click_link "View Past Applications"
+      click_link "Application History"
 
       expect(page).to have_content('Your Previous Applications')
     end
@@ -64,7 +64,7 @@ RSpec.feature "User", type: :feature do
       expect(page).to have_content('Job 1 description')
 
       click_link "View Profile"
-      click_link "View Past Applications"
+      click_link "Application History"
       click_link "View"
 
       click_link "Job2"
