@@ -31,7 +31,7 @@ RSpec.feature "User", type: :feature do
     end
   end
 
-  context "that is logged in as a registerd user"  do
+  context "that is logged in as a registered user"  do
     let!(:user) { User.create!(username: 'user', password: 'password') }
 
     before do
