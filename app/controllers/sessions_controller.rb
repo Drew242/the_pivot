@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         redirect_to dashboard_path
       end
     else
-      flash.now[:error] = "Invalid username or password"
+      flash.now[:danger] = "Invalid username or password"
       render :new
     end
   end
