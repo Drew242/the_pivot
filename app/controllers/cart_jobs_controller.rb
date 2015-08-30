@@ -9,11 +9,11 @@ def create
 
     if request.referrer.include?("/jobs/")
 
-      flash[:notice] = "Added to Favorites"
+      flash[:sucess] = "Added to Favorites"
       redirect_to company_job_path(job.company, job)
     else
       # redirect_to root_path
-      flash.now[:notice] = "Unable to add to Favorites"
+      flash.now[:danger] = "Unable to add to Favorites"
       render :back
     end
   end
@@ -22,7 +22,7 @@ def create
     @job = Job.find(params[:id])
     cart.remove_job(@job)
     session[:cart] = cart.data
-    flash[:notice] = render_to_string partial: "flash"
+    flash[:info] = render_to_string partial: "flash"
     redirect_to cart_path
   end
 end

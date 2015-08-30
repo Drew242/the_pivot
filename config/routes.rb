@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
   resources :jobs, only: [:index]
-  resources :companies, only: [:index, :show]
+  resources :companies, only: [:index, :show, :new, :create]
 
   namespace :companies, path: ':company', as: :company do
     resources :jobs, only: [:index, :show]
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   resources :users #, except: [:show] do
   #   resources :addresses, only: [:new, :create, :show]
   # end
-
   namespace :admin do
     get "/dashboard", to: "admin#index"
     resources :jobs
