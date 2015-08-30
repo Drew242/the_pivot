@@ -16,7 +16,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     if current_user.company.nil? && @company.save
       current_user.company = @company
-      current_user.role = 1
+      current_user.roles << Role.find_by(name: "company_admin")
       flash[:success] = "#{@company.name} has been created"
       redirect_to root_path
     else
