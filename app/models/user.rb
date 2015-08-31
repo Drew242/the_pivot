@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   has_many :applications
   has_many :user_roles
   has_many :roles, through: :user_roles
@@ -14,6 +15,7 @@ class User < ActiveRecord::Base
     "dashboard"
   end
 
+<<<<<<< HEAD
   def registered_user?
     roles.exists?(name: 'registered_user')
   end
@@ -25,4 +27,7 @@ class User < ActiveRecord::Base
   def platform_admin?
     roles.exists?(name: 'platform_admin')
   end
+=======
+  mount_uploader :resume, ResumeUploader
+>>>>>>> master
 end

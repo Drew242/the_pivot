@@ -38,7 +38,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-
   end
 
 
@@ -46,7 +45,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :password, :name, :street_address,
-                                :city, :state, :zipcode)
+                                :city, :state, :zipcode, :email, :resume)
   end
-
 end
