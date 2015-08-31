@@ -25,11 +25,11 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  def current_admin?
-    current_user && current_user.admin?
+  def company_admin?
+    current_user && current_user.company_admin?
   end
 
-  helper_method :current_admin?
+  helper_method :company_admin?
 
   def render_not_found
     render "/public/404", status: 404

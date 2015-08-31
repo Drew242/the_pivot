@@ -18,16 +18,16 @@ Rails.application.routes.draw do
   resources :users #, except: [:show] do
   #   resources :addresses, only: [:new, :create, :show]
   # end
-  namespace :admin do
-    get "/dashboard", to: "admin#index"
-    resources :companies, path: ':company', as: :company, except: [:index] do
-      resources :jobs, only: [:index, :show]
-    end
-    resources :applications, only: [:index, :show]
-    resources :sales, only: [:index, :new, :create] do
-      member do
-        post :end_sale
-      end
+  resources :companies do
+    namespace :admin do
+      get "/dashboard", to: "admin#index"
+      resources :jobs
+      resources :applications, only: [:index, :show]
+      # resources :sales, only: [:index, :new, :create] do
+        # member do
+        #   post :end_sale
+        # end
+      # end
     end
   end
 
