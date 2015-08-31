@@ -5,6 +5,7 @@ RSpec.feature "AdminCanSeeDashBoard", type: :feature do
       admin = User.create(username: "admin",
                           password: "password",
                           role: 1)
+      admin.roles << Role.find_by(name: "company_admin")
       ApplicationController.any_instance.stubs(:current_user).returns(admin)
       visit admin_dashboard_path
 
