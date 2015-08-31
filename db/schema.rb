@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830201444) do
+ActiveRecord::Schema.define(version: 20150830213328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,10 @@ ActiveRecord::Schema.define(version: 20150830201444) do
     t.string   "information"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "job_applications", force: :cascade do |t|
     t.integer  "application_id"
@@ -73,6 +76,12 @@ ActiveRecord::Schema.define(version: 20150830201444) do
 
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
 
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sales", force: :cascade do |t|
     t.string   "name"
     t.integer  "discount"
@@ -92,6 +101,16 @@ ActiveRecord::Schema.define(version: 20150830201444) do
   add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match", using: :btree
   add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner", using: :btree
 
+  create_table "user_roles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
+  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
@@ -109,7 +128,10 @@ ActiveRecord::Schema.define(version: 20150830201444) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "applications", "users"
+  add_foreign_key "companies", "users"
   add_foreign_key "job_applications", "applications"
   add_foreign_key "job_applications", "jobs"
   add_foreign_key "jobs", "companies"
+  add_foreign_key "user_roles", "roles"
+  add_foreign_key "user_roles", "users"
 end

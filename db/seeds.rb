@@ -9,6 +9,10 @@ Category.create(name: "Web Development")
 Category.create(name: "Database")
 Category.create(name: "Graphic Design")
 
+Role.create(name: "registered_user")
+Role.create(name: "company_admin")
+Role.create(name: "platform_admin")
+
 50.times do  |n|
   name = Faker::Company.name
   information = Faker::Lorem.paragraphs(2)
