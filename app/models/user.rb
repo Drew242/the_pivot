@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   has_many :applications
   has_secure_password
   validates_presence_of :username, :password
@@ -11,4 +12,5 @@ class User < ActiveRecord::Base
     "dashboard"
   end
 
+  mount_uploader :resume, ResumeUploader
 end
