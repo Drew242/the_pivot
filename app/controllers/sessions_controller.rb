@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
 
       if @user.company_admin?
-        redirect_to company_path(@user.company)
+        redirect_to admin_company_path(@user.company.name, @user.company)
       else
         redirect_to dashboard_path
       end

@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   # end
   namespace :admin do
     get "/dashboard", to: "admin#index"
-    resources :jobs
+    resources :companies, path: ':company', as: :company, except: [:index] do
+      resources :jobs, only: [:index, :show]
+    end
     resources :applications, only: [:index, :show]
     resources :sales, only: [:index, :new, :create] do
       member do
