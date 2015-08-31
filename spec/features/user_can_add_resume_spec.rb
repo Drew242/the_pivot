@@ -16,8 +16,7 @@ RSpec.feature "User", type: :feature do
 
     it "can upload a resume" do
       click_button "Edit Profile"
-      click_button "Upload File"
-
+      within("#resume") { click_button "Choose File" }
     end
   end
 end
