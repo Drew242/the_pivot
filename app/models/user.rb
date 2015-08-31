@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
     "dashboard"
   end
 
-<<<<<<< HEAD
   def registered_user?
     roles.exists?(name: 'registered_user')
   end
@@ -27,7 +26,6 @@ class User < ActiveRecord::Base
   def platform_admin?
     roles.exists?(name: 'platform_admin')
   end
-=======
+
   mount_uploader :resume, ResumeUploader
->>>>>>> master
 end

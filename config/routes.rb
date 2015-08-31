@@ -18,18 +18,20 @@ Rails.application.routes.draw do
   resources :users #, except: [:show] do
   #   resources :addresses, only: [:new, :create, :show]
   # end
-  resources :companies do
-    namespace :admin do
-      get "/dashboard", to: "admin#index"
-      resources :jobs
-      resources :applications, only: [:index, :show]
-      # resources :sales, only: [:index, :new, :create] do
+    namespace :companies do
+      namespace :admin do
+        get "/dashboard", to: "admin#index"
+        resources :jobs
+        resources :applications, only: [:index, :show]
+        resources :companies 
+        # resources :sales, only: [:index, :new, :create] do
         # member do
         #   post :end_sale
         # end
-      # end
+        # end
+      end
     end
-  end
+
 
   resources :applications, only: [:index, :show, :create]
 
