@@ -5,10 +5,13 @@ class UsersController < ApplicationController
   end
 
   def create
+
     @user = User.new(user_params)
+
     if @user.save
       session[:user_id] = @user.id
       @user.roles << Role.find_by(name: "registered_user")
+
       if @user.roles.include?("registered_user")
         redirect_to root_path
       elsif @user.roles.include?("company_admin")
@@ -40,11 +43,10 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
 
   def user_params
     params.require(:user).permit(:username, :password, :name, :street_address,
-                                :city, :state, :zipcode, :email, :resume)
+                                 :city, :state, :zipcode, :email, :resume)
   end
 end

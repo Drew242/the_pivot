@@ -18,7 +18,8 @@ class CompaniesController < ApplicationController
       current_user.company = @company
       current_user.roles << Role.find_by(name: "company_admin")
       flash[:success] = "#{@company.name} has been created"
-      redirect_to root_path
+      redirect_to companies_admin_company_path(@company)
+      # redirect_to root_path
     else
       flash.now[:danger] = "There was a problem creating #{@company.name}, you may only have one company."
       render :new

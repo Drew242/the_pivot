@@ -21,9 +21,10 @@ Rails.application.routes.draw do
     namespace :companies do
       namespace :admin do
         get "/dashboard", to: "admin#index"
+        get "/:company/:job/toggle_status", to: "jobs#status"
         resources :jobs
         resources :applications, only: [:index, :show]
-        resources :companies 
+        resources :companies
         # resources :sales, only: [:index, :new, :create] do
         # member do
         #   post :end_sale
