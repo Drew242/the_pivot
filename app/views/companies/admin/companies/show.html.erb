@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="text-center col-md-12">
+    <h1 id="title"> "<%= @company.name %>" Details</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Company Information</h3>
+    <%= @company.information %></br>
+  </div>
+
+  <div class="col-md-8">
+    <h3>Jobs with <%= @company.name %></h3>
+    <%= link_to "Create Job", new_companies_admin_job_path %>
+    <table class='table table-bordered table-hover'>
+      <tr>
+        <th>Job Status</th>
+        <th>Job Title</th>
+        <th>Description</th>
+        <th>Posted</th>
+        <th>Location</th>
+      </tr>
+      <% if @company.jobs %>
+        <% @company.jobs.each do |job| %>
+          <tr>
+            <td id="<%= job.title %>"><%= link_to job.status, companies_admin_path(job.company, job) %></td>
+            <td><%= link_to job.title, companies_admin_job_path(job) %></td>
+            <td><%= job.description %></td>
+            <td><%= job.created_at %></td>
+            <td><%= job.location %></td>
+            <td><%= link_to "Edit", edit_companies_admin_job_path(job) %></td>
+            <td><%= button_to "Delete", companies_admin_job_path(job),
+              method: :delete, data: { confirm: "Are you sure?" } %></td>
+            <!-- <td><%= link_to "Delete", companies_admin_job_path(job), method: :delete %></td> -->
+          </tr>
+        <% end %>
+      <% end %>
+  </div>
+</div>

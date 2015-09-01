@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="text-center col-md-12">
+      <h1 id="title"> "<%= @company.name %>" Details</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Company Information</h3>
+      <%= @company.information %></br>
+    </div>
+    <div class="col-md-8">
+      <h3>Jobs with <%= @company.name %></h3>
+      <table class='table table-bordered table-hover'>
+      <tr>
+        <th>Job Title</th>
+        <th>Description</th>
+        <th>Posted</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <% if @company.jobs %>
+        <% @company.jobs.each do |job| %>
+        <td><%= link_to job.title, company_job_path(job.company, job) %></td>
+        <td><%= job.description %></td>
+        <td><%= job.created_at %></td>
+        <td><%= job.location %></td>
+      </tr>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

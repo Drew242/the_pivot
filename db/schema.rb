@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829174227) do
+ActiveRecord::Schema.define(version: 20150901203448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_trgm"
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "user_id"
@@ -49,7 +50,10 @@ ActiveRecord::Schema.define(version: 20150829174227) do
     t.string   "information"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "job_applications", force: :cascade do |t|
     t.integer  "application_id"
@@ -64,14 +68,21 @@ ActiveRecord::Schema.define(version: 20150829174227) do
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "category_id"
     t.string   "location"
     t.integer  "company_id"
+    t.integer  "status",      default: 0
   end
 
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sales", force: :cascade do |t|
     t.string   "name"
@@ -81,16 +92,15 @@ ActiveRecord::Schema.define(version: 20150829174227) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "trigrams", force: :cascade do |t|
-    t.string  "trigram",     limit: 3
-    t.integer "score",       limit: 2
-    t.integer "owner_id"
-    t.string  "owner_type"
-    t.string  "fuzzy_field"
+  create_table "user_roles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match", using: :btree
-  add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner", using: :btree
+  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
+  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -104,11 +114,15 @@ ActiveRecord::Schema.define(version: 20150829174227) do
     t.string   "state"
     t.string   "zipcode"
     t.string   "email"
+    t.string   "resume"
   end
 
   add_foreign_key "addresses", "users"
   add_foreign_key "applications", "users"
+  add_foreign_key "companies", "users"
   add_foreign_key "job_applications", "applications"
   add_foreign_key "job_applications", "jobs"
   add_foreign_key "jobs", "companies"
+  add_foreign_key "user_roles", "roles"
+  add_foreign_key "user_roles", "users"
 end

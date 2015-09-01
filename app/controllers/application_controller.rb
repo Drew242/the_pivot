@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  protected
+  before_action :authorize!
 
   def cart
     @cart ||= Cart.new(session[:cart])
@@ -15,13 +15,21 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  helper_method :current_user
-
-  def current_admin?
-    current_user && current_user.admin?
+  def current_permission
+    @current_permission ||= PermissionService.new(current_user)
   end
 
-  helper_method :current_admin?
+  def authorize!
+    redirect_to root_url, danger: "You don't know me." unless authorized?
+  end
+
+  helper_method :current_user
+
+  def company_admin?
+    current_user && current_user.company_admin?
+  end
+
+  helper_method :company_admin?
 
   def render_not_found
     render "/public/404", status: 404
@@ -29,5 +37,9 @@ class ApplicationController < ActionController::Base
 
   def current_company
     @current_company ||= Company.find(params[:id]) if params[:company]
+  end
+
+  def authorized?
+    current_permission.allow?(params[:controller], params[:action])
   end
 end

@@ -2,12 +2,13 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   context "with valid params" do
     let!(:user) { User.create!(valid_params) }
+
     it "creates a user with valid params" do
       expect(user).to be_valid
     end
 
-    it "has a default role" do
-      expect(user.role).to eq("default")
+    it "doesn't have a default role" do
+      expect(user.roles).to eq([])
     end
   end
 

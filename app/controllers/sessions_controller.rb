@@ -8,13 +8,13 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
 
-      if @user.role == "admin"
-        redirect_to admin_dashboard_path
+      if @user.company_admin?
+        redirect_to companies_admin_company_path(@user.company.id)
       else
         redirect_to dashboard_path
       end
     else
-      flash.now[:error] = "Invalid username or password"
+      flash.now[:danger] = "Invalid username or password"
       render :new
     end
   end
