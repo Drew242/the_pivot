@@ -9,9 +9,17 @@ Category.create(name: "Web Development")
 Category.create(name: "Database")
 Category.create(name: "Graphic Design")
 
-Role.create(name: "registered_user")
-Role.create(name: "company_admin")
-Role.create(name: "platform_admin")
+# user_auth     = Role.create(name: "registered_user")
+# company_auth  = Role.create(name: "company_admin")
+# platform_auth = Role.create(name: "platform_admin")
+#
+# registered_user  = User.create(username: "josh@turing.io", password: "password")
+# company_admin    = User.create(username: "andrew@turing.io", password: "password")
+# platform_admin   = User.create(username: "jorge@turing.io", password: "password")
+#
+# registered_user.roles << user_auth
+# company_admin.roles   << company_auth
+# platform_admin.roles  << platform_auth
 
 50.times do  |n|
   name = Faker::Company.name
