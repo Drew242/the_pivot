@@ -7,9 +7,6 @@ class Job < ActiveRecord::Base
   validates  :title, presence: true
   validates  :description, presence: true
 
-  fuzzily_searchable :title
-  fuzzily_searchable :location
-
   # scope :top, -> { all.limit(10) }
 
   enum status: %w(active inactive)

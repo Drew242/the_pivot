@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
   post "/dashboard", to: "addresses#create"
   get "/cart", to: "cart_jobs#index"
+  get "/search", to: "search#index"
   get "/signup", to: "users#new"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

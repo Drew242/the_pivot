@@ -29,6 +29,26 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
       expect(page).to have_content("Seattle, WA")
     end
 
+    it "can search for a job given only a title" do
+      visit root_path
+      fill_in :search_title, with: "Stop the Virus"
+      click_button "Find Me A Job"
+
+      expect(page).to have_content("Jobs")
+      expect(page).to have_content("Stop the Virus")
+      expect(page).not_to have_content("Prevent Radical-6")
+    end
+
+    it "can search for a job given only a location" do
+      visit root_path
+      fill_in :search_location, with: "Seattle, WA"
+      click_button "Find Me A Job"
+
+      expect(page).to have_content("Jobs")
+      expect(page).to have_content("Stop the Virus")
+      expect(page).not_to have_content("Prevent Radical-6")
+    end
+
     it "does not return jobs not matching the criteria" do
       visit root_path
       fill_in :search_title, with: "Stop the Virus"
@@ -38,6 +58,40 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
       expect(page).to have_content("Jobs")
       expect(page).not_to have_content("Prevent Radical-6")
       expect(page).not_to have_content("Reno, NV")
+    end
+
+    it "will return results based on an inexact match" do
+      visit root_path
+      fill_in :search_title, with: "Virus"
+      fill_in :search_location, with: "Seattle"
+      click_button "Find Me A Job"
+
+      expect(page).to have_content("Jobs")
+      expect(page).to have_content("Stop the Virus")
+      expect(page).to have_content("Crash Keys")
+      expect(page).to have_content("Seattle, WA")
+    end
+
+    it "will return results based on an inexact title only" do
+      visit root_path
+      fill_in :search_title, with: "Virus"
+      click_button "Find Me A Job"
+
+      expect(page).to have_content("Jobs")
+      expect(page).to have_content("Stop the Virus")
+      expect(page).to have_content("Crash Keys")
+      expect(page).to have_content("Seattle, WA")
+    end
+
+    it "will return results based on an inexact location only" do
+      visit root_path
+      fill_in :search_location, with: "Seattle"
+      click_button "Find Me A Job"
+
+      expect(page).to have_content("Jobs")
+      expect(page).to have_content("Stop the Virus")
+      expect(page).to have_content("Crash Keys")
+      expect(page).to have_content("Seattle, WA")
     end
   end
 end
