@@ -1,7 +1,8 @@
 class JobsController < ApplicationController
   def index
     @categories = Category.all
-    @jobs = Job.paginate(page: params[:page])
+    @jobs = Job.where(status: 'active')
+    # @jobs = Job.paginate(page: params[:page])
     if params[:search_title]
       @jobs = Job.where(id: Job.find_by_fuzzy_title(params[:search_title]).map(&:id)).paginate(page: params[:page])
     end

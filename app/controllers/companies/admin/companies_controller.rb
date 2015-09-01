@@ -30,5 +30,4 @@ class Companies::Admin::CompaniesController < Admin::BaseController
   def company_params
     params.require(:company).permit(:name, :information)
   end
-
 end
