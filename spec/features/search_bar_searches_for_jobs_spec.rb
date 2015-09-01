@@ -16,6 +16,16 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
                                  description: "Please infiltrate the Mars Mission Test Site.",
                                  location: "Reno, NV")
     end
+    let!(:same_title) do
+      company.jobs << Job.create(title: "Stop the Virus",
+                                 description: "One of our computer systems has become infected.",
+                                 location: "Philadelphia, PA")
+    end
+    let!(:same_location) do
+      company.jobs << Job.create(title: "AI Coordinator",
+                                 description: "Monitor our developing AI. Requires quantum computing experience.",
+                                 location: "Seattle, WA")
+    end
 
     it "can search for a job given criteria" do
       visit root_path
@@ -27,6 +37,16 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
       expect(page).to have_content("Stop the Virus")
       expect(page).to have_content("Crash Keys")
       expect(page).to have_content("Seattle, WA")
+    end
+
+    it "searches using the intersection" do
+      visit root_path
+      fill_in :search_title, with: "Stop the Virus"
+      fill_in :search_location, with: "Seattle, WA"
+      click_button "Find Me A Job"
+
+      expect(page).not_to have_content("Philadelphia, PA")
+      expect(page).not_to have_content("AI Coordinator")
     end
 
     it "can search for a job given only a title" do
