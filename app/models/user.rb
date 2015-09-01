@@ -5,9 +5,11 @@ class User < ActiveRecord::Base
   has_many :roles, through: :user_roles
   has_one  :company
   has_secure_password
-  validates_presence_of :username, :password
+  validates_presence_of :username
+  validates_presence_of :password, :unless => lambda{ |user| user.password.blank? }
   validates_uniqueness_of :username
   has_one :address
+  validates_confirmation_of :password
 
   enum role: %w(default admin)
 
