@@ -29,6 +29,7 @@
             <td><%= job.description %></td>
             <td><%= job.created_at %></td>
             <td><%= job.location %></td>
+            <td><%= link_to "Edit", edit_companies_admin_job_path(job) %></td>
           </tr>
         <% end %>
       <% end %>
