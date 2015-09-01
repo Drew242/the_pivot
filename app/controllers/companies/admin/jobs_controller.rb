@@ -44,6 +44,13 @@ class Companies::Admin::JobsController < Admin::BaseController
     end
   end
 
+  def destroy
+    @company = Company.find_by(user_id: current_user.id)
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to companies_admin_company_path(@company)
+  end
+
   def status
     @company = Company.find_by(user_id: current_user.id)
     @job = @company.jobs.find(params[:job])
@@ -54,6 +61,7 @@ class Companies::Admin::JobsController < Admin::BaseController
     end
     redirect_to companies_admin_company_path(@company)
   end
+
 
   private
 

@@ -30,6 +30,9 @@
             <td><%= job.created_at %></td>
             <td><%= job.location %></td>
             <td><%= link_to "Edit", edit_companies_admin_job_path(job) %></td>
+            <td><%= button_to "Delete", companies_admin_job_path(job),
+              method: :delete, data: { confirm: "Are you sure?" } %></td>
+            <!-- <td><%= link_to "Delete", companies_admin_job_path(job), method: :delete %></td> -->
           </tr>
         <% end %>
       <% end %>

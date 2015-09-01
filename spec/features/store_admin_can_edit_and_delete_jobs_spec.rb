@@ -75,7 +75,7 @@ RSpec.feature "Store Admin", type: :feature do
 
     expect(current_path).to eq(companies_admin_company_path(user.company.id))
 
-    click_link 'Delete'
+    click_button 'Delete'
 
     expect(page).to_not have_content('dev')
     expect(page).to_not have_content('dev description')

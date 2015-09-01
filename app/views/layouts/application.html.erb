@@ -3,6 +3,7 @@
 
   <head>
     <title>TechnicallyEmployed</title>
+    <%= javascript_include_tag :defaults %>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -21,7 +22,7 @@
       </div>
 
       <%= yield %>
-      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%# <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     </div>
   </body>
 </html>
