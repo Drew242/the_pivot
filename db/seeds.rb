@@ -25,9 +25,11 @@ company_admin.company = Company.create(name: "Carmer's Cupcakery",
 information: Faker::Lorem.paragraphs(2))
 
 50.times do |n|
-  company_admin.company.jobs.create(title: Faker::Hacker.adjective,
-  description: Faker::Lorem.paragraphs(3),
-  location: Faker::Address.city)
+  jobs          = Job.create(title: Faker::Hacker.adjective,
+                             description: Faker::Lorem.paragraphs(3),
+                             location: Faker::Address.city)
+  jobs.category = Category.find(rand(1..Category.count))
+  company_admin.company.jobs << jobs
 end
 
 10.times do |n|
@@ -36,16 +38,21 @@ end
   information    = Faker::Lorem.paragraphs(2)
   user = User.create!(username: "username#{n}", password: "password")
   user.company = Company.create!(name: name, information: information)
-    50.times do |n|
-      title          = Faker::Hacker.adjective
-      description    = Faker::Lorem.paragraphs(3)
-      created_at     = Faker::Time.between(2.days.ago, Time.now)
-      location       = Faker::Address.city
-      user.company.jobs.create(title: title,
-                               description: description,
-                               location: location,
-                               created_at: created_at)
-    end
+  50.times do |n|
+    title          = Faker::Hacker.adjective
+    description    = Faker::Lorem.paragraphs(3)
+    created_at     = Faker::Time.between(2.days.ago, Time.now)
+    location       = Faker::Address.city
+    job            = Job.create!(
+                       title:       title,
+                       description: description,
+                       location:    location,
+                       created_at:  created_at,
+                       )
+    job.category   = Category.find(rand(1..Category.count))
+
+    user.company.jobs << job
+  end
 end
 
 Job.bulk_update_fuzzy_title
