@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       @user.roles << Role.find_by(name: "registered_user")
 
       if @user.roles.include?("registered_user")
+        NotificationsMailer.contact(email_params).deliver_now
         redirect_to root_path
       elsif @user.roles.include?("company_admin")
         redirect_to dashboard_path
@@ -48,5 +49,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :password, :name, :street_address,
                                  :city, :state, :zipcode, :email, :resume)
+  end
+
+  def email_params
+    params.permit(:username, :message)
   end
 end

@@ -17,6 +17,17 @@ Bundler.require(*Rails.groups)
 
 module JurassicParka
   class Application < Rails::Application
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.madrillapp.com',
+      port:                 '587',
+      domain:               'emailery.com',
+      user_name:            'atconly@gmail.com',
+      password:             'bf0fChtgZHc40dOJzJ77cQ',
+      authentication:       'plain',
+      enable_starttls_auto: true
+    }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
