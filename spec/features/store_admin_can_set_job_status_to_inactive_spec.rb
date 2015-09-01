@@ -35,11 +35,35 @@ RSpec.feature "Store Admin", type: :feature do
     click_button "Submit"
 
     expect(current_path).to eq(companies_admin_company_path(user.company.id))
+
+    click_link 'Create Job'
+
+    expect(current_path).to eq(new_companies_admin_job_path)
+
+    fill_in "Title", with: "admin"
+    fill_in "Description", with: "admin description"
+    fill_in "Location", with: "Denver"
+
+    click_button "Submit"
+
     expect(page).to have_content('dev')
+    expect(page).to have_content('admin')
+    expect(page).to have_content('active')
     expect(page).to have_content('active')
 
-    click_link "active"
+    within("#dev") { click_link "active" }
 
     expect(page).to have_content('inactive')
+
+    click_link "Jobs"
+
+    expect(page).to_not have_content('dev')
+    expect(page).to have_content('admin')
+
+    click_link "Jobs"
+    click_link "acme"
+
+    expect(page).to_not have_content('dev')
+    expect(page).to have_content('admin')
   end
 end

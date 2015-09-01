@@ -24,7 +24,7 @@
       <% if @company.jobs %>
         <% @company.jobs.each do |job| %>
           <tr>
-            <td><%= link_to job.status, companies_admin_path(job.company, job) %></td>
+            <td id="<%= job.title %>"><%= link_to job.status, companies_admin_path(job.company, job) %></td>
             <td><%= link_to job.title, companies_admin_job_path(job) %></td>
             <td><%= job.description %></td>
             <td><%= job.created_at %></td>
