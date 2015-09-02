@@ -1,5 +1,19 @@
-<div class="container">
-  <h1><%=@category.name.capitalize%></h1>
-
-  <%= render partial: "items/show_items", locals: {items: @items} %>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1" id="categories">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-6 panel-title text-left">
+            <h3>Current Job Offerings</h3>
+          </div>
+          <div class="col-md-6 panel-title text-right">
+            <h3> <%= render partial: "categories/categories" %> </h3>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <%= render partial: "jobs/show_jobs", locals: {jobs: @jobs} %>
+      </div>
+    </div>
+  </div>
 </div>

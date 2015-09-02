@@ -9,5 +9,4 @@ class Category < ActiveRecord::Base
   def to_param
     name.downcase.gsub(" ", "_")
   end
-
 end

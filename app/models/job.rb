@@ -3,11 +3,8 @@ class Job < ActiveRecord::Base
   belongs_to :company
   has_many   :job_applications
   has_many   :applications, through: :job_applications
-  belongs_to :sale
   validates  :title, presence: true
   validates  :description, presence: true
-
-  # scope :top, -> { all.limit(10) }
 
   enum status: %w(active inactive)
 end

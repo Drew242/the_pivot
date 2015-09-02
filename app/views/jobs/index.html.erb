@@ -1,20 +1,22 @@
 <div class="row">
-  <div class="col-md-12">
-
-    <div class="btn-group">
-      <button type="button" class="btn btn-info">Categories</button>
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <ul class="dropdown-menu">
-        <% @categories.each do |category| %>
-          <li><%= link_to category.name.capitalize, category_path(category)%></li>
-          <li role="separator" class="divider"></li>
-        <% end %>
-      </ul>
+  <div class="col-md-10 col-md-offset-1" id="categories">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-6 panel-title text-left">
+            <h3>Current Job Offerings</h3>
+          </div>
+          <div class="col-md-6 panel-title text-right">
+            <h3> <%= render partial: "categories/categories" %> </h3>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <%= render partial: "jobs/show_jobs", locals: {jobs: @jobs} %>
+      </div>
     </div>
-      <h1 id="title">Jobs</h1>
-      <%= render partial: "show_jobs", locals: {jobs: @jobs} %>
   </div>
 </div>
+
+
+
