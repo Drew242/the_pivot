@@ -1,9 +1,11 @@
 require "rails_helper"
 
-RSpec.feature "VisitorSeesNavigation", type: :feature do
-  context "as a visitor" do
+RSpec.feature "Visitor", type: :feature do
+  include LoginHelper
 
-    it "I see the navbar at the root path" do
+  context "that visits our welcome page" do
+
+    it "will see the navbar" do
       visit root_path
 
       expect(page).to have_content("Technically Employed")
@@ -14,12 +16,27 @@ RSpec.feature "VisitorSeesNavigation", type: :feature do
       expect(page).to have_content("Employers")
     end
 
-    it "when I click Emplyers I see an emplyer landing page" do
+    it "will have to register to create a company" do
+      create_roles
+
       visit root_path
 
       click_link("Employers")
-      expect(current_path).to eq(company_admin_new_path)
-    end
 
+      expect(current_path).to eq(login_path)
+
+      click_link "Register"
+
+      fill_in "Username", with: "user"
+      fill_in "Password", with: "password"
+
+      click_button "Create Account"
+
+      expect(current_path).to eq(root_path)
+
+      click_link "Employers"
+
+      expect(current_path).to eq(new_company_path)
+    end
   end
 end
