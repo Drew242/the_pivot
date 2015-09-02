@@ -9,11 +9,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      @user.send_welcome_email
+      flash[:success] = "Account activation sent to #{@user.email}"
       session[:user_id] = @user.id
       @user.roles << Role.find_by(name: "registered_user")
 
       if @user.roles.include?("registered_user")
-        NotificationsMailer.contact(email_params).deliver_now
         redirect_to root_path
       elsif @user.roles.include?("company_admin")
         redirect_to dashboard_path
@@ -52,6 +53,6 @@ class UsersController < ApplicationController
   end
 
   def email_params
-    params.permit(:username, :message)
+    params.permit(:email, :message)
   end
 end

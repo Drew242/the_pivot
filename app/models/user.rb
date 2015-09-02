@@ -29,5 +29,9 @@ class User < ActiveRecord::Base
     roles.exists?(name: 'platform_admin')
   end
 
+  def send_welcome_email
+    UserMailer.send_welcome_email(self).deliver_now
+  end
+
   mount_uploader :resume, ResumeUploader
 end
