@@ -14,7 +14,7 @@ class Companies::Admin::JobsController < Admin::BaseController
   end
 
   def create
-    @company = Company.find_by(user_id: current_user.id)
+    @company = Company.friendly.find_by(user_id: current_user.id)
 
     @job = @company.jobs.new(job_params)
 
@@ -32,7 +32,7 @@ class Companies::Admin::JobsController < Admin::BaseController
   end
 
   def update
-    @company = Company.find_by(user_id: current_user.id)
+    @company = Company.friendly.find_by(user_id: current_user.id)
     @job = Job.find(params[:id])
 
     if @job.update(job_params)
@@ -45,14 +45,14 @@ class Companies::Admin::JobsController < Admin::BaseController
   end
 
   def destroy
-    @company = Company.find_by(user_id: current_user.id)
+    @company = Company.friendly.find_by(user_id: current_user.id)
     @job = Job.find(params[:id])
     @job.destroy
     redirect_to companies_admin_company_path(@company)
   end
 
   def status
-    @company = Company.find_by(user_id: current_user.id)
+    @company = Company.friendly.find_by(user_id: current_user.id)
     @job = @company.jobs.find(params[:job])
     if @job.active?
       @job.inactive!

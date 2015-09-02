@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_company
-    @current_company ||= Company.find(params[:id]) if params[:company]
+    @current_company ||= Company.friendly.find(params[:id]) if params[:company]
   end
 
   def authorized?
