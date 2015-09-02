@@ -11,7 +11,8 @@ module LoginHelper
   end
 
   def create_account
-    visit signup_path
+    visit root_path
+    click_link "Create Account"
 
     fill_in "Username", with: "user"
     fill_in "Password", with: "password"
@@ -26,5 +27,16 @@ module LoginHelper
     fill_in "Password", with: "password"
 
     click_button "Login"
+  end
+
+  def login_as_store_admin
+    login_as_registered_user
+
+    click_link 'Employers'
+
+    fill_in 'Name', with: 'acme'
+    fill_in 'Information', with: 'acme info'
+
+    click_button 'Create Account'
   end
 end
