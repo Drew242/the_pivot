@@ -9,20 +9,20 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :test
+  # config.action_mailer.delivery_method = :test
   host = 'localhost:3000'
   config.action_mailer.default_url_options = { host: host }
 
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address:              'smtp.madrillapp.com',
-    port:                 '587',
-    domain:               'technically-employed.com',
-    user_name:            'atconly@gmail.com',
-    password:             'G8E79jCkBDbpDoNgcTMOog',
-    authentication:       'plain',
-    enable_starttls_auto: true
+    :user_name  => 'drew242',
+    :password   => 'sendgrid12345',
+    :domain     => 'technically-employed.com',
+    :address    => 'smtp.sendgrid.net',
+    :port       => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
