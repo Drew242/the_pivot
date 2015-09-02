@@ -55,5 +55,3 @@ end
   end
 end
 
-Job.bulk_update_fuzzy_title
-Job.bulk_update_fuzzy_location
