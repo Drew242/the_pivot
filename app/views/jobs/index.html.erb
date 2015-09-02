@@ -12,7 +12,9 @@
         </div>
       </div>
       <div class="panel-body">
+        <%= will_paginate %>
         <%= render partial: "jobs/show_jobs", locals: {jobs: @jobs} %>
+        <%= will_paginate %>
       </div>
     </div>
   </div>

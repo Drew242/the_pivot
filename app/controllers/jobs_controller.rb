@@ -2,8 +2,7 @@ class JobsController < ApplicationController
   def index
     @categories = Category.all
     @category = Category.find_by(slug: params[:id])
-    @jobs = Job.where(status: 'active')
-    # @jobs = Job.paginate(page: params[:page])
+    @jobs = Job.where(status: 'active').paginate(page: params[:page])
   end
 
   def show

@@ -54,3 +54,4 @@ end
     user.company.jobs << job
   end
 end
+
