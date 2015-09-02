@@ -9,6 +9,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      @user.send_welcome_email
+      flash[:success] = "Account activation sent to #{@user.email}"
       session[:user_id] = @user.id
       @user.roles << Role.find_by(name: "registered_user")
 
@@ -48,5 +50,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :password, :name, :street_address,
                                  :city, :state, :zipcode, :email, :resume)
+  end
+
+  def email_params
+    params.permit(:email, :message)
   end
 end
