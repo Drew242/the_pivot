@@ -1,9 +1,12 @@
-<%= form_for [:companies, :admin, @job] do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :description %>
-<%= f.text_field :description %>
-<%= f.label :location %>
-<%= f.text_field :location %>
-<%= f.submit "Submit" %>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3" id="login">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center">Edit Account</h3>
+      </div>
+      <div class="panel-body">
+        <%= render 'jobs/form' %>
+      </div>
+    </div>
+  </div>
+</div>

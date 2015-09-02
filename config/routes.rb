@@ -33,7 +33,6 @@ Rails.application.routes.draw do
       end
     end
 
-
   resources :applications, only: [:index, :show, :create]
 
   get "/dashboard", to: "users#show"
