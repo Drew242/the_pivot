@@ -1,0 +1,13 @@
+<div>
+  <h3 class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%= current_category %>
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </h3>
+  <ul class="dropdown-menu">
+    <% @categories.each do |category| %>
+      <li class=<%= category.name %>> <%= link_to category.name.capitalize, category_path(category)%></li>
+      <li role="separator" class="divider"></li>
+    <% end %>
+  </ul>
+</div>
