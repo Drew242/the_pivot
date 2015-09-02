@@ -1,18 +1,28 @@
-<div class='row'>
-  <div class='col-md-8 col-md-offset-2 welcome'>
 
-    <h1 id="welcome">Technically Employed </h1>
-    <%= form_tag("/jobs", method: "get", class: "form-inline") do %>
-      <div class="form-group">
-        <%= label_tag(:search_title, "Job Title") %>
-        <%= text_field_tag(:search_title) %>
+
+
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2" id="welcome">
+    <div class="text-center">
+      <h2 id="welcome">Find your passion</h2>
+    </div>
+    <div class="panel panel-default center">
+      <div class="panel-body">
+        <%= form_tag("/jobs", method: "get", class: "form-inline") do %>
+          <div class="form-group">
+            <%= text_field_tag :search_title, nil, :placeholder => "Job Title"  %>
+          </div>
+          <div class="form-group">
+            <%= text_field_tag :search_location, nil, placeholder: "City, State, or Zip" %>
+          </div>
+          <%= hidden_field_tag(:searched, true) %>
+          <button type="submit" class="pull-right btn btn-success" formaction="/search">Find Me A Job</button>
+        <% end %>
       </div>
-      <div class="form-group">
-        <%= label_tag(:search_location, "City, State, or Zip Code") %>
-        <%= text_field_tag(:search_location) %>
-      </div>
-      <%= hidden_field_tag(:searched, true) %>
-      <button type="submit" class="btn btn-default" formaction="/search">Find Me A Job</button>
-    <% end %>
+    </div>
   </div>
 </div>
+
+
+

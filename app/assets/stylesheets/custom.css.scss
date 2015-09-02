@@ -1,4 +1,12 @@
 
+body {
+  // background-image: url("people-office-group-team.jpg");
+  background-size: 100%;
+}
+
+img {
+    opacity: 0.4;
+}
 td {
   padding: 10px;
 }
@@ -6,4 +14,11 @@ td {
 th {
   padding: 10px;
 }
+
+.center {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
