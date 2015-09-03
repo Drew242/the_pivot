@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user.id)
     if @user.update(user_params)
-      flash[:error] = "User Profile updated!"
+      flash[:success] = "User Profile updated!"
       redirect_to dashboard_path
     else
       render :edit
