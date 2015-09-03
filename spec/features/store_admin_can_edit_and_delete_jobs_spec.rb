@@ -42,11 +42,9 @@ RSpec.feature "Store Admin", type: :feature do
     fill_in "Description", with: "edited dev description"
     fill_in "Location", with: "Cleveland"
 
-    click_button "Edit"
-
+    click_link_or_button "Update Job"
 
     expect(page).to have_content('edited dev')
-    expect(page).to have_content('edited dev description')
     expect(page).to have_content('Cleveland')
   end
 

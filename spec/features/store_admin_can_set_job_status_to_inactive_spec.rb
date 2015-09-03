@@ -48,12 +48,12 @@ RSpec.feature "Store Admin", type: :feature do
 
     expect(page).to have_content('dev')
     expect(page).to have_content('admin')
-    expect(page).to have_content('active')
-    expect(page).to have_content('active')
+    expect(page).to have_button('active')
+    expect(page).to have_button('active')
 
-    within("#dev") { click_link "active" }
+    within("#dev") { click_link_or_button "active" }
 
-    expect(page).to have_content('inactive')
+    expect(page).to have_button('inactive')
 
     click_link "Jobs"
 
