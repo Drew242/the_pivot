@@ -5,9 +5,9 @@ class JobsController < ApplicationController
     @jobs = Job.where(status: 'active').paginate(page: params[:page])
   end
 
-  def show
-    @job = Job.find(params[:id])
-  end
+  # def show
+  #   @job = Job.find(params[:id])
+  # end
 
   private
 
