@@ -16,6 +16,7 @@ module LoginHelper
 
     fill_in "Username", with: "user"
     fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
     fill_in "Email", with: "test@example.com"
 
     click_button "Create Account"

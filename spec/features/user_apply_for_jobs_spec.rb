@@ -38,6 +38,8 @@ RSpec.feature "User", type: :feature do
       visit login_path
       fill_in "Username", with: "user"
       fill_in "Password", with: "password"
+      fill_in "Password confirmation", with: "password"
+      fill_in "Email", with: "user@example.com"
 
       click_button "Login"
     end

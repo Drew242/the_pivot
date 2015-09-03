@@ -11,7 +11,7 @@ class ApplicationsController < ApplicationController
     @application = current_user.applications.build
     @application.cart_data = session[:cart] if session[:cart]
     if @application.save
-      flash[:message] = "Your applications have been successfully sent"
+      flash[:success] = "Your applications have been successfully sent"
       session[:cart] = nil
       redirect_to applications_path
     else
