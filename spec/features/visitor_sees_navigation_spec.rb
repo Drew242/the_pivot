@@ -29,6 +29,7 @@ RSpec.feature "Visitor", type: :feature do
 
       fill_in "Username", with: "user"
       fill_in "Password", with: "password"
+      fill_in "Email", with: "test@example.com"
 
       click_button "Create Account"
 
