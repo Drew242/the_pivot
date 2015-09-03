@@ -1,12 +1,14 @@
 
 body {
-  // background-image: url("people-office-group-team.jpg");
-  background-size: 100%;
+ background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+ url("people-office-group-team.jpg");
+ background-size: 100%;
 }
 
-img {
-    opacity: 0.4;
+.white-text {
+  color: white;
 }
+
 td {
   padding: 10px;
 }

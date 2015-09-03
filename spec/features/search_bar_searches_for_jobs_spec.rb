@@ -31,7 +31,7 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
       visit root_path
       fill_in :search_title, with: "Stop the Virus"
       fill_in :search_location, with: "Seattle, WA"
-      click_button "Find Me A Job"
+      click_button "Find A Job"
 
       expect(page).to have_content("Jobs")
       expect(page).to have_content("Stop the Virus")
@@ -43,7 +43,7 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
       visit root_path
       fill_in :search_title, with: "Stop the Virus"
       fill_in :search_location, with: "Seattle, WA"
-      click_button "Find Me A Job"
+      click_button "Find A Job"
 
       expect(page).not_to have_content("Philadelphia, PA")
       expect(page).not_to have_content("AI Coordinator")
@@ -52,7 +52,7 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
     it "can search for a job given only a title" do
       visit root_path
       fill_in :search_title, with: "Stop the Virus"
-      click_button "Find Me A Job"
+      click_button "Find A Job"
 
       expect(page).to have_content("Jobs")
       expect(page).to have_content("Stop the Virus")
@@ -62,7 +62,7 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
     it "can search for a job given only a location" do
       visit root_path
       fill_in :search_location, with: "Seattle, WA"
-      click_button "Find Me A Job"
+      click_button "Find A Job"
 
       expect(page).to have_content("Jobs")
       expect(page).to have_content("Stop the Virus")
@@ -73,7 +73,7 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
       visit root_path
       fill_in :search_title, with: "Stop the Virus"
       fill_in :search_location, with: "Seattle, WA"
-      click_button "Find Me A Job"
+      click_button "Find A Job"
 
       expect(page).to have_content("Jobs")
       expect(page).not_to have_content("Prevent Radical-6")
@@ -84,7 +84,7 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
       visit root_path
       fill_in :search_title, with: "Virus"
       fill_in :search_location, with: "Seattle"
-      click_button "Find Me A Job"
+      click_button "Find A Job"
 
       expect(page).to have_content("Jobs")
       expect(page).to have_content("Stop the Virus")
@@ -95,7 +95,7 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
     it "will return results based on an inexact title only" do
       visit root_path
       fill_in :search_title, with: "Virus"
-      click_button "Find Me A Job"
+      click_button "Find A Job"
 
       expect(page).to have_content("Jobs")
       expect(page).to have_content("Stop the Virus")
@@ -106,7 +106,7 @@ RSpec.feature "SearchBarSearchesForJobs", type: :feature do
     it "will return results based on an inexact location only" do
       visit root_path
       fill_in :search_location, with: "Seattle"
-      click_button "Find Me A Job"
+      click_button "Find A Job"
 
       expect(page).to have_content("Jobs")
       expect(page).to have_content("Stop the Virus")

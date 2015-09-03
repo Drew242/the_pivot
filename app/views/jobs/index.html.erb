@@ -4,17 +4,23 @@
       <div class="panel-heading">
         <div class="row">
           <div class="col-md-6 panel-title text-left">
-            <h3>Current Job Offerings</h3>
+            <div>
+              <h3>Current Job Offerings</h3>
+            </div>
           </div>
-          <div class="col-md-6 panel-title text-right">
-            <h3> <%= render partial: "categories/categories" %> </h3>
+          <div class="col-md-6 panel-title">
+            <%= render partial: "categories/categories" %>
           </div>
         </div>
       </div>
       <div class="panel-body">
-        <%= will_paginate %>
+        <div class="center">
+          <%= will_paginate %>
+        </div>
         <%= render partial: "jobs/show_jobs", locals: {jobs: @jobs} %>
-        <%= will_paginate %>
+        <div class="center">
+          <%= will_paginate %>
+        </div>
       </div>
     </div>
   </div>
