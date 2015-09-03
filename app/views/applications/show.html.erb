@@ -6,30 +6,30 @@
           <div class="col-md-6">
             <h5>Applied on: <%= @application.created_at.strftime("%m-%d-%Y %I:%M %p") %></h5>
           </div>
-          <div class="col-md-6">
-            <h5>Status: <%= @application.status.capitalize %></h4>
+          <div class="col=col-md-6">
+            <table id="user-applications">
+              <tr>
+                <th>Title</th>
+                <th>Location</th>
+              </tr>
+              <% @application.jobs.each do |job| %>
+                <tr>
+                  <td>
+                    <%= link_to job.title, company_job_path(job.company.id, job.id), id: job.title %>
+                  </td>
+                  <td>
+                    <%= job.location %>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
           </div>
         </div>
-        <table id="user-applications">
-          <tr>
-            <th>Title</th>
-            <th>Location</th>
-          </tr>
-          <% @application.jobs.each do |job| %>
-            <tr>
-              <td>
-                <%= link_to job.title, company_job_path(job.company.id, job.id), id: job.title %>
-              </td>
-              <td>
-                <%= job.location %>
-              </td>
-            </tr>
-          <% end %>
-        </table>
+        <div class="pull-right">
+           <%= button_to "Back", dashboard_path, method: :get, class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>
 

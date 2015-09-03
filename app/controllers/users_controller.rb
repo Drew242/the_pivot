@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @applications = @user.applications if @user.applications
   end
 
   def create
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
+    @applications = @user.applications if @user.applications
   end
 
   def edit

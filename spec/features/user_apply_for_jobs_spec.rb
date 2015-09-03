@@ -15,7 +15,6 @@ RSpec.feature "User", type: :feature do
     click_button 'Add to Favorites'
   end
 
-
   context "that isn't logged in" do
 
     it "is redirected to a login page if they apply for jobs" do
@@ -32,10 +31,14 @@ RSpec.feature "User", type: :feature do
   end
 
   context "that is logged in as a registered user"  do
-    let!(:user) { User.create!(username: 'user', password: 'password') }
+    let!(:user) { User.create!(username: 'user',
+                               password: 'password',
+                               password_confirmation: 'password',
+                               email: 'dummy@example.com') }
 
     before do
       visit login_path
+
       fill_in "Username", with: "user"
       fill_in "Password", with: "password"
 

@@ -1,25 +1,22 @@
 <%= form_for([:companies, :admin, @job], html: {class: 'form-horizontal', multipart: true }) do |f| %>
   <div class="field form-group">
-    <%= f.label :title, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_field :title, class: 'form-control' %>
+    <div class="col-sm-12">
+      <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
     </div>
   </div>
   <div class="field form-group">
-    <%= f.label :description, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_area :description, class: 'form-control' %>
+    <div class="col-sm-12">
+      <%= f.text_area :description, class: 'form-control', placeholder: 'Description' %>
     </div>
   </div>
   <div class="field form-group">
-    <%= f.label :location, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_area :location, class: 'form-control' %>
+    <div class="col-sm-12">
+      <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
     </div>
   </div>
   <div class="actions form-group">
-    <div class="col-sm-offset-2 col-sm-8">
-      <%= f.submit "Edit Job" %>
+    <div class="col-sm-12">
+      <%= f.submit "Update Job", class: 'btn btn-primary pull-right'%>
     </div>
   </div>
 <% end %>
