@@ -16,7 +16,8 @@ RSpec.feature "User", type: :feature do
   end
 
   context "that is logged in as a registered user"  do
-    let!(:user) { User.create!(username: 'user', password: 'password') }
+    let!(:user) { User.create!(username: 'user', password: 'password',
+                               email: 'test@example.com') }
 
     before do
       visit login_path
