@@ -14,7 +14,7 @@ RSpec.feature "User", type: :feature do
 
     click_link "Jobs"
 
-    expect(page).to have_content('All Categories')
+    expect(page).to have_content('Filter by Category')
 
     find(".caret").click
 

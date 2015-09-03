@@ -5,19 +5,19 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2" id="welcome">
     <div class="text-center">
-      <h2 id="welcome">Find your passion</h2>
+      <h2 class="white-text">Find your passion</h2>
     </div>
     <div class="panel panel-default center">
       <div class="panel-body">
         <%= form_tag("/jobs", method: "get", class: "form-inline") do %>
           <div class="form-group">
-            <%= text_field_tag :search_title, nil, :placeholder => "Job Title"  %>
+            <%= text_field_tag :search_title, nil, :placeholder => "Job Title", class: "form-control"  %>
           </div>
           <div class="form-group">
-            <%= text_field_tag :search_location, nil, placeholder: "City, State, or Zip" %>
+            <%= text_field_tag :search_location, nil, placeholder: "City, State, or Zip", class: "form-control" %>
           </div>
           <%= hidden_field_tag(:searched, true) %>
-          <button type="submit" class="pull-right btn btn-success" formaction="/search">Find Me A Job</button>
+          <button type="submit" class="pull-right btn btn-primary" formaction="/search">Find A Job</button>
         <% end %>
       </div>
     </div>

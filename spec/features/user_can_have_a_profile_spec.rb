@@ -13,13 +13,14 @@ RSpec.feature "Registered User", type: :feature do
 
       expect(current_path).to eq(user_path(user))
 
-      click_button "Edit Profile"
+      click_link_or_button "Edit Profile"
 
       fill_in "Name", with: "Ricky"
 
       click_button "Update Account"
 
-      expect(current_path).to eq(user_path(user))
+      # expect(current_path).to eq(user_path(user))
+      expect(current_path).to eq(dashboard_path)
 
       expect(page).to have_content("Ricky")
     end
