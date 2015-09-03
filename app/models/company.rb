@@ -14,4 +14,8 @@ class Company < ActiveRecord::Base
       [:name, :id]
     ]
   end
+
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 end
