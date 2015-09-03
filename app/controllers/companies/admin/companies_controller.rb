@@ -5,7 +5,11 @@ class Companies::Admin::CompaniesController < Admin::BaseController
   end
 
   def show
+<<<<<<< HEAD
     @company = Company.find(params[:id]) 
+=======
+    @company = Company.friendly.find(params[:id])
+>>>>>>> master
   end
 
   def new

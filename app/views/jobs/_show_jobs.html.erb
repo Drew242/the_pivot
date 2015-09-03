@@ -7,9 +7,9 @@
   </tr>
   <% jobs.each do |job| %>
     <tr>
-      <td><%= link_to job.title, company_job_path(job.company.id, job) %></td>
+      <td><%= link_to job.title, company_job_path(job.company.slug, job) %></td>
       <td><%= time_ago_in_words(job.created_at) unless job.created_at.blank? %> ago</td>
-      <td><%= link_to job.company.name, company_path(job.company.id) %></td>
+      <td><%= link_to job.company.name, company_path(job.company.slug) %></td>
       <td><%= job.location %></td>
     </tr>
   <% end %>
