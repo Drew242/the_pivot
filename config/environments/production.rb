@@ -18,13 +18,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address:              'smtp.madrillapp.com',
-    port:                 '587',
-    domain:               'technically-employed.com',
-    user_name:            'atconly@gmail.com',
-    password:             'G8E79jCkBDbpDoNgcTMOog',
-    authentication:       'plain',
-    enable_starttls_auto: true
+    :user_name => 'drew242',
+    :password => 'sendgrid12345',
+    :domain => 'technically-employed.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
