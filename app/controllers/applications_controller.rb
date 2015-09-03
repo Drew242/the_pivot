@@ -10,6 +10,7 @@ class ApplicationsController < ApplicationController
   def create
     @application = current_user.applications.build
     @application.cart_data = session[:cart] if session[:cart]
+
     if @application.save
 
       ApplyForJobsMailer.notify_user(current_user).deliver_now
