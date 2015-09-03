@@ -8,12 +8,12 @@ class UsersController < ApplicationController
   def create
 
     @user = User.new(user_params)
+    @user.roles << Role.find_by(name: "registered_user")
 
     if @user.save
       @user.send_welcome_email
       flash[:success] = "Account activation sent to #{@user.email}"
       session[:user_id] = @user.id
-      @user.roles << Role.find_by(name: "registered_user")
 
       if @user.roles.include?("registered_user")
         redirect_to root_path

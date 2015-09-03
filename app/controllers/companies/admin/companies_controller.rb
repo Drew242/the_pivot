@@ -5,7 +5,11 @@ class Companies::Admin::CompaniesController < Admin::BaseController
   end
 
   def show
+<<<<<<< HEAD
+    @company = Company.find(params[:id]) 
+=======
     @company = Company.friendly.find(params[:id])
+>>>>>>> master
   end
 
   def new
@@ -16,6 +20,7 @@ class Companies::Admin::CompaniesController < Admin::BaseController
     @company = Company.new(company_params)
     if current_user.company.nil? && @company.save
       current_user.company = @company
+      current_user.user_roles.first.user_id = nil
       current_user.roles << Role.find_by(name: "company_admin")
       flash[:success] = "#{@company.name} has been created"
       redirect_to root_path
