@@ -11,7 +11,7 @@ class PermissionService
     @controller = controller
     @action     = action
 
-    if user && user.company_admin? 
+    if user && user.company_admin?
       company_admin_permissions
     elsif user && user.registered_user?
       registered_user_permissions
@@ -32,12 +32,13 @@ class PermissionService
     # return true
     return true if controller == 'welcome'
     return true if controller == 'users'
-    return true if controller == 'jobs' && action.in?(%w(index))
+    return true if controller == 'jobs' && action.in?(%w(index show))
     return true if controller == 'companies' && action.in?(%w(index show new create))
-    return true if controller == 'company/job' && action.in?(%w(index show))
+    return true if controller == 'companies/jobs' && action.in?(%w(index show))
     return true if controller == 'categories' && action.in?(%w(show index))
     return true if controller == 'sessions' && action.in?(%w(new create destroy))
-    return true if controller == 'cart_jobs' && action.in?(%w(index create destroy))
+    return true if controller == 'cart_jobs' && action.in?(%w(index show create destroy))
+    return true if controller == 'applications' && action.in?(%w(index show create))
   end
 
   def company_admin_permissions
