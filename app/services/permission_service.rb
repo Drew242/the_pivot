@@ -24,21 +24,22 @@ class PermissionService
 
   private
 
-  def registered_user_permissions
-    return true
-    # return true if controller == 'companies' && action.in?(%w(index show))
-    # return true if controller == 'sessions' && action.in?(%w(new create destroy))
+  def guest_user_permissions
+    return true if controller == 'jobs' && actio.in?(%w(index show))
+    return true if controller == 'companies' && action.in?(%w(index show))
+    return true if controller == 'sessions' && action.in?(%w(new create destroy))
   end
 
-  def guest_user_permissions
-    return true
-    # return true if controller == 'companies' && action == 'index'
-    # return true if controller == 'sessions' && action.in?(%w(new create))
+  def registered_user_permissions
+    return true if controller == 'users'
+    return true if controller == 'companies' && action.in?(%w(index show new create))
+    return true if controller == 'categories' && action.in?(%w(show index))
+    return true if controller == 'sessions' && action.in?(%w(new create destroy))
+    return true if controller == 'cart_jobs' && action.in?(%w(index create destroy))
   end
 
   def company_admin_permissions
-    return true
-    # return true if controller != 'users'
+    return true if controller != 'users'
   end
 
   def platform_admin_permissions
