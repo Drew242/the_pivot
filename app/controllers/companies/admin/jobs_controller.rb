@@ -1,5 +1,4 @@
 class Companies::Admin::JobsController < Admin::BaseController
-  # class Companies::Admin::JobsController < Companies::CompaniesController
 
   def index
     @jobs = current_company.jobs

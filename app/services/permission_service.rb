@@ -1,7 +1,7 @@
 class PermissionService
   attr_reader :user,
-              :controller,
-              :action
+  :controller,
+  :action
 
   def initialize(user)
     @user = user
@@ -11,10 +11,10 @@ class PermissionService
     @controller = controller
     @action     = action
 
-    if user && user.registered_user?
-      registered_user_permissions
-    elsif user && user.company_admin?
+    if user && user.company_admin?
       company_admin_permissions
+    elsif user && user.registered_user?
+      registered_user_permissions
     elsif user && user.platform_admin?
       platform_admin_permissions
     else
@@ -26,13 +26,6 @@ class PermissionService
 
   def guest_user_permissions
     return true
-    # return true if controller == 'welcome'
-    # return true if controller == 'jobs' && action.in?(%w(index show))
-    # return true if controller == 'companies' && action.in?(%w(index show))
-    # return true if controller == 'company/job' && action.in?(%w(index show))
-    # return true if controller == 'categories' && action.in?(%w(show index))
-    # return true if controller == 'users' && action.in?(%w(new create))
-    # return true if controller == 'sessions' && action.in?(%w(new create destroy))
   end
 
   def registered_user_permissions
