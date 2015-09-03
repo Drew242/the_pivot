@@ -3,7 +3,7 @@ class Company < ActiveRecord::Base
   has_many :jobs
   belongs_to :user
 
-  friendly_id :slug_candidates, use: :slugged
+  friendly_id :slug_candidates, use: [:slugged, :finders]
 
   validates :name, presence: true
   validates :information, presence: true
@@ -16,6 +16,6 @@ class Company < ActiveRecord::Base
   end
 
   def should_generate_new_friendly_id?
-    new_record?
+    name_changed? || super
   end
 end
