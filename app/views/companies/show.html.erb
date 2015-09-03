@@ -1,35 +1,36 @@
 <div class="row">
-  <div class="text-center col-md-12">
-    <h1 id="title"> "<%= @company.name %>" Details</h1>
+  <div class="col-md-10 col-md-offset-1" id="create">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 id="title"> "<%= @company.name %>" Details</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Company Information</h3>
+            <%= @company.information %></br>
+          </div>
+          <div class="col-md-8">
+            <h3>Jobs with <%= @company.name %></h3>
+            <table class='table table-bordered table-hover'>
+              <tr>
+                <th>Job Title</th>
+                <th>Posted</th>
+                <th>Location</th>
+              </tr>
+              <% if @company.jobs %>
+                <% @company.jobs.each do |job| %>
+                  <% next if job.inactive? %>
+                  <tr>
+                    <td><%= link_to job.title, company_job_path(job.company, job) %></td>
+                    <td><%= job.created_at %></td>
+                    <td><%= job.location %></td>
+                  </tr>
+                <% end %>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-md-4">
-    <h3>Company Information</h3>
-    <%= @company.information %></br>
-  </div>
-  <div class="col-md-8">
-    <h3>Jobs with <%= @company.name %></h3>
-    <table class='table table-bordered table-hover'>
-      <tr>
-        <th>Job Title</th>
-        <th>Description</th>
-        <th>Posted</th>
-        <th>Location</th>
-      </tr>
-      <% if @company.jobs %>
-        <% @company.jobs.each do |job| %>
-          <% next if job.inactive? %>
-          <tr>
-            <td><%= link_to job.title, company_job_path(job.company, job) %></td>
-            <td><%= job.description %></td>
-            <td><%= job.created_at %></td>
-            <td><%= job.location %></td>
-          </tr>
-        <% end %>
-      <% end %>
-  </div>
-</div>
-
-

@@ -12,9 +12,9 @@ RSpec.feature "User", type: :feature do
 
   it "can sort jobs by category" do
 
-    click_link "Jobs"
+    click_link "View Jobs"
 
-    expect(page).to have_content('All Categories')
+    expect(page).to have_content('Filter by Category')
 
     find(".caret").click
 

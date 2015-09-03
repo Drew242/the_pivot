@@ -18,8 +18,8 @@ company_admin    = User.create(username: "andrew@turing.io", password: "password
 platform_admin   = User.create(username: "jorge@turing.io", password: "password")
 
 registered_user.roles << user_auth
-company_admin.roles   << user_auth << company_auth
-platform_admin.roles  << user_auth << company_auth << platform_auth
+company_admin.roles   << company_auth
+platform_admin.roles  << platform_auth
 
 company_admin.company = Company.create(name: "Carmer's Cupcakery",
 information: Faker::Lorem.paragraphs(2))
@@ -54,4 +54,3 @@ end
     user.company.jobs << job
   end
 end
-

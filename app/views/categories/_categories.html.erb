@@ -1,10 +1,9 @@
-<div>
-  <h3 class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <%= current_category %>
+<div class="dropdown pull-right dropdown-menu-right">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Filter by Category
     <span class="caret"></span>
-    <span class="sr-only">Toggle Dropdown</span>
-  </h3>
-  <ul class="dropdown-menu">
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
     <% @categories.each do |category| %>
       <li class=<%= category.name %>> <%= link_to category.name.capitalize, category_path(category)%></li>
       <li role="separator" class="divider"></li>

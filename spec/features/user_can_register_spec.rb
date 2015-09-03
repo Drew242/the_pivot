@@ -19,10 +19,11 @@ RSpec.feature "User", type: :feature do
 
       fill_in "Username", with: "user"
       fill_in "Password", with: "password"
+      fill_in "Email", with: "test@example.com"
 
       click_button "Create Account"
 
-      expect(page).to have_content("Find Me A Job")
+      expect(page).to have_content("Find A Job")
     end
   end
 
@@ -31,7 +32,7 @@ RSpec.feature "User", type: :feature do
       create_account
       login_as_registered_user
 
-      expect(page).to have_content("Application History")
+      expect(page).to have_content("Your Previous Applications")
     end
 
     it "can logout" do
