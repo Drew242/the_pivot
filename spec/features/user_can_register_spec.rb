@@ -32,7 +32,6 @@ RSpec.feature "User", type: :feature do
       create_account
       login_as_registered_user
 
-      save_and_open_page
       expect(page).to have_content("Your Previous Applications")
     end
 
