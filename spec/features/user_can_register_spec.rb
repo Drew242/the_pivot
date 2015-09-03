@@ -32,7 +32,7 @@ RSpec.feature "User", type: :feature do
       create_account
       login_as_registered_user
 
-      expect(page).to have_content("Application History")
+      expect(page).to have_content("Your Previous Applications")
     end
 
     it "can logout" do

@@ -1,9 +1,24 @@
-<%= form_for [:companies, :admin, @job] do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :description %>
-<%= f.text_field :description %>
-<%= f.label :location %>
-<%= f.text_field :location %>
-<%= f.submit "Submit" %>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3" id="login">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center">New Job</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_for [:companies, :admin, @job] do |f| %>
+          <div class="field form-group">
+            <%= f.text_field :title, class: 'form-control', placeholder: "Title" %>
+          </div>
+          <div class="field form-group">
+            <%= f.text_area :description, class: 'form-control', placeholder: "Description" %>
+          </div>
+          <div class="field form-group">
+            <%= f.text_field :location, class: 'form-control', placeholder: "Location" %>
+          </div>
+          <%= f.submit "Submit", class: "btn btn-primary pull-right" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

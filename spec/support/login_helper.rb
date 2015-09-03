@@ -16,6 +16,7 @@ module LoginHelper
 
     fill_in "Username", with: "user"
     fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
     fill_in "Email", with: "test@example.com"
 
     click_button "Create Account"
@@ -33,7 +34,7 @@ module LoginHelper
   def login_as_store_admin
     login_as_registered_user
 
-    click_link 'Employers'
+    click_link 'Post Jobs'
 
     fill_in 'Name', with: 'acme'
     fill_in 'Information', with: 'acme info'
