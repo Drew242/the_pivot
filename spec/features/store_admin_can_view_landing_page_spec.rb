@@ -10,7 +10,7 @@ RSpec.feature "Store Admin", type: :feature do
   it "can login" do
     create_account
     login_as_store_admin
-    
+
     expect(page).to have_content("Company Information")
   end
 
@@ -20,11 +20,11 @@ RSpec.feature "Store Admin", type: :feature do
     expect(page).to have_content("The page you were looking for doesn't exist.")
   end
 
-  it "shows a 404 with registered user non admin" do
+  it "redirects to root path for registered user non admin" do
     create_account
     login_as_registered_user
 
     visit companies_admin_companies_path(1)
-    expect(page).to have_content("The page you were looking for doesn't exist.")
+    expect(current_path).to eq(root_path)
   end
 end
