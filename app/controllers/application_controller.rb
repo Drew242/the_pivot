@@ -36,7 +36,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_company
-    @current_company ||= Company.find(params[:id]) if params[:company]
+    if current_user.company
+      @current_company ||= Company.find_by(url: current_user.company.id)
+    else
+      @current_company = nil
+    end
   end
 
   def authorized?

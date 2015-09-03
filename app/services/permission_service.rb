@@ -4,14 +4,14 @@ class PermissionService
   :action
 
   def initialize(user)
-    @user = user
+    @user    = user
   end
 
   def allow?(controller, action)
     @controller = controller
     @action     = action
 
-    if user && user.company_admin?
+    if user && user.company_admin? 
       company_admin_permissions
     elsif user && user.registered_user?
       registered_user_permissions
