@@ -13,9 +13,9 @@
             </tr>
             <% @cart_jobs.each do |cart_job| %>
 
-              <tr id="cart-table">
-                <td id="Title"><%= cart_job.title %></td>
-                <td id="Description"><%= cart_job.description %></td>
+              <tr class="cart-table">
+                <td class="Title"><%= cart_job.title %></td>
+                <td class="Description"><%= cart_job.description %></td>
                 <td>
                   <%= button_to "Remove", cart_job_path(cart_job), method: :delete, class: "btn btn-xs" %>
                 </td>

@@ -11,8 +11,6 @@ RSpec.feature "User", type: :feature do
   before do
     visit company_job_path(job.company, job)
     click_button "Add to Favorites"
-    visit company_job_path(job2.company, job2)
-    click_button 'Add to Favorites'
   end
 
   context "that isn't logged in" do
@@ -22,7 +20,6 @@ RSpec.feature "User", type: :feature do
       click_link "Favorite Jobs"
 
       expect(page).to have_content('Job 1')
-      expect(page).to have_content('Job 2')
 
       click_button "Apply to Jobs"
 
@@ -45,12 +42,19 @@ RSpec.feature "User", type: :feature do
       click_button "Login"
     end
 
+    it "can remove a job from the cart" do
+      click_link "Favorite Jobs"
+
+      expect(page).to have_content('Job 1')
+
+      click_button "Remove"
+    end
+
     it "receives confirmation that they have successfully applied for jobs" do
 
       click_link "Favorite Jobs"
 
       expect(page).to have_content('Job 1')
-      expect(page).to have_content('Job 2')
 
       click_button "Apply to Jobs"
 
