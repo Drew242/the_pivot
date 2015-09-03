@@ -10,7 +10,7 @@ RSpec.feature "Store Admin", type: :feature do
   it "can login" do
     create_account
     login_as_store_admin
-
+    
     expect(page).to have_content("Company Information")
   end
 
@@ -28,5 +28,3 @@ RSpec.feature "Store Admin", type: :feature do
     expect(page).to have_content("The page you were looking for doesn't exist.")
   end
 end
-
-
