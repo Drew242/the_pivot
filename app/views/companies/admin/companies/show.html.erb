@@ -1,41 +1,56 @@
 <div class="row">
-  <div class="text-center col-md-12">
-    <h1 id="title"> "<%= @company.name %>" Details</h1>
+  <div class="col-md-10 col-md-offset-1" id="create">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h3 id="title"><%= @company.name.titlecase %></h3>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+            Company Information<br>
+            <address>
+              <%= @company.information %></br>
+            </address>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6" id="create">
+                Jobs with <%= @company.name %>
+            </div>
+            <div class="col-md-6" id="create">
+              <%= link_to "Create Job", new_companies_admin_job_path, class: "btn btn-primary btn-xs pull-right" %>
+            </div>
+            </div>
+            <div>
+              <table class='table table-bordered table-hover'>
+                <tr>
+                  <th>Status</th>
+                  <th>Title</th>
+                  <th>Posted</th>
+                  <th>Location</th>
+                  <th colspan="2">Actions</th>
+                </tr>
+                <% if @company.jobs %>
+                  <% @company.jobs.each do |job| %>
+                    <tr>
+                      <td id="<%= job.title %>"><%= button_to job.status, companies_admin_path(job.company, job), method: :get, class: "btn btn-default btn-xs" %></td>
+                      <td><%= link_to job.title, companies_admin_job_path(job) %></td>
+                      <td><%= time_ago_in_words(job.created_at) unless job.created_at.blank? %> ago</td>
+                      <td><%= job.location %></td>
+                      <td><%= button_to "Edit", edit_companies_admin_job_path(job), method: :get, class: "btn btn-primary btn-xs" %></td>
+                      <td colspan=""><%= button_to "Delete", companies_admin_job_path(job),
+                        method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs" %></td>
+                    </tr>
+                  <% end %>
+                <% end %>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-4">
-    <h3>Company Information</h3>
-    <%= @company.information %></br>
-  </div>
-
-  <div class="col-md-8">
-    <h3>Jobs with <%= @company.name %></h3>
-    <%= link_to "Create Job", new_companies_admin_job_path %>
-    <table class='table table-bordered table-hover'>
-      <tr>
-        <th>Job Status</th>
-        <th>Job Title</th>
-        <th>Description</th>
-        <th>Posted</th>
-        <th>Location</th>
-        <th colspan="2">Actions</th>
-      </tr>
-      <% if @company.jobs %>
-        <% @company.jobs.each do |job| %>
-          <tr>
-            <td id="<%= job.title %>"><%= link_to job.status, companies_admin_path(job.company, job) %></td>
-            <td><%= link_to job.title, companies_admin_job_path(job) %></td>
-            <td><%= job.description %></td>
-            <td><%= job.created_at %></td>
-            <td><%= job.location %></td>
-            <td><%= link_to "Edit", edit_companies_admin_job_path(job) %></td>
-            <td><%= button_to "Delete", companies_admin_job_path(job),
-              method: :delete, data: { confirm: "Are you sure?" } %></td>
-            <!-- <td><%= link_to "Delete", companies_admin_job_path(job), method: :delete %></td> -->
-          </tr>
-        <% end %>
-      <% end %>
-  </div>
-</div>

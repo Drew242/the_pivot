@@ -24,7 +24,7 @@ RSpec.feature "Store Admin", type: :feature do
 
     expect(current_path).to eq(companies_admin_company_path(user.company.id))
 
-    click_link 'Create Job'
+    click_link_or_button 'Create Job'
 
     expect(current_path).to eq(new_companies_admin_job_path)
 
@@ -36,13 +36,13 @@ RSpec.feature "Store Admin", type: :feature do
 
     expect(current_path).to eq(companies_admin_company_path(user.company.id))
 
-    click_link 'Edit'
+    click_link_or_button 'Edit'
 
     fill_in "Title", with: "edited dev"
     fill_in "Description", with: "edited dev description"
     fill_in "Location", with: "Cleveland"
 
-    click_button "Edit Job"
+    click_button "Edit"
 
 
     expect(page).to have_content('edited dev')
