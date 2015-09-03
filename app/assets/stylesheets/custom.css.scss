@@ -1,12 +1,19 @@
 
+html {
+}
+
 body {
- background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
- url("people-office-group-team.jpg");
- background-size: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+  url("people-office-group-team.jpg");
+  background-size: 100%;
 }
 
 .white-text {
   color: white;
+}
+
+.padding {
+  padding: 20px;
 }
 
 td {
@@ -24,12 +31,12 @@ th {
 }
 
 .footer {
-    position: absolute;
-    bottom: -1;
-    width: 100%;
-    height: 60px;
-    background-color: black;
-    color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  color: white;
 }
 
 .text-muted {
@@ -55,3 +62,4 @@ th {
 #user_resume {
   padding-top: 7px;
 }
+
