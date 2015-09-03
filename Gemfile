@@ -18,6 +18,7 @@ gem "textacular"
 gem 'carrierwave'
 gem 'fog'
 gem 'figaro'
+gem 'friendly_id'
 
 group :development, :test do
   gem "byebug"

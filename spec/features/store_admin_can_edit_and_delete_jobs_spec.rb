@@ -22,7 +22,7 @@ RSpec.feature "Store Admin", type: :feature do
 
     click_button 'Create Account'
 
-    expect(current_path).to eq(companies_admin_company_path(user.company.id))
+    expect(current_path).to eq(companies_admin_company_path(user.company.slug))
 
     click_link_or_button 'Create Job'
 
@@ -34,7 +34,7 @@ RSpec.feature "Store Admin", type: :feature do
 
     click_button "Submit"
 
-    expect(current_path).to eq(companies_admin_company_path(user.company.id))
+    expect(current_path).to eq(companies_admin_company_path(user.company.slug))
 
     click_link_or_button 'Edit'
 
@@ -59,7 +59,7 @@ RSpec.feature "Store Admin", type: :feature do
 
     click_button 'Create Account'
 
-    expect(current_path).to eq(companies_admin_company_path(user.company.id))
+    expect(current_path).to eq(companies_admin_company_path(user.company.slug))
 
     click_link 'Create Job'
 
@@ -71,7 +71,7 @@ RSpec.feature "Store Admin", type: :feature do
 
     click_button "Submit"
 
-    expect(current_path).to eq(companies_admin_company_path(user.company.id))
+    expect(current_path).to eq(companies_admin_company_path(user.company.slug))
 
     click_button 'Delete'
 

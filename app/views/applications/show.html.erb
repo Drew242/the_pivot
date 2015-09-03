@@ -15,7 +15,7 @@
               <% @application.jobs.each do |job| %>
                 <tr>
                   <td>
-                    <%= link_to job.title, company_job_path(job.company.id, job.id), id: job.title %>
+                    <%= link_to job.title, company_job_path(job.company.slug, job.id), id: job.title %>
                   </td>
                   <td>
                     <%= job.location %>

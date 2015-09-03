@@ -5,7 +5,7 @@ class Companies::Admin::CompaniesController < Admin::BaseController
   end
 
   def show
-    @company = Company.find(params[:id])
+    @company = Company.friendly.find(params[:id])
   end
 
   def new
