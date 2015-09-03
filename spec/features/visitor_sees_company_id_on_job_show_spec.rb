@@ -13,9 +13,9 @@ RSpec.feature "VisitorSeesCompanyIdOnJobShow", type: :feature do
     it "can view a single job" do
       visit jobs_path
 
-      expect(page).to have_content("Jobs")
+      expect(page).to have_content("View Jobs")
       click_link("Jr Dev")
       expect(current_path).to eq(company_job_path(job.company, job))
     end
-  end 
+  end
 end

@@ -15,7 +15,7 @@ RSpec.feature "Store Admin", type: :feature do
     Role.create(name: "registered_user")
     Role.create(name: "company_admin")
 
-    click_link 'Employers'
+    click_link 'Post Jobs'
 
     fill_in 'Name', with: 'acme'
     fill_in 'Information', with: 'acme info'
@@ -55,12 +55,12 @@ RSpec.feature "Store Admin", type: :feature do
 
     expect(page).to have_button('inactive')
 
-    click_link "Jobs"
+    click_link "View Jobs"
 
     expect(page).to_not have_content('dev')
     expect(page).to have_content('admin')
 
-    click_link "Jobs"
+    click_link "View Jobs"
     click_link "acme"
 
     expect(page).to_not have_content('dev')
