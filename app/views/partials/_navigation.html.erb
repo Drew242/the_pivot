@@ -25,6 +25,9 @@
           <ul class="nav navbar-nav navbar-right">
               <li class="" id="favorite_jobs"><%= link_to "Favorite Jobs", cart_path %></li>
             <% if current_user %>
+              <% if company_admin? %>
+                <li class="" id="profile"><%= link_to "View Company Profile", companies_admin_company_path(current_user.company.id) %></li>
+              <% end %>
               <li class="" id="profile"><%= link_to "View Profile", user_path(current_user) %></li>
               <li class=""><%= link_to "#{current_user.username}", dashboard_path %> </li>
               <li class=""><%= link_to "Logout", logout_path %></li>
