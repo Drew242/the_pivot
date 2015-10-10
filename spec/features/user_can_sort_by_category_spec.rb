@@ -12,16 +12,13 @@ RSpec.feature "User", type: :feature do
 
   it "can sort jobs by category" do
 
+    expect(page).not_to have_content('Filter by Category')
     click_link "View Jobs"
 
     expect(page).to have_content('Filter by Category')
-
+    expect(page).not_to have_content('Tests')
     find(".caret").click
 
     expect(page).to have_content('Tests')
-
-    find(".tests").click
-
-    expect(page).to have_css('.tests')
   end
 end
