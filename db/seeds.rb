@@ -24,7 +24,7 @@ platform_admin.roles  << platform_auth
 company_admin.company = Company.create(name: "Carmer's Cupcakery",
 information: Faker::Lorem.paragraphs(2))
 
-50.times do |n|
+10.times do |n|
   jobs          = Job.create(title: Faker::Hacker.adjective,
                              description: Faker::Lorem.paragraphs(3),
                              location: Faker::Address.city)
@@ -32,13 +32,13 @@ information: Faker::Lorem.paragraphs(2))
   company_admin.company.jobs << jobs
 end
 
-10.times do |n|
+5.times do |n|
   username       = Faker::Name.name
   name           = Faker::Company.name
   information    = Faker::Lorem.paragraphs(2)
   user = User.create!(username: "username#{n}", password: "password")
   user.company = Company.create!(name: name, information: information)
-  50.times do |n|
+  10.times do |n|
     title          = Faker::Hacker.adjective
     description    = Faker::Lorem.paragraphs(3)
     created_at     = Faker::Time.between(2.days.ago, Time.now)
