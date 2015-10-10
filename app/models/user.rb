@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_one  :company
   has_secure_password
   validates_presence_of :username
-  validates_presence_of :password, :unless => lambda{ |user| user.password.blank? }
+  validates_presence_of :password, if: :new_record?
   validates_uniqueness_of :username
   has_one :address
   validates_confirmation_of :password
