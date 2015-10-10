@@ -19,9 +19,10 @@ class ApplyForJobsMailer < ApplicationMailer
   #   en.apply_for_jobs_mailer.notify_admin.subject
   #
   def notify_admin(user)
-    @greeting = "Hi"
+
     @user = user
-    mail to: user.email, subject: "You have received an application for a job."
+    mail to: user.email,
+      subject: "You have received an application for a job."
   end
 end
 
